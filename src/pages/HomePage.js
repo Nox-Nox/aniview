@@ -8,7 +8,7 @@ function HomePage() {
   {
     Page(page: 1, perPage: 40) {
 
-      media(season: WINTER, type: ANIME, status: NOT_YET_RELEASED, format: TV) {
+      media(season: SPRING, type: ANIME, status: NOT_YET_RELEASED, format:TV) {
         id
         coverImage{
           large
