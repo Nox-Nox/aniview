@@ -1,38 +1,9 @@
 import { AppBar, Toolbar, ThemeProvider, CssBaseline } from "@mui/material";
-import { createTheme, Link } from "@mui/material";
-
-const theme = createTheme({
-  components: {
-    MuiLink: {
-      styleOverrides: {
-        root: {
-          color: "#d9d9d9",
-          "&:hover": {
-            color: "white",
-          },
-          textDecoration: "none",
-          padding: 20,
-        },
-      },
-    },
-  },
-  typography: {
-    fontFamily: "Roboto",
-    fontSize: 20,
-  },
-  palette: {
-    primary: {
-      main: "#171717",
-    },
-    secondary: {
-      main: "#eeeeee",
-    },
-  },
-});
-
+import { Link } from "@mui/material";
+import { mainTheme } from "../Theme/mainTheme";
 function MainNavigation() {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={mainTheme}>
       <AppBar sx={{ alignItems: "center", width: "100%", position: "sticky" }}>
         <CssBaseline />
         <Toolbar variant="dense">
