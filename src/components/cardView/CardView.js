@@ -37,7 +37,7 @@ function CardView(props) {
         <Box
           sx={{
             display: "flex",
-            margin: 5,
+            margin: "2vw",
           }}
         >
           <Box
@@ -49,23 +49,22 @@ function CardView(props) {
             <CardMedia
               component="img"
               image={item.coverImage.large}
-              height={"100%"}
+              height="250vh"
+              width="10vw"
+              display="flex"
             />
           </Box>
-          <Box>
+          <Box backgroundColor={mainTheme.palette.primary.light}>
             <Box
               float="left"
-              width="15vw"
+              width="10vw"
               sx={{
-                backgroundColor: mainTheme.palette.primary.light,
                 borderRadius: "2px",
                 overflowY: "auto",
-                display: "flex",
                 flexGrow: 1,
                 flexDirection: "column",
-                height: "100%",
-                maxHeight: "265px",
-
+                height: "20vh",
+                maxHeight: "250vh",
                 display: "flex",
               }}
             >
@@ -76,7 +75,6 @@ function CardView(props) {
           </Box>
         </Box>
       ))}
-      )
     </ThemeProvider>
   );
 }

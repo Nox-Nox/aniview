@@ -2,36 +2,25 @@ import * as React from "react";
 import { Box, createTheme, ThemeProvider } from "@mui/material";
 import CardView from "../cardView/CardView";
 import { Grid } from "@mui/material";
-
-let theme = createTheme({
-  palette: {
-    primary: {
-      main: "#171717",
-    },
-    secondary: {
-      main: "#eeeeee",
-    },
-  },
-});
+import { mainTheme } from "../Theme/mainTheme";
 
 function CardContainer(props) {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={mainTheme}>
       <h1>{props.title}</h1>
       <Box
-        sx={{
-          width: "100%",
-          height: "auto",
-          backgroundColor: "primary.dark",
-          marginBottom: 15,
-        }}
+        backgroundColor={mainTheme.palette.primary.main}
+        marginBottom="auto"
+        sx={{ flexGrow: 1 }}
       >
         <Grid
+          columns={4}
           container
-          rowSpacing={2}
-          spacing={0}
-          alignItems={"center"}
-          justifyContent={"center"}
+          rowSpacing={1}
+          columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+          item
+          xs={6}
+          justifyContent="center"
         >
           <CardView items={props.list} />
         </Grid>
