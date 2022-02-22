@@ -5,7 +5,6 @@ function MainNavigation() {
   return (
     <ThemeProvider theme={mainTheme}>
       <AppBar sx={{ alignItems: "center", position: "sticky" }}>
-        <CssBaseline />
         <Toolbar>
           <Link href="/">Home Page</Link>
           <Link href="/animePage">Anime Page</Link>

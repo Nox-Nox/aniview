@@ -10,15 +10,20 @@ export const mainTheme = createTheme({
             color: "white",
           },
           textDecoration: "none",
-          padding: 20,
+          padding: "2vw",
+        },
+      },
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Roboto",
+          fontSize: "1.5vw",
         },
       },
     },
   },
-  typography: {
-    fontFamily: "Roboto",
-    fontSize: 20,
-  },
+
   palette: {
     primary: {
       main: "#171717",

@@ -4,6 +4,7 @@ function Layout(props) {
   return (
     <div>
       <MainNavigation />
+      <CssBaseline />
       <main>{props.children}</main>
     </div>
   );
