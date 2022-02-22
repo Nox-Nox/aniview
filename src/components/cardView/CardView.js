@@ -9,9 +9,6 @@ import {
 import { mainTheme } from "../Theme/mainTheme";
 
 let theme = createTheme({
-  typography: {
-    fontFamily: "",
-  },
   components: {
     MuiCardMedia: {
       styleOverrides: {
@@ -51,18 +48,21 @@ function CardView(props) {
               height="250vh"
               width="10vw"
               display="flex"
+              sx={{ borderTopLeftRadius: "20%" }}
             />
           </Box>
-          <Box backgroundColor={mainTheme.palette.primary.light}>
+          <Box
+            backgroundColor={mainTheme.palette.primary.light}
+            sx={{ borderBottomRightRadius: "10%" }}
+          >
             <Box
               float="left"
               width="10vw"
               sx={{
-                borderRadius: "2px",
                 overflowY: "auto",
                 flexGrow: 1,
                 flexDirection: "column",
-                height: "20vh",
+                height: "22vh",
                 maxHeight: "250vh",
                 display: "flex",
               }}
@@ -70,8 +70,9 @@ function CardView(props) {
               <Typography
                 color={"white"}
                 fontSize="12px"
-                padding={"5px"}
+                variant="body2"
                 dangerouslySetInnerHTML={{ __html: item.description }}
+                padding="1vh"
               ></Typography>
             </Box>
           </Box>

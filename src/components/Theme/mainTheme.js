@@ -19,6 +19,7 @@ export const mainTheme = createTheme({
         root: {
           fontFamily: "Roboto",
           fontSize: "1.5vw",
+          padding: "2.5vw",
         },
       },
     },
