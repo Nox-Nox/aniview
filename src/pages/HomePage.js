@@ -1,5 +1,7 @@
 import CardContainer from "../components/cardsContainer/CardContainer";
 import { useState, useEffect } from "react";
+import LoadingHome from "../components/LoadingSpinner/LoadingHome";
+import { Box } from "@mui/system";
 
 function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -58,11 +60,7 @@ function HomePage() {
   }, []);
 
   if (loadedData.length === 0) {
-    return (
-      <section>
-        <p>Loading.....</p>
-      </section>
-    );
+    return <LoadingHome />;
   }
   return (
     <div>

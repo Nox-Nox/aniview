@@ -5,7 +5,6 @@ import {
   ThemeProvider,
   responsiveFontSizes,
   Box,
-  ListItemSecondaryAction,
 } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
 
@@ -68,9 +67,12 @@ function CardView(props) {
                 display: "flex",
               }}
             >
-              <Typography color={"white"} fontSize="12px" padding={"5px"}>
-                {item.description}
-              </Typography>
+              <Typography
+                color={"white"}
+                fontSize="12px"
+                padding={"5px"}
+                dangerouslySetInnerHTML={{ __html: item.description }}
+              ></Typography>
             </Box>
           </Box>
         </Box>
