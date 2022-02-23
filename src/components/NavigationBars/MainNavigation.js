@@ -6,10 +6,10 @@ function MainNavigation() {
     <ThemeProvider theme={mainTheme}>
       <AppBar sx={{ alignItems: "center", position: "sticky" }}>
         <Toolbar>
-          <Link href="/">Home Page</Link>
-          <Link href="/animePage">Anime Page</Link>
-          <Link href="/mangaPage">Manga Page</Link>
-          <Link href="/lightNovelPage">Light Novel Page</Link>
+          <Link href="/">Home</Link>
+          <Link href="/animePage">Anime</Link>
+          <Link href="/mangaPage">Manga</Link>
+          <Link href="/lightNovelPage">Light Novel</Link>
         </Toolbar>
       </AppBar>
     </ThemeProvider>

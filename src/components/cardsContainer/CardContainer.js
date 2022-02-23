@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, createTheme, ThemeProvider } from "@mui/material";
+import { Box, ThemeProvider } from "@mui/material";
 import CardView from "../cardView/CardView";
 import { Grid } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";

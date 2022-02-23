@@ -3,10 +3,11 @@ import {
   CardMedia,
   createTheme,
   ThemeProvider,
-  responsiveFontSizes,
   Box,
+  Stack,
 } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
+import GenresChip from "../Chip/GenresChip";
 
 let theme = createTheme({
   components: {
@@ -24,20 +25,22 @@ let theme = createTheme({
     },
   },
 });
-theme = responsiveFontSizes(theme);
 
 function CardView(props) {
+  {
+    (props.items || []).map((item1) => console.log(item1.genres));
+  }
   return (
     <ThemeProvider theme={theme}>
       {(props.items || []).map((item) => (
         <Box
+          key={item.id}
           sx={{
             display: "flex",
             margin: "2vw",
           }}
         >
           <Box
-            key={item.id}
             sx={{
               float: "left",
             }}
@@ -45,7 +48,7 @@ function CardView(props) {
             <CardMedia
               component="img"
               image={item.coverImage.large}
-              height="250vh"
+              height="260vh"
               width="10vw"
               display="flex"
               sx={{ borderTopLeftRadius: "20%" }}
@@ -54,6 +57,7 @@ function CardView(props) {
           <Box
             backgroundColor={mainTheme.palette.primary.light}
             sx={{ borderBottomRightRadius: "10%" }}
+            width="10vw"
           >
             <Box
               float="left"
@@ -65,6 +69,7 @@ function CardView(props) {
                 height: "22vh",
                 maxHeight: "250vh",
                 display: "flex",
+                marginBottom: "1vh",
               }}
             >
               <Typography
@@ -75,6 +80,24 @@ function CardView(props) {
                 padding="1vh"
               ></Typography>
             </Box>
+            <Stack
+              alignItems={"center"}
+              spacing={1}
+              padding={1}
+              sx={{
+                overflow: "auto",
+                flexGrow: 1,
+                flexDirection: "column",
+                height: "6.2vh",
+                maxHeight: "50vh",
+                justifyItems: "flex-start",
+                borderBottomRightRadius: "10%",
+              }}
+              width={"100%"}
+              backgroundColor={mainTheme.palette.primary.dark}
+            >
+              <GenresChip items={item.genres} />
+            </Stack>
           </Box>
         </Box>
       ))}
