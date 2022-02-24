@@ -1,15 +1,27 @@
 ::-webkit-scrollbar {
-  overflow-y: hidden;
-}
-
-:hover::-webkit-scrollbar {
-  background: #c9c9c9;
   border-radius: 4px;
   height: 8px;
   width: 8px;
 }
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 3px;
+}
 
-:hover::-webkit-scrollbar-thumb {
-  background: #393a3a;
+.scroll {
+  overflow: hidden;
+}
+
+.scroll:hover {
+  overflow: auto;
+}
+
+.scroll::-webkit-scrollbar {
+  border-radius: 4px;
+  height: 8px;
+  width: 8px;
+}
+.scroll:hover::-webkit-scrollbar-thumb {
+  background: #222222;
   border-radius: 3px;
 }

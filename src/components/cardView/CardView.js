@@ -9,7 +9,6 @@ import {
 import { mainTheme } from "../Theme/mainTheme";
 import GenresChip from "../Chip/GenresChip";
 import classes from "./Scroll.module.css";
-
 let theme = createTheme({
   components: {
     MuiCardMedia: {
@@ -50,16 +49,12 @@ function CardView(props) {
               sx={{ borderTopLeftRadius: "20%" }}
             />
           </Box>
-          <Box
-            className={classes}
-            backgroundColor={mainTheme.palette.primary.light}
-            width="10vw"
-          >
+          <Box backgroundColor={mainTheme.palette.primary.light} width="10vw">
             <Box
+              className={classes.scroll}
               float="left"
               width="10vw"
               sx={{
-                overflowY: "scroll",
                 flexGrow: 1,
                 flexDirection: "column",
                 height: "22vh",
@@ -77,15 +72,15 @@ function CardView(props) {
               ></Typography>
             </Box>
             <Stack
+              className={classes.scroll}
               alignItems={"center"}
               spacing={1}
               padding={1}
               sx={{
-                overflow: "auto",
                 flexGrow: 1,
                 flexDirection: "column",
-                height: "6.2vh",
-                maxHeight: "50vh",
+                height: "5vh",
+
                 justifyItems: "flex-start",
               }}
               width={"100%"}
