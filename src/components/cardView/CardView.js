@@ -49,7 +49,14 @@ function CardView(props) {
               sx={{ borderTopLeftRadius: "20%" }}
             />
           </Box>
-          <Box backgroundColor={mainTheme.palette.primary.light} width="10vw">
+          <Box
+            backgroundColor={mainTheme.palette.primary.light}
+            width="10vw"
+            sx={{
+              borderBottomRightRadius: "16px",
+              borderTopRightRadius: "11px",
+            }}
+          >
             <Box
               className={classes.scroll}
               float="left"
@@ -77,10 +84,10 @@ function CardView(props) {
               spacing={1}
               padding={1}
               sx={{
+                borderBottomRightRadius: "10px",
                 flexGrow: 1,
                 flexDirection: "column",
                 height: "5vh",
-
                 justifyItems: "flex-start",
               }}
               width={"100%"}
