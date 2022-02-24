@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import AnimePage from "./pages/AnimePage";
 import MangaPage from "./pages/MangaPage";
 import LightNovelPage from "./pages/LightNovelPage";
+
 function App() {
   return (
     <Layout>

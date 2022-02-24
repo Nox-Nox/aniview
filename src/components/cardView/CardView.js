@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
 import GenresChip from "../Chip/GenresChip";
+import classes from "./Scroll.module.css";
 
 let theme = createTheme({
   components: {
@@ -16,11 +17,6 @@ let theme = createTheme({
         root: {
           width: "10vw",
         },
-      },
-    },
-    MuiCardHeader: {
-      styleOverrides: {
-        root: {},
       },
     },
   },
@@ -55,15 +51,15 @@ function CardView(props) {
             />
           </Box>
           <Box
+            className={classes}
             backgroundColor={mainTheme.palette.primary.light}
-            sx={{ borderBottomRightRadius: "10%" }}
             width="10vw"
           >
             <Box
               float="left"
               width="10vw"
               sx={{
-                overflowY: "auto",
+                overflowY: "scroll",
                 flexGrow: 1,
                 flexDirection: "column",
                 height: "22vh",
@@ -91,10 +87,9 @@ function CardView(props) {
                 height: "6.2vh",
                 maxHeight: "50vh",
                 justifyItems: "flex-start",
-                borderBottomRightRadius: "10%",
               }}
               width={"100%"}
-              backgroundColor={mainTheme.palette.primary.dark}
+              backgroundColor={mainTheme.palette.primary.light}
             >
               <GenresChip items={item.genres} />
             </Stack>

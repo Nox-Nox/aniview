@@ -1,0 +1,15 @@
+::-webkit-scrollbar {
+  overflow-y: hidden;
+}
+
+:hover::-webkit-scrollbar {
+  background: #c9c9c9;
+  border-radius: 4px;
+  height: 8px;
+  width: 8px;
+}
+
+:hover::-webkit-scrollbar-thumb {
+  background: #393a3a;
+  border-radius: 3px;
+}
