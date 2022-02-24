@@ -4,7 +4,12 @@ import { mainTheme } from "../Theme/mainTheme";
 function MainNavigation() {
   return (
     <ThemeProvider theme={mainTheme}>
-      <AppBar sx={{ alignItems: "center", position: "sticky" }}>
+      <AppBar
+        sx={{
+          alignItems: "center",
+          position: "relative",
+        }}
+      >
         <Toolbar>
           <Link href="/">Home</Link>
           <Link href="/animePage">Anime</Link>

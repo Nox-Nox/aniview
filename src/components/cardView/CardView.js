@@ -48,6 +48,7 @@ function CardView(props) {
               display="flex"
               sx={{ borderTopLeftRadius: "20%" }}
             />
+            <Box></Box>
           </Box>
           <Box
             backgroundColor={mainTheme.palette.primary.light}
