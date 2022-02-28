@@ -1,6 +1,7 @@
 import { AppBar, Toolbar, ThemeProvider } from "@mui/material";
 import { Link, Box } from "@mui/material";
 import SeasonsNavigationTheme from "../Theme/seasonsNavigationTheme";
+import WinterPage from "../../pages/seasonsPages/WinterPage";
 
 function SeasonsNavigation(props) {
   return (
@@ -8,18 +9,10 @@ function SeasonsNavigation(props) {
       <Box display={"flex"} justifyContent="center">
         <AppBar>
           <Toolbar>
-            <Link href="#/winter_season" onClick={() => props.season("WINTER")}>
-              Winter
-            </Link>
-            <Link href="#/spring_season" onClick={() => props.season("SPRING")}>
-              Spring
-            </Link>
-            <Link href="#/summer_season" onClick={() => props.season("SUMMER")}>
-              Summer
-            </Link>
-            <Link href="#/fall_season" onClick={() => props.season("FALL")}>
-              Fall
-            </Link>
+            <Link href="/Winter">Winter</Link>
+            <Link href="/Spring">Spring</Link>
+            <Link href="/Summer">Summer</Link>
+            <Link href="/Fall">Fall</Link>
           </Toolbar>
         </AppBar>
       </Box>

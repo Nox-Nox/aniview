@@ -1,6 +1,3 @@
-const [isCurrentSeason, setCurrentSeason] = useState();
-const [isStatus, setStatus] = useState(status);
-
 function getCurrentSeason() {
   var today = new Date();
   var year = today.getFullYear();
@@ -8,17 +5,15 @@ function getCurrentSeason() {
   var day = today.getDate();
 
   if (day >= 1 && month >= 2 && month <= 4) {
-    setCurrentSeason("SPRING");
-    setStatus("RELEASING");
+    return "SPRING";
   } else if (day >= 1 && month >= 5 && month <= 7) {
-    setCurrentSeason("SUMMER");
-    setStatus("RELEASING");
+    return "SUMMER";
   } else if (day >= 1 && month >= 8 && month <= 10) {
-    setCurrentSeason("FALL");
-    setStatus("RELEASING");
+    return "FALL";
   } else {
-    setCurrentSeason("WINTER");
-    setStatus("RELEASING");
+    return "WINTER";
   }
 }
 
+var season = getCurrentSeason();
+console.log(season);

@@ -14,7 +14,7 @@ function MainNavigation() {
           <Link href="/Home">Home</Link>
           <Link href="/Anime">Anime</Link>
           <Link href="/Manga">Manga</Link>
-          <Link href="/Light Novel">Light Novel</Link>
+          <Link href="/LightNovel">Light Novel</Link>
         </Toolbar>
       </AppBar>
     </ThemeProvider>
