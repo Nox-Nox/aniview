@@ -9,8 +9,11 @@ function HomePage() {
   const [loadedData, setLoadedData] = useState([]);
   const [isSeason, setSeason] = useState("SPRING");
 
-  function getSelectedSeason() {
-    console.log("blablabla");
+  function getSelectedSeason(props) {
+    console.log(isSeason);
+    console.log(props);
+    setSeason(props);
+    console.log(isSeason);
   }
 
   function getCurrentSeason() {
@@ -20,13 +23,13 @@ function HomePage() {
     var day = today.getDate();
 
     if (day >= 1 && (month >= 2 || month <= 4)) {
-      setSeason("SPRING");
+      console.log("spring");
     } else if (day >= 1 && (month >= 5 || month <= 7)) {
-      setSeason("SUMMER");
+      console.log("summer");
     } else if (day >= 1 && (month >= 8 || month <= 11)) {
-      setSeason("FALL");
+      console.log("fall");
     } else {
-      setSeason("WINTER");
+      console.log("winter");
     }
   }
   var season = isSeason;
@@ -62,7 +65,6 @@ function HomePage() {
       }),
     };
   useEffect(() => {
-    getCurrentSeason();
     setIsLoading(true);
     fetch(url, options)
       .then((response) => {
@@ -83,14 +85,14 @@ function HomePage() {
         setIsLoading(false);
         setLoadedData(items);
       });
-  }, []);
+  }, [season]);
 
   if (loadedData.length === 0) {
     return <LoadingHome />;
   }
   return (
     <Box>
-      <SeasonsNavigation />
+      <SeasonsNavigation season={getSelectedSeason} />
       <CardContainer title="TV series to be aired" list={loadedData} />
     </Box>
   );

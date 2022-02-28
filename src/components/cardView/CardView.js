@@ -22,9 +22,6 @@ let theme = createTheme({
 });
 
 function CardView(props) {
-  {
-    (props.items || []).map((item1) => console.log(item1.genres));
-  }
   return (
     <ThemeProvider theme={theme}>
       {(props.items || []).map((item) => (
