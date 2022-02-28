@@ -27,10 +27,10 @@ const SeasonsNavigationTheme = createTheme({
       styleOverrides: {
         root: {
           width: "28vw",
-          left: "37vw",
           alignItems: "center",
           position: "relative",
           marginTop: "2vh",
+          borderRadius: "2vw",
         },
       },
     },
