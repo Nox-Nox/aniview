@@ -52,7 +52,7 @@ function CardView(props) {
             width="10vw"
             sx={{
               borderBottomRightRadius: "16px",
-              borderTopRightRadius: "11px",
+              borderTopRightRadius: "10px",
             }}
           >
             <Box

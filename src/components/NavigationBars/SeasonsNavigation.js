@@ -8,16 +8,16 @@ function SeasonsNavigation(props) {
       <Box display={"flex"} justifyContent="center">
         <AppBar>
           <Toolbar>
-            <Link href="#" onClick={() => props.season("WINTER")}>
+            <Link href="#/winter_season" onClick={() => props.season("WINTER")}>
               Winter
             </Link>
-            <Link href="#" onClick={() => props.season("SPRING")}>
+            <Link href="#/spring_season" onClick={() => props.season("SPRING")}>
               Spring
             </Link>
-            <Link href="#" onClick={() => props.season("SUMMER")}>
+            <Link href="#/summer_season" onClick={() => props.season("SUMMER")}>
               Summer
             </Link>
-            <Link href="#" onClick={() => props.season("FALL")}>
+            <Link href="#/fall_season" onClick={() => props.season("FALL")}>
               Fall
             </Link>
           </Toolbar>

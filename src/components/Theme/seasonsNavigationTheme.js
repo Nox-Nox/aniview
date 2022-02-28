@@ -30,7 +30,7 @@ const SeasonsNavigationTheme = createTheme({
           alignItems: "center",
           position: "relative",
           marginTop: "2vh",
-          borderRadius: "2vw",
+          borderRadius: "8vw",
         },
       },
     },

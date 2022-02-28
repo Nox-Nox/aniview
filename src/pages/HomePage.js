@@ -3,41 +3,25 @@ import { useState, useEffect } from "react";
 import LoadingHome from "../components/LoadingSpinner/LoadingHome";
 import { Box } from "@mui/material";
 import SeasonsNavigation from "../components/NavigationBars/SeasonsNavigation";
+import { getCurrentSeason } from "../components/Functions/GetCurrentSeason";
 
 function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedData, setLoadedData] = useState([]);
-  const [isSeason, setSeason] = useState("SPRING");
-
+  const [isCurrentSeason, setCurrentSeason] = useState();
+  const [isStatus, setStatus] = useState("RELEASING");
+  var selected_season = " ";
   function getSelectedSeason(props) {
-    console.log(isSeason);
-    console.log(props);
-    setSeason(props);
-    console.log(isSeason);
+    selected_season = props;
   }
 
-  function getCurrentSeason() {
-    var today = new Date();
-    var year = today.getFullYear();
-    var month = today.getMonth();
-    var day = today.getDate();
-
-    if (day >= 1 && (month >= 2 || month <= 4)) {
-      console.log("spring");
-    } else if (day >= 1 && (month >= 5 || month <= 7)) {
-      console.log("summer");
-    } else if (day >= 1 && (month >= 8 || month <= 11)) {
-      console.log("fall");
-    } else {
-      console.log("winter");
-    }
-  }
-  var season = isSeason;
+  var status = isStatus;
+  var season = isCurrentSeason;
   var query = `
   {
     Page(page: 1, perPage: 40) {
 
-      media(season: ${season}, type: ANIME, status: NOT_YET_RELEASED, format:TV) {
+      media(season: ${season}, type: ANIME, status: ${status}, format:TV) {
         id
         coverImage{
           large
@@ -66,6 +50,7 @@ function HomePage() {
     };
   useEffect(() => {
     setIsLoading(true);
+    setCurrentSeason(getCurrentSeason());
     fetch(url, options)
       .then((response) => {
         return response.json();
@@ -85,7 +70,7 @@ function HomePage() {
         setIsLoading(false);
         setLoadedData(items);
       });
-  }, [season]);
+  }, [isCurrentSeason]);
 
   if (loadedData.length === 0) {
     return <LoadingHome />;
@@ -93,7 +78,7 @@ function HomePage() {
   return (
     <Box>
       <SeasonsNavigation season={getSelectedSeason} />
-      <CardContainer title="TV series to be aired" list={loadedData} />
+      <CardContainer title="TV series currently airing" list={loadedData} />
     </Box>
   );
 }

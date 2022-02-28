@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Layout from "./layout/Layout";
 import HomePage from "./pages/HomePage";
 import AnimePage from "./pages/AnimePage";
@@ -9,10 +9,11 @@ function App() {
   return (
     <Layout>
       <Routes>
-        <Route path="/" exact element={<HomePage />} />
-        <Route path="/animePage" element={<AnimePage />} />
-        <Route path="/mangaPage" element={<MangaPage />} />
-        <Route path="/lightNovelPage" element={<LightNovelPage />} />
+        <Route path="/" element={<Navigate to="/Home" />} />
+        <Route path="/Home" exact element={<HomePage />} />
+        <Route path="/anime" element={<AnimePage />} />
+        <Route path="/manga" element={<MangaPage />} />
+        <Route path="/Light Novel" element={<LightNovelPage />} />
       </Routes>
     </Layout>
   );

@@ -11,10 +11,10 @@ function MainNavigation() {
         }}
       >
         <Toolbar>
-          <Link href="/">Home</Link>
-          <Link href="/animePage">Anime</Link>
-          <Link href="/mangaPage">Manga</Link>
-          <Link href="/lightNovelPage">Light Novel</Link>
+          <Link href="/Home">Home</Link>
+          <Link href="/Anime">Anime</Link>
+          <Link href="/Manga">Manga</Link>
+          <Link href="/Light Novel">Light Novel</Link>
         </Toolbar>
       </AppBar>
     </ThemeProvider>
