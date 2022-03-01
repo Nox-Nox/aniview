@@ -1,4 +1,4 @@
-function getCurrentSeason() {
+export function getCurrentSeason() {
   var today = new Date();
   var year = today.getFullYear();
   var month = today.getMonth();
@@ -14,6 +14,3 @@ function getCurrentSeason() {
     return "WINTER";
   }
 }
-
-var season = getCurrentSeason();
-console.log(season);

@@ -1,16 +1,16 @@
 import { createTheme } from "@mui/material";
 
-export const mainTheme = createTheme({
+const SeasonsNavigationTheme = createTheme({
   components: {
     MuiLink: {
       styleOverrides: {
         root: {
-          color: "#d9d9d9",
+          color: "#efefef",
           "&:hover": {
             color: "white",
           },
           textDecoration: "none",
-          padding: "2vw",
+          padding: 20,
         },
       },
     },
@@ -18,13 +18,23 @@ export const mainTheme = createTheme({
       styleOverrides: {
         root: {
           fontFamily: "Roboto",
-          fontSize: "1.5vw",
+          fontSize: "1.2vw",
           padding: "2.5vw",
         },
       },
     },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          width: "28vw",
+          alignItems: "center",
+          position: "relative",
+          marginTop: "2vh",
+          borderRadius: "8vw",
+        },
+      },
+    },
   },
-
   palette: {
     primary: {
       main: "#171717",
@@ -34,3 +44,5 @@ export const mainTheme = createTheme({
     },
   },
 });
+
+export default SeasonsNavigationTheme;

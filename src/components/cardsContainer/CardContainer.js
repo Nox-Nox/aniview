@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, createTheme, ThemeProvider } from "@mui/material";
+import { Box, ThemeProvider } from "@mui/material";
 import CardView from "../cardView/CardView";
 import { Grid } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
@@ -17,7 +17,6 @@ function CardContainer(props) {
           columns={4}
           container
           rowSpacing={1}
-          columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           item
           xs={6}
           justifyContent="center"

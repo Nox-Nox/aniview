@@ -1,11 +1,15 @@
 import MainNavigation from "../components/NavigationBars/MainNavigation";
 import { CssBaseline } from "@mui/material";
+
+import { Box } from "@mui/material";
 function Layout(props) {
   return (
-    <div>
+    <Box>
+      <CssBaseline />
       <MainNavigation />
+
       <main>{props.children}</main>
-    </div>
+    </Box>
   );
 }
 export default Layout;

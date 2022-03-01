@@ -4,13 +4,17 @@ import { mainTheme } from "../Theme/mainTheme";
 function MainNavigation() {
   return (
     <ThemeProvider theme={mainTheme}>
-      <AppBar sx={{ alignItems: "center", position: "sticky" }}>
-        <CssBaseline />
+      <AppBar
+        sx={{
+          alignItems: "center",
+          position: "relative",
+        }}
+      >
         <Toolbar>
-          <Link href="/">Home Page</Link>
-          <Link href="/animePage">Anime Page</Link>
-          <Link href="/mangaPage">Manga Page</Link>
-          <Link href="/lightNovelPage">Light Novel Page</Link>
+          <Link href="/Home">Home</Link>
+          <Link href="/Anime">Anime</Link>
+          <Link href="/Manga">Manga</Link>
+          <Link href="/LightNovel">Light Novel</Link>
         </Toolbar>
       </AppBar>
     </ThemeProvider>
