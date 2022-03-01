@@ -26,6 +26,7 @@ function CardView(props) {
     <ThemeProvider theme={theme}>
       {(props.items || []).map((item) => (
         <Box
+          position="relative"
           key={item.id}
           sx={{
             display: "flex",
@@ -37,15 +38,33 @@ function CardView(props) {
               float: "left",
             }}
           >
-            <CardMedia
-              component="img"
-              image={item.coverImage.large}
-              height="260vh"
+            <Box>
+              <CardMedia
+                component="img"
+                image={item.coverImage.large}
+                height="260vh"
+                width="10vw"
+                display="flex"
+                sx={{ borderTopLeftRadius: "20%" }}
+              />
+            </Box>
+            <Box
               width="10vw"
-              display="flex"
-              sx={{ borderTopLeftRadius: "20%" }}
-            />
-            <Box></Box>
+              height="10vh"
+              position="absolute"
+              top="19.2vh"
+              backgroundColor="rgba(0, 0, 0, 0.7) "
+            >
+              <Typography
+                color={"white"}
+                paddingTop="2px"
+                paddingLeft="4px"
+                paddingRight="2px"
+                variant="body1"
+              >
+                {item.title.romaji}
+              </Typography>
+            </Box>
           </Box>
           <Box
             backgroundColor={mainTheme.palette.primary.light}
