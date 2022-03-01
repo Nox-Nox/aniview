@@ -9,11 +9,16 @@ function FallPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedData, setLoadedData] = useState([]);
   var season = getCurrentSeason();
+  var today = new Date();
+  var year = today.getFullYear();
   var title = "";
   var status = "";
   if (season === "FALL") {
     status = "RELEASING";
     title = "TV series currently airing";
+  } else if (year < year + 1) {
+    status = "RELEASING";
+    title = "TV series already aired";
   } else {
     status = "NOT_YET_RELEASED";
     title = "TV series to be aired";

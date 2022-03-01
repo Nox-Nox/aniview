@@ -9,10 +9,10 @@ function SeasonsNavigation(props) {
       <Box display={"flex"} justifyContent="center">
         <AppBar>
           <Toolbar>
-            <Link href="/Winter">Winter</Link>
-            <Link href="/Spring">Spring</Link>
-            <Link href="/Summer">Summer</Link>
-            <Link href="/Fall">Fall</Link>
+            <Link href="/Home/Winter">Winter</Link>
+            <Link href="/Home/Spring">Spring</Link>
+            <Link href="/Home/Summer">Summer</Link>
+            <Link href="/Home/Fall">Fall</Link>
           </Toolbar>
         </AppBar>
       </Box>

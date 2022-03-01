@@ -19,10 +19,10 @@ function App() {
         <Route path="/Manga" element={<MangaPage />} />
         <Route path="/LightNovel" element={<LightNovelPage />} />
 
-        <Route path="/Winter" element={<WinterPage />} />
-        <Route path="/Spring" element={<SpringPage />} />
-        <Route path="/Summer" element={<SummerPage />} />
-        <Route path="/Fall" element={<FallPage />} />
+        <Route path="/Home/Winter" element={<WinterPage />} />
+        <Route path="/Home/Spring" element={<SpringPage />} />
+        <Route path="/Home/Summer" element={<SummerPage />} />
+        <Route path="/Home/Fall" element={<FallPage />} />
       </Routes>
     </Layout>
   );
