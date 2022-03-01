@@ -12,14 +12,15 @@ function SpringPage() {
   var season = getCurrentSeason();
   var today = new Date();
   var year = today.getFullYear();
+  var month = today.getMonth();
   var title = "";
   var status = "";
-  if (season === "SPRING") {
+  if (season === "SPRING" && month <= 4 && month > 2) {
     status = "RELEASING";
     title = "TV series currently airing";
-  } else if (year < year + 1) {
-    status = "RELEASING";
-    title = "TV series already aired";
+  } else if (season === "SPRING" && month <=4 && month === 3) {
+    status = "NOT_YET_RELEASED";
+    title = "TV series to be aired";
   } else {
     status = "NOT_YET_RELEASED";
     title = "TV series to be aired";
@@ -58,7 +59,7 @@ function SpringPage() {
     };
   useEffect(() => {
     setIsLoading(true);
-
+    console.log(query);
     fetch(url, options)
       .then((response) => {
         return response.json();

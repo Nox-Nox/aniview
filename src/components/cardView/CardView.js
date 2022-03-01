@@ -27,6 +27,7 @@ function CardView(props) {
       {(props.items || []).map((item) => (
         <Box
           position="relative"
+          height="28vh"
           key={item.id}
           sx={{
             display: "flex",
@@ -36,24 +37,26 @@ function CardView(props) {
           <Box
             sx={{
               float: "left",
+              display:"flex",
             }}
           >
-            <Box>
+            <Box float="left">
               <CardMedia
+              alignItems="flex-end"
                 component="img"
                 image={item.coverImage.large}
-                height="260vh"
+                height="100%"
                 width="10vw"
-                display="flex"
                 sx={{ borderTopLeftRadius: "20%" }}
               />
             </Box>
             <Box
+              top="69%"
               width="10vw"
-              height="10vh"
+              height="31%"
               position="absolute"
-              top="19.2vh"
-              backgroundColor="rgba(0, 0, 0, 0.7) "
+              
+              backgroundColor="rgba(0, 0, 0, 0.7)"
             >
               <Typography
                 color={"white"}
@@ -70,7 +73,7 @@ function CardView(props) {
             backgroundColor={mainTheme.palette.primary.light}
             width="10vw"
             sx={{
-              borderBottomRightRadius: "16px",
+              
               borderTopRightRadius: "10px",
             }}
           >
@@ -78,12 +81,12 @@ function CardView(props) {
               className={classes.scroll}
               float="left"
               width="10vw"
+              alignItems="flex-end"
               sx={{
                 flexGrow: 1,
                 flexDirection: "column",
-                height: "22vh",
-                maxHeight: "250vh",
-                display: "flex",
+                height: "75%",
+                maxHeight: "100%",
                 marginBottom: "1vh",
               }}
             >
@@ -96,16 +99,17 @@ function CardView(props) {
               ></Typography>
             </Box>
             <Stack
+            alignItems="flex-end"
               className={classes.scroll}
-              alignItems={"center"}
+              alignItems="center"
               spacing={1}
-              padding={1}
+              
               sx={{
-                borderBottomRightRadius: "10px",
+                
                 flexGrow: 1,
                 flexDirection: "column",
-                height: "5vh",
-                justifyItems: "flex-start",
+                height: "20%",
+                justifyItems: "flex-end",
               }}
               width={"100%"}
               backgroundColor={mainTheme.palette.primary.light}
