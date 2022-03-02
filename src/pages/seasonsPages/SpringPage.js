@@ -8,13 +8,19 @@ import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";
 function SpringPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedData, setLoadedData] = useState([]);
-  const [isCurrentSeason, setCurrentSeason] = useState();
+
   var season = getCurrentSeason();
+  var today = new Date();
+  var year = today.getFullYear();
+  var month = today.getMonth();
   var title = "";
   var status = "";
-  if (season === "SPRING") {
+  if (season === "SPRING" && month <= 4 && month > 2) {
     status = "RELEASING";
     title = "TV series currently airing";
+  } else if (season === "SPRING" && month <=4 && month === 3) {
+    status = "NOT_YET_RELEASED";
+    title = "TV series to be aired";
   } else {
     status = "NOT_YET_RELEASED";
     title = "TV series to be aired";
@@ -53,7 +59,7 @@ function SpringPage() {
     };
   useEffect(() => {
     setIsLoading(true);
-
+    console.log(query);
     fetch(url, options)
       .then((response) => {
         return response.json();

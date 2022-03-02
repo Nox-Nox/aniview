@@ -9,11 +9,21 @@ function WinterPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedData, setLoadedData] = useState([]);
   var season = getCurrentSeason();
+  var today = new Date();
+  var year = today.getFullYear();
   var title = "";
   var status = "";
+<<<<<<< HEAD
   if (season === "SUMMER") {
+=======
+  if (season === "WINTER") {
+    console.log(year, " ", year + 1);
+>>>>>>> 6d196cdf0107f072880389998cc408aa9a0cf203
     status = "RELEASING";
     title = "TV series currently airing";
+  } else if (year < year + 1) {
+    status = "RELEASING";
+    title = "TV series already aired";
   } else {
     status = "NOT_YET_RELEASED";
     title = "TV series to be aired";
