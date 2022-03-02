@@ -11,18 +11,19 @@ function WinterPage() {
   var season = getCurrentSeason();
   var title = "";
   var status = "";
-  if (season === "WINTER") {
+  if (season === "SUMMER") {
     status = "RELEASING";
     title = "TV series currently airing";
   } else {
     status = "NOT_YET_RELEASED";
     title = "TV series to be aired";
   }
+
   var query = `
   {
     Page(page: 1, perPage: 40) {
 
-      media(season: WINTER, type: ANIME, status: ${status}, format:TV) {
+      media(season: WINTER, type: ANIME, status: RELEASING, format:TV) {
         id
         coverImage{
           large
@@ -51,7 +52,7 @@ function WinterPage() {
     };
   useEffect(() => {
     setIsLoading(true);
-
+    console.log(query)
     fetch(url, options)
       .then((response) => {
         return response.json();
