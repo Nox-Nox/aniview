@@ -9,37 +9,15 @@ import WinterPage from "./seasonsPages/WinterPage";
 import SpringPage from "./seasonsPages/SpringPage";
 import SummerPage from "./seasonsPages/SummerPage";
 import FallPage from "./seasonsPages/FallPage";
+import { homePageQuery } from "../components/Functions/HomePageQueries";
 
 function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedData, setLoadedData] = useState([]);
   const [isCurrentSeason, setCurrentSeason] = useState();
 
-  var selected_season = " ";
-  function getSelectedSeason(props) {
-    selected_season = props;
-  }
-
   var season = isCurrentSeason;
-  var query = `
-  {
-    Page(page: 1, perPage: 40) {
-
-      media(season: ${season}, type: ANIME, status: RELEASING, format:TV) {
-        id
-        coverImage{
-          large
-        }
-        title {
-          romaji
-        }
-        genres
-        description
-        source
-      }
-    }
-  }
-  `;
+  var query = homePageQuery(season, "TV")
 
   var url = "https://graphql.anilist.co",
     options = {
@@ -90,7 +68,7 @@ function HomePage() {
         </Routes>
       </SeasonsNavigation>
       <CardContainer title="TV series currently airing" list={loadedData} />
-      <CardContainer title="TV series currently airing" list={loadedData} />
+      <CardContainer title="TV shorts currently airing" list={loadedData} />
     </Box>
   );
 }
