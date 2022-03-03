@@ -15,10 +15,11 @@ function SpringPage() {
   var month = today.getMonth();
   var title = "";
   var status = "";
+  
   if (season === "SPRING" && month <= 4 && month > 2) {
     status = "RELEASING";
     title = "TV series currently airing";
-  } else if (season === "SPRING" && month <=4 && month === 3) {
+  } else if (season === "SPRING" && month <= 4 && month === 3) {
     status = "NOT_YET_RELEASED";
     title = "TV series to be aired";
   } else {

@@ -8,10 +8,16 @@ function CardContainer(props) {
   return (
     <ThemeProvider theme={mainTheme}>
       <h1>{props.title}</h1>
+
       <Box
         backgroundColor={mainTheme.palette.primary.main}
         marginBottom="auto"
-        sx={{ flexGrow: 1 }}
+        sx={{
+          flexGrow: 1,
+          border: 5,
+          borderColor: "#d989dd",
+          borderRadius:"20px"
+        }}
       >
         <Grid
           columns={4}
@@ -19,7 +25,7 @@ function CardContainer(props) {
           rowSpacing={1}
           item
           xs={6}
-          justifyContent="center"
+          justifyContent="flex-start"
         >
           <CardView items={props.list} />
         </Grid>

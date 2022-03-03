@@ -32,5 +32,6 @@ export const mainTheme = createTheme({
     secondary: {
       main: "#eeeeee",
     },
+
   },
 });

@@ -11,19 +11,16 @@ function WinterPage() {
   var season = getCurrentSeason();
   var today = new Date();
   var year = today.getFullYear();
+  var month = today.getMonth();
   var title = "";
   var status = "";
-<<<<<<< HEAD
-  if (season === "SUMMER") {
-=======
-  if (season === "WINTER") {
-    console.log(year, " ", year + 1);
->>>>>>> 6d196cdf0107f072880389998cc408aa9a0cf203
+
+  if (season === "WINTER" && month <= 1 && month > 10) {
     status = "RELEASING";
     title = "TV series currently airing";
-  } else if (year < year + 1) {
-    status = "RELEASING";
-    title = "TV series already aired";
+  } else if (season === "WINTER" && month <= 1 && month === 0) {
+    status = "NOT_YET_RELEASED";
+    title = "TV series to be aired";
   } else {
     status = "NOT_YET_RELEASED";
     title = "TV series to be aired";
@@ -62,7 +59,7 @@ function WinterPage() {
     };
   useEffect(() => {
     setIsLoading(true);
-    console.log(query)
+    console.log(query);
     fetch(url, options)
       .then((response) => {
         return response.json();

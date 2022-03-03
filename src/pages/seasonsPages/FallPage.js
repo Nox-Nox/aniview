@@ -8,17 +8,20 @@ import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";
 function FallPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedData, setLoadedData] = useState([]);
+
   var season = getCurrentSeason();
   var today = new Date();
   var year = today.getFullYear();
+  var month = today.getMonth();
   var title = "";
   var status = "";
-  if (season === "FALL") {
+
+  if (season === "FALL" && month <= 10 && month > 8) {
     status = "RELEASING";
     title = "TV series currently airing";
-  } else if (year < year + 1) {
-    status = "RELEASING";
-    title = "TV series already aired";
+  } else if (season === "SPRING" && month <= 10 && month === 9) {
+    status = "NOT_YET_RELEASED";
+    title = "TV series to be aired";
   } else {
     status = "NOT_YET_RELEASED";
     title = "TV series to be aired";

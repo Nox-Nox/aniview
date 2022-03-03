@@ -5,6 +5,7 @@ import {
   ThemeProvider,
   Box,
   Stack,
+  Divider,
 } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
 import GenresChip from "../Chip/GenresChip";
@@ -26,39 +27,31 @@ function CardView(props) {
     <ThemeProvider theme={theme}>
       {(props.items || []).map((item) => (
         <Box
+
+          key={item.id}
+          borderColor="red"
+          display="flex"
           position="relative"
           height="28vh"
-          key={item.id}
-          sx={{
-            display: "flex",
-            margin: "2vw",
-          }}
+          margin="2vw"
+          flexDirection="row"
         >
-          <Box
-            sx={{
-              float: "left",
-              display:"flex",
-            }}
-          >
-            <Box float="left">
-              <CardMedia
+          <Box>
+            <CardMedia
               alignItems="flex-end"
-                component="img"
-                image={item.coverImage.large}
-                height="100%"
-                width="10vw"
-                sx={{ borderTopLeftRadius: "20%" }}
-              />
-            </Box>
-            <Box
-              top="69%"
+              component="img"
+              image={item.coverImage.large}
               width="10vw"
-              height="31%"
+              sx={{ borderTopLeftRadius: "20%", height: "100%" }}
+            />
+            <Box
+              sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
               position="absolute"
-              
-              backgroundColor="rgba(0, 0, 0, 0.7)"
+              bottom="0"
+              width="10VW"
             >
               <Typography
+                height="10vh"
                 color={"white"}
                 paddingTop="2px"
                 paddingLeft="4px"
@@ -69,25 +62,17 @@ function CardView(props) {
               </Typography>
             </Box>
           </Box>
-          <Box
-            backgroundColor={mainTheme.palette.primary.light}
-            width="10vw"
-            sx={{
-              
-              borderTopRightRadius: "10px",
-            }}
-          >
+          <Box>
             <Box
               className={classes.scroll}
-              float="left"
               width="10vw"
               alignItems="flex-end"
+              backgroundColor={mainTheme.palette.primary.light}
               sx={{
                 flexGrow: 1,
                 flexDirection: "column",
-                height: "75%",
-                maxHeight: "100%",
-                marginBottom: "1vh",
+                height: "80%",
+                maxHeight: "120%",
               }}
             >
               <Typography
@@ -96,23 +81,19 @@ function CardView(props) {
                 variant="body2"
                 dangerouslySetInnerHTML={{ __html: item.description }}
                 padding="1vh"
-              ></Typography>
+              />
             </Box>
+
             <Stack
-            alignItems="flex-end"
-              className={classes.scroll}
               alignItems="center"
+              className={classes.scroll}
+              direction="row"
               spacing={1}
-              
-              sx={{
-                
-                flexGrow: 1,
-                flexDirection: "column",
-                height: "20%",
-                justifyItems: "flex-end",
-              }}
-              width={"100%"}
+              flexGrow={1}
+              width="10vw"
+              height="20%"
               backgroundColor={mainTheme.palette.primary.light}
+              padding="5px"
             >
               <GenresChip items={item.genres} />
             </Stack>

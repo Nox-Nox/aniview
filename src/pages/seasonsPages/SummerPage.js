@@ -11,14 +11,16 @@ function SummerPage() {
   var season = getCurrentSeason();
   var today = new Date();
   var year = today.getFullYear();
+  var month = today.getMonth();
   var title = "";
   var status = "";
-  if (season === "SUMMER") {
+
+  if (season === "SUMMER" && month <= 7 && month > 7) {
     status = "RELEASING";
     title = "TV series currently airing";
-  } else if (year < year + 1) {
-    status = "RELEASING";
-    title = "TV series already aired";
+  } else if (season === "SPRING" && month <= 7 && month === 6) {
+    status = "NOT_YET_RELEASED";
+    title = "TV series to be aired";
   } else {
     status = "NOT_YET_RELEASED";
     title = "TV series to be aired";
