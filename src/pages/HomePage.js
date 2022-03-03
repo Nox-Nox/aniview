@@ -17,7 +17,13 @@ function HomePage() {
   const [isCurrentSeason, setCurrentSeason] = useState();
 
   var season = isCurrentSeason;
-  var query = homePageQuery(season, "TV")
+  
+  var queryTV = homePageQuery(season, "TV")
+  var queryTV_SHORT = homePageQuery(season, "TV_SHORT")
+  var queryMOVIE = homePageQuery(season, "MOVIE")
+  var queryOVA = homePageQuery(season, "OVA")
+  var queryONA = homePageQuery(season, "ONA")
+  var querySPECIAL = homePageQuery(season, "SPECIAL")
 
   var url = "https://graphql.anilist.co",
     options = {
@@ -27,7 +33,7 @@ function HomePage() {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        query: query,
+        query: queryTV,
       }),
     };
   useEffect(() => {
