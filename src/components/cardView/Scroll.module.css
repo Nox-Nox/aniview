@@ -39,5 +39,5 @@
   border: 4px solid transparent;
 }
 .border:hover {
-  border-image: linear-gradient(purple, violet, purple) 1;
+  border-image: linear-gradient(pink, violet, purple) 1;
 }
