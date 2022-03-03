@@ -66,7 +66,7 @@ function CardView(props) {
             <Box>
               <Box
                 className={classes.scroll}
-                width="10vw"
+                width="15vw"
                 alignItems="flex-end"
                 backgroundColor={mainTheme.palette.primary.light}
                 sx={{
@@ -90,7 +90,7 @@ function CardView(props) {
                 direction="row"
                 spacing={1}
                 flexGrow={1}
-                width="10vw"
+                width="15vw"
                 height="20%"
                 backgroundColor={mainTheme.palette.primary.light}
                 padding="5px"
