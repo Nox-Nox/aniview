@@ -18,7 +18,6 @@ export const mainTheme = createTheme({
       styleOverrides: {
         root: {
           fontFamily: "Roboto",
-          fontSize: "1.5vw",
           padding: "2.5vw",
         },
       },
@@ -32,6 +31,5 @@ export const mainTheme = createTheme({
     secondary: {
       main: "#eeeeee",
     },
-
   },
 });

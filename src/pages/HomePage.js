@@ -90,6 +90,7 @@ function HomePage() {
         </Routes>
       </SeasonsNavigation>
       <CardContainer title="TV series currently airing" list={loadedData} />
+      <CardContainer title="TV series currently airing" list={loadedData} />
     </Box>
   );
 }

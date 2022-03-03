@@ -7,7 +7,6 @@ function Layout(props) {
     <Box sx={{background: 'linear-gradient(to right, #7b29ab, #d238dd, #552586)'}}>
       <CssBaseline />
       <MainNavigation />
-
       <main>{props.children}</main>
     </Box>
   );

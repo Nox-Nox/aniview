@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, ThemeProvider, CssBaseline } from "@mui/material";
+import { AppBar, Toolbar, ThemeProvider } from "@mui/material";
 import { Link } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
 function MainNavigation() {
@@ -6,6 +6,7 @@ function MainNavigation() {
     <ThemeProvider theme={mainTheme}>
       <AppBar
         sx={{
+          fontSize: "1.5vw",
           alignItems: "center",
           position: "relative",
         }}

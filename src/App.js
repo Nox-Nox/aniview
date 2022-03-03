@@ -11,7 +11,7 @@ import FallPage from "./pages/seasonsPages/FallPage";
 
 function App() {
   return (
-    <Layout>
+    
       <Routes>
         <Route path="/" element={<Navigate to="/Home" />} />
         <Route path="/Home" exact element={<HomePage />} />
@@ -24,7 +24,7 @@ function App() {
         <Route path="/Home/Summer" element={<SummerPage />} />
         <Route path="/Home/Fall" element={<FallPage />} />
       </Routes>
-    </Layout>
+    
   );
 }
 

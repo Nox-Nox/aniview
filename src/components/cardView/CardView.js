@@ -70,7 +70,6 @@ function CardView(props) {
                 alignItems="flex-end"
                 backgroundColor={mainTheme.palette.primary.light}
                 sx={{
-                  flexGrow: 1,
                   flexDirection: "column",
                   height: "80%",
                   maxHeight: "120%",
@@ -81,7 +80,7 @@ function CardView(props) {
                   fontSize="12px"
                   variant="body2"
                   dangerouslySetInnerHTML={{ __html: item.description }}
-                  padding="1vh"
+                  padding="1vw"
                 />
               </Box>
 
