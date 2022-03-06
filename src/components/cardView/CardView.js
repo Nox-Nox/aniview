@@ -1,31 +1,18 @@
 import {
   Typography,
   CardMedia,
-  createTheme,
   ThemeProvider,
   Box,
   Stack,
-  Divider,
 } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
 import GenresChip from "../Chip/GenresChip";
 import classes from "./Scroll.module.css";
-import { borderColor } from "@mui/system";
-let theme = createTheme({
-  components: {
-    MuiCardMedia: {
-      styleOverrides: {
-        root: {
-          width: "10vw",
-        },
-      },
-    },
-  },
-});
+
 
 function CardView(props) {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={mainTheme}>
       {(props.items || []).map((item) => (
         <Box
           key={item.id}
@@ -41,22 +28,21 @@ function CardView(props) {
               alignItems="flex-end"
               component="img"
               image={item.coverImage.large}
-              width="10vw"
               height="100%"
             />
             <Box
               sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
               position="absolute"
-              bottom="0"
+              top="0"
               width="10VW"
+              paddingBottom="auto"
             >
               <Typography
-                height="12vh"
                 color={"white"}
                 paddingTop="2px"
                 paddingLeft="4px"
                 paddingRight="2px"
-                fontSize="14px"
+                variant="h6"
               >
                 {item.title.romaji}
               </Typography>

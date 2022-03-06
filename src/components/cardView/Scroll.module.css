@@ -39,5 +39,18 @@
   border: 4px solid transparent;
 }
 .border:hover {
-  border-image: linear-gradient(pink, violet, purple) 1;
+  border-image: linear-gradient(rgb(204, 12, 146), violet, purple) 1;
+  
 }
+
+.title {
+  display: none;
+}
+
+.title:hover {
+  display: block;
+}
+
+
+
+

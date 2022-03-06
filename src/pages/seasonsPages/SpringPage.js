@@ -15,7 +15,7 @@ function SpringPage() {
   var month = today.getMonth();
   var title = "";
   var status = "";
-  
+
   if (season === "SPRING" && month <= 4 && month > 2) {
     status = "RELEASING";
     title = "TV series currently airing";

@@ -14,6 +14,13 @@ export const mainTheme = createTheme({
         },
       },
     },
+    MuiCardMedia: {
+      styleOverrides: {
+        root: {
+          width: "10vw",
+        },
+      },
+    },
     MuiTypography: {
       styleOverrides: {
         root: {

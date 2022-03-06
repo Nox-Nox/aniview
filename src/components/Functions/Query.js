@@ -1,4 +1,4 @@
-export function homePageQuery(season, format) {
+export function Query(season, format) {
   var query = `
     {
       Page(page: 1, perPage: 40) {
@@ -19,4 +19,19 @@ export function homePageQuery(season, format) {
     }
     `;
   return query;
+}
+
+export function queryOptions(query) {
+  var options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      query: query,
+    }),
+  };
+
+  return options;
 }

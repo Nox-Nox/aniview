@@ -12,7 +12,6 @@ function MainNavigation() {
         }}
       >
         <Toolbar>
-          <Link href="/Home">Home</Link>
           <Link href="/Anime">Anime</Link>
           <Link href="/Manga">Manga</Link>
           <Link href="/LightNovel">Light Novel</Link>

@@ -1,20 +1,38 @@
-function getCurrentSeason() {
-  var today = new Date();
-  var year = today.getFullYear()+1;
-  var month = today.getMonth();
-  var day = today.getDate();
-  console.log(year)
 
-  if (day >= 1 && month >= 2 && month <= 4) {
-    return "SPRING";
-  } else if (day >= 1 && month >= 5 && month <= 7) {
-    return "SUMMER";
-  } else if (day >= 1 && month >= 8 && month <= 10) {
-    return "FALL";
-  } else {
-    return "WINTER";
+var query = `
+{
+  Page(page: 1, perPage: 40) {
+
+    media(season: SPRING, type: ANIME, status: RELEASING, format:TV) {
+      id
+      coverImage{
+        large
+      }
+      title {
+        romaji
+      }
+      genres
+      description
+      source
+    }
   }
 }
+`;
 
-var season = getCurrentSeason();
-console.log(season);
+
+
+var url = "https://graphql.anilist.co",
+options = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  },
+  body: JSON.stringify({
+    query: queryTV,
+  }),
+};
+
+fetch(url, options).then((response) => {
+  return console.log(response.json());
+})
