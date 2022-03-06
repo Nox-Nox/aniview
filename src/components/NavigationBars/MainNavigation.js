@@ -1,7 +1,14 @@
 import { AppBar, Toolbar, ThemeProvider } from "@mui/material";
 import { Link } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
+import { useLocation } from "react-router-dom";
+
+
+
 function MainNavigation() {
+
+  var location = useLocation().pathname
+
   return (
     <ThemeProvider theme={mainTheme}>
       <AppBar

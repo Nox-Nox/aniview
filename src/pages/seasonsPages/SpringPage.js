@@ -60,7 +60,6 @@ function SpringPage() {
     };
   useEffect(() => {
     setIsLoading(true);
-    console.log(query);
     fetch(url, options)
       .then((response) => {
         return response.json();

@@ -4,11 +4,6 @@ import LoadingHome from "../components/LoadingSpinner/LoadingHome";
 import { Box } from "@mui/material";
 import SeasonsNavigation from "../components/NavigationBars/SeasonsNavigation";
 import { getCurrentSeason } from "../components/Functions/GetCurrentSeason";
-import { Route, Routes } from "react-router-dom";
-import WinterPage from "./seasonsPages/WinterPage";
-import SpringPage from "./seasonsPages/SpringPage";
-import SummerPage from "./seasonsPages/SummerPage";
-import FallPage from "./seasonsPages/FallPage";
 import { Query, queryOptions } from "../components/Functions/Query";
 
 function AnimePage() {
@@ -30,8 +25,7 @@ function AnimePage() {
   useEffect(() => {
     setIsLoading(true);
     setCurrentSeason(getCurrentSeason());
-    console.log(getCurrentSeason())
-    console.log(queryTV)
+
     fetch(url, options)
       .then((response) => {
         return response.json();
@@ -58,14 +52,7 @@ function AnimePage() {
   }
   return (
     <Box>
-      <SeasonsNavigation>
-        <Routes>
-          <Route path="/Winter " element={<WinterPage />} />
-          <Route path="/Spring" element={<SpringPage />} />
-          <Route path="/Summer" element={<SummerPage />} />
-          <Route path="/Fall" element={<FallPage />} />
-        </Routes>
-      </SeasonsNavigation>
+      <SeasonsNavigation />
       <CardContainer title="TV series currently airing" list={loadedData} />
       <CardContainer title="TV shorts currently airing" list={loadedData} />
     </Box>

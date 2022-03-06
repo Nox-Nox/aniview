@@ -1,9 +1,7 @@
-import { AppBar, Toolbar, ThemeProvider } from "@mui/material";
-import { Link, Box } from "@mui/material";
+import { AppBar, Toolbar, ThemeProvider, Link, Box } from "@mui/material";
 import SeasonsNavigationTheme from "../Theme/seasonsNavigationTheme";
-import WinterPage from "../../pages/seasonsPages/WinterPage";
 
-function SeasonsNavigation(props) {
+function SeasonsNavigation() {
   return (
     <ThemeProvider theme={SeasonsNavigationTheme}>
       <Box display={"flex"} justifyContent="center">

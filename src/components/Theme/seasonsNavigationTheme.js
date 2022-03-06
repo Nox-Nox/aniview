@@ -5,12 +5,12 @@ const SeasonsNavigationTheme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
-          color: "#efefef",
+          color: "lightgrey",
+          textDecoration:"none",
           "&:hover": {
             color: "white",
           },
-          textDecoration: "none",
-          padding: 20,
+          padding: "1rem",
         },
       },
     },

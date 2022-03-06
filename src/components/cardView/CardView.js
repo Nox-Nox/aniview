@@ -25,7 +25,6 @@ function CardView(props) {
         >
           <Box>
             <CardMedia
-              alignItems="flex-end"
               component="img"
               image={item.coverImage.large}
               height="100%"
@@ -42,7 +41,7 @@ function CardView(props) {
                 paddingTop="2px"
                 paddingLeft="4px"
                 paddingRight="2px"
-                variant="h6"
+                variant="body1"
               >
                 {item.title.romaji}
               </Typography>
@@ -62,7 +61,6 @@ function CardView(props) {
             >
               <Typography
                 color={"white"}
-                fontSize="12px"
                 variant="body2"
                 dangerouslySetInnerHTML={{ __html: item.description }}
                 padding="1vw"

@@ -5,12 +5,13 @@ export const mainTheme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
-          color: "#d9d9d9",
+          color: "lightgrey",
+          textDecoration:"none",
           "&:hover": {
             color: "white",
           },
-          textDecoration: "none",
-          padding: "2vw",
+          padding: "2rem",
+          
         },
       },
     },
