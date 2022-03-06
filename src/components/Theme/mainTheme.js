@@ -2,19 +2,6 @@ import { createTheme } from "@mui/material";
 
 export const mainTheme = createTheme({
   components: {
-    MuiLink: {
-      styleOverrides: {
-        root: {
-          color: "lightgrey",
-          textDecoration:"none",
-          "&:hover": {
-            color: "white",
-          },
-          padding: "2rem",
-          
-        },
-      },
-    },
     MuiCardMedia: {
       styleOverrides: {
         root: {
