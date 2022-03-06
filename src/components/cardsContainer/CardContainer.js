@@ -18,7 +18,7 @@ function CardContainer(props) {
       <Box marginRight="5%" marginLeft="5%" >
         <Box
           backgroundColor={mainTheme.palette.primary.main}
-          marginBottom="50px"
+          marginBottom="8vh"
         >
           <Grid columns={4} container justifyContent="center">
             <CardView items={props.list} />

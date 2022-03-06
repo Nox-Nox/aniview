@@ -76,8 +76,8 @@ function SummerPage() {
           };
           items.push(item);
         }
-        setIsLoading(false);
         setLoadedData(items);
+        setIsLoading(false);
       });
   }, []);
 

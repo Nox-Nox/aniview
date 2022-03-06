@@ -10,6 +10,7 @@ import GenresChip from "../Chip/GenresChip";
 import classes from "./Scroll.module.css";
 
 
+
 function CardView(props) {
   return (
     <ThemeProvider theme={mainTheme}>
