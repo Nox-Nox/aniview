@@ -21,7 +21,7 @@ export function QuerySeason(season, format) {
   return query;
 }
 
-export function queryOptions(query) {
+export function QueryOptions(query) {
   var options = {
     method: "POST",
     headers: {

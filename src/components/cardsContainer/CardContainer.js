@@ -15,14 +15,14 @@ function CardContainer(props) {
       >
         {props.title}
       </Typography>
-      <Box marginRight="5%" marginLeft="5%" >
+      <Box marginRight="5%" marginLeft="5%">
         <Box
           backgroundColor={mainTheme.palette.primary.main}
           marginBottom="8vh"
           borderRadius="3rem"
         >
           <Grid columns={4} container justifyContent="center">
-            <CardView items={props.list} />
+            <CardView items={props.items} />
           </Grid>
         </Box>
       </Box>

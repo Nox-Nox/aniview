@@ -4,89 +4,101 @@ import CardContainer from "../../components/cardsContainer/CardContainer";
 import SeasonsNavigation from "../../components/NavigationBars/SeasonsNavigation";
 import { Box } from "@mui/material";
 import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";
+import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
 
 function SpringPage() {
   const [isLoading, setIsLoading] = useState(true);
-  const [loadedData, setLoadedData] = useState([]);
+  const [loadedDataTV, setLoadedDataTV] = useState([]);
+  const [loadedDataTV_SHORT, setLoadedDataTV_SHORT] = useState([]);
+  const [loadedDataMOVIE, setLoadedDataMOVIE] = useState([]);
 
   var season = getCurrentSeason();
   var today = new Date();
   var month = today.getMonth();
-  var title = "";
   var status = "";
 
   if (season === "SPRING" && month <= 4 && month > 2) {
     status = "RELEASING";
-    title = "TV series currently airing";
   } else if (season === "SPRING" && month <= 4 && month === 3) {
     status = "NOT_YET_RELEASED";
-    title = "TV series to be aired";
   } else {
     status = "NOT_YET_RELEASED";
-    title = "TV series to be aired";
   }
 
-  var query = `
-  {
-    Page(page: 1, perPage: 40) {
+  var queryTV = QuerySeason(season, "TV");
+  var queryTV_SHORT = QuerySeason(season, "TV_SHORT");
+  var queryMOVIE = QuerySeason(season, "MOVIE");
+  var queryOVA = QuerySeason(season, "OVA");
+  var queryONA = QuerySeason(season, "ONA");
+  var querySPECIAL = QuerySeason(season, "SPECIAL");
 
-      media(season: SPRING, type: ANIME, status: ${status}, format:TV) {
-        id
-        coverImage{
-          large
-        }
-        title {
-          romaji
-        }
-        genres
-        description
-        source
-      }
-    }
-  }
-  `;
+  var url = "https://graphql.anilist.co";
+  var optionsTV = QueryOptions(queryTV);
+  var optionsTV_SHORT = QueryOptions(queryTV_SHORT);
+  var optionsMOVIE = QueryOptions(queryMOVIE);
+  var optionsOVA = QueryOptions(queryOVA);
+  var optionsONA = QueryOptions(queryONA);
+  var optionsSPECIAL = QueryOptions(querySPECIAL);
 
-  var url = "https://graphql.anilist.co",
-    options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        query: query,
-      }),
-    };
+  var fetchTV = fetch(url, optionsTV);
+  var fetchTV_SHORT = fetch(url, optionsTV_SHORT);
+  var fetchMOVIE = fetch(url, optionsMOVIE);
+
   useEffect(() => {
     setIsLoading(true);
-    fetch(url, options)
-      .then((response) => {
-        return response.json();
-      })
+    Promise.all([fetchTV, fetchTV_SHORT, fetchMOVIE])
+      .then((response) => Promise.all(response.map((r) => r.json())))
       .then((data) => {
-        const items = [];
-
+        const TV_ITEMS = [];
+        const TV_SHORT_ITEMS = [];
+        const MOVIE_ITEMS = [];
         for (const [key, value] of Object.entries(
-          data["data"]["Page"]["media"]
+          data[0]["data"]["Page"]["media"]
         )) {
-          const item = {
+          const TV_ITEM = {
             id: key,
             ...value,
           };
-          items.push(item);
+          TV_ITEMS.push(TV_ITEM);
         }
+        setLoadedDataTV(TV_ITEMS);
+        for (const [key, value] of Object.entries(
+          data[1]["data"]["Page"]["media"]
+        )) {
+          const TV_SHORT_ITEM = {
+            id: key,
+            ...value,
+          };
+          TV_SHORT_ITEMS.push(TV_SHORT_ITEM);
+        }
+        setLoadedDataTV_SHORT(TV_SHORT_ITEMS);
+        for (const [key, value] of Object.entries(
+          data[2]["data"]["Page"]["media"]
+        )) {
+          const MOVIE_ITEM = {
+            id: key,
+            ...value,
+          };
+          MOVIE_ITEMS.push(MOVIE_ITEM);
+        }
+        setLoadedDataMOVIE(MOVIE_ITEMS);
         setIsLoading(false);
-        setLoadedData(items);
       });
   }, []);
-
-  if (loadedData.length === 0) {
+  console.log(loadedDataTV, loadedDataTV_SHORT, loadedDataMOVIE);
+  if (
+    loadedDataTV.length === 0 &&
+    loadedDataTV_SHORT.length === 0 &&
+    loadedDataMOVIE.length === 0
+  ) {
     return <LoadingHome />;
   }
   return (
     <Box>
       <SeasonsNavigation />
-      <CardContainer title={title} list={loadedData} />
+      <CardContainer title="TV" items={loadedDataTV} />
+      <CardContainer title="TV SHORTS" items={loadedDataTV_SHORT} />
+      <CardContainer title="MOVIES" items={loadedDataMOVIE} />
     </Box>
   );
 }
