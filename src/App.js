@@ -1,4 +1,5 @@
 import { Route, Routes, Navigate } from "react-router-dom";
+import HomePage from "./pages/HomePage";
 import AnimePage from "./pages/AnimePage";
 import MangaPage from "./pages/MangaPage";
 import LightNovelPage from "./pages/LightNovelPage";
@@ -13,13 +14,13 @@ var season = getCurrentSeason();
 function navigateTo(season){
   switch(season){
     case "WINTER":
-      return "/Anime/Winter"
+      return "/Home/Winter"
     case "SPRING":
-      return "/Anime/Spring"
+      return "/Home/Spring"
     case "SUMMER":
-      return "/Anime/Summer"
+      return "/Home/Summer"
     case "FALL":
-      return "/Anime/Fall"
+      return "/Home/Fall"
   }
 }
 
@@ -28,14 +29,15 @@ function App() {
     
       <Routes>
         <Route path="/" element={<Navigate to={navigateTo(season)} />} />
+        <Route path="/Home" element={<HomePage />} />
         <Route path="/Anime" element={<AnimePage />} />
         <Route path="/Manga" element={<MangaPage />} />
         <Route path="/LightNovel" element={<LightNovelPage />} />
 
-        <Route path="/Anime/Winter" element={<WinterPage />} />
-        <Route path="/Anime/Spring" element={<SpringPage />} />
-        <Route path="/Anime/Summer" element={<SummerPage />} />
-        <Route path="/Anime/Fall" element={<FallPage />} />
+        <Route path="/Home/Winter" element={<WinterPage />} />
+        <Route path="/Home/Spring" element={<SpringPage />} />
+        <Route path="/Home/Summer" element={<SummerPage />} />
+        <Route path="/Home/Fall" element={<FallPage />} />
       </Routes>
     
   );

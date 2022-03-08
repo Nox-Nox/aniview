@@ -25,14 +25,21 @@ function MainNavigation() {
         <Toolbar className={classes.text}>
           <Link
             className={
-              isActive === "/Anime" ||
-              isActive === "/Anime/Winter" ||
-              isActive === "/Anime/Spring" ||
-              isActive === "/Anime/Summer" ||
-              isActive === "/Anime/Fall"
+              isActive === "/Home" ||
+              isActive === "/Home/Winter" ||
+              isActive === "/Home/Spring" ||
+              isActive === "/Home/Summer" ||
+              isActive === "/Home/Fall"
                 ? classes.active
                 : ""
             }
+            to="/Home"
+          >
+            Home
+          </Link>
+
+          <Link
+            className={isActive === "/Anime" ? classes.active : ""}
             to="/Anime"
           >
             Anime

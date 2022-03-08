@@ -17,13 +17,13 @@ function WinterPage() {
 
   if (season === "WINTER" && month <= 1 && month > 10) {
     status = "RELEASING";
-    title = "TV series currently airing";
+    title = "TV";
   } else if (season === "WINTER" && month <= 1 && month === 0) {
     status = "NOT_YET_RELEASED";
-    title = "TV series to be aired";
+    title = "TV";
   } else {
     status = "NOT_YET_RELEASED";
-    title = "TV series to be aired";
+    title = "TV";
   }
 
   var query = `

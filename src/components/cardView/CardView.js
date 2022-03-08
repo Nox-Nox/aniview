@@ -17,25 +17,27 @@ function CardView(props) {
       {(props.items || []).map((item) => (
         <Box
           key={item.id}
-          className={classes.border}
           display="flex"
           position="relative"
           height="30vh"
           margin="2vw"
           flexDirection="row"
+          borderRadius="2rem"
         >
-          <Box>
+          <Box sx={{borderTopLeftRadius:"1rem", borderBottomLeftRadius:"1rem"}}>
             <CardMedia
+            sx={{borderTopLeftRadius:"1rem", borderBottomLeftRadius:"1rem"}}
               component="img"
               image={item.coverImage.large}
               height="100%"
+              borderRadius="2rem"
             />
             <Box
-              sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)" }}
+              sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", borderTopLeftRadius:"1rem" }}
               position="absolute"
               top="0"
               width="10VW"
-              paddingBottom="auto"
+              height="auto"
             >
               <Typography
                 color={"white"}
@@ -55,6 +57,7 @@ function CardView(props) {
               alignItems="flex-end"
               backgroundColor={mainTheme.palette.primary.light}
               sx={{
+                borderTopRightRadius:"1rem",
                 flexDirection: "column",
                 height: "80%",
                 maxHeight: "120%",
@@ -78,6 +81,7 @@ function CardView(props) {
               height="20%"
               backgroundColor={mainTheme.palette.primary.light}
               padding="5px"
+              sx={{borderBottomRightRadius:"1rem"}}
             >
               <GenresChip items={item.genres} />
             </Stack>

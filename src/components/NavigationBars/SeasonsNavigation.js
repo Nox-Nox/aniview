@@ -17,10 +17,10 @@ function SeasonsNavigation() {
       <Box display={"flex"} justifyContent="center">
         <AppBar>
           <Toolbar className={classes.text}>
-            <Link className={isActive === "/Anime/Winter" ? classes.active : ""} to="/Anime/Winter">Winter</Link>
-            <Link className={isActive === "/Anime/Spring" ? classes.active : ""} to="/Anime/Spring">Spring</Link>
-            <Link className={isActive === "/Anime/Summer" ? classes.active : ""} to="/Anime/Summer">Summer</Link>
-            <Link className={isActive === "/Anime/Fall" ? classes.active : ""} to="/Anime/Fall">Fall</Link>
+            <Link className={isActive === "/Home/Winter" ? classes.active : ""} to="/Home/Winter">Winter</Link>
+            <Link className={isActive === "/Home/Spring" ? classes.active : ""} to="/Home/Spring">Spring</Link>
+            <Link className={isActive === "/Home/Summer" ? classes.active : ""} to="/Home/Summer">Summer</Link>
+            <Link className={isActive === "/Home/Fall" ? classes.active : ""} to="/Home/Fall">Fall</Link>
           </Toolbar>
         </AppBar>
       </Box>

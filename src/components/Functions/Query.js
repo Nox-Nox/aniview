@@ -1,4 +1,4 @@
-export function Query(season, format) {
+export function QuerySeason(season, format) {
   var query = `
     {
       Page(page: 1, perPage: 40) {
@@ -34,4 +34,26 @@ export function queryOptions(query) {
   };
 
   return options;
+}
+
+export function QueryTrending(seasonyear) {
+  var query = `
+  {
+    Page(page: 1, perPage: 40) {
+      media(sort:TRENDING_DESC, type:ANIME, seasonYear:${seasonyear} ) {
+        id
+        popularity
+        coverImage {
+          large
+        }
+        title {
+          romaji
+        }
+        genres
+        description
+        source
+      }
+    }
+  }`;
+  return query;
 }

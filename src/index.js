@@ -6,13 +6,11 @@ import { BrowserRouter } from "react-router-dom";
 import Layout from "./layout/Layout";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
+  <BrowserRouter>
     <Layout>
       <App />
-      </Layout>
-    </BrowserRouter>
-  </React.StrictMode>,
+    </Layout>
+  </BrowserRouter>,
   document.getElementById("root")
 );
 
