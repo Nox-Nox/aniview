@@ -1,22 +1,77 @@
-export function QuerySeason(season, format) {
+export function QuerySeason(season, status, movie_status) {
   var query = `
-    {
-      Page(page: 1, perPage: 40) {
-  
-        media(season: ${season}, type: ANIME, status: RELEASING, format:${format}) {
-          id
-          coverImage{
-            large
-          }
-          title {
-            romaji
-          }
-          genres
-          description
-          source
+  {
+    TV_media: Page(page: 1, perPage: 25) {
+       media(season: ${season}, type: ANIME, status: ${status}, format: TV) {
+        id
+        coverImage {
+          large
         }
+        title {
+          romaji
+        }
+        genres
+        description
+        source
       }
     }
+      TV_SHORT_media: Page(page: 1, perPage: 25) {
+      media(season: ${season}, type: ANIME, status: ${status}, format: TV_SHORT) {
+        id
+        coverImage {
+          large
+        }
+        title {
+          romaji
+        }
+        genres
+        description
+        source
+      }
+    }
+      MOVIE_media: Page(page: 1, perPage: 25) {
+      media(season: ${season}, type: ANIME, status: ${movie_status}, format: MOVIE) {
+        id
+        coverImage {
+          large
+        }
+        title {
+          romaji
+        }
+        genres
+        description
+        source
+      }
+    }
+        OVA_media: Page(page: 1, perPage: 25) {
+        media(season: ${season}, type: ANIME, status: ${status}, format: OVA) {
+        id
+        coverImage {
+          large
+        }
+        title {
+          romaji
+        }
+        genres
+        description
+        source
+      }
+    }
+        ONA_media: Page(page: 1, perPage: 25) {
+        media(season: ${season}, type: ANIME, status: ${status}, format: ONA) {
+        id
+        coverImage {
+          large
+        }
+        title {
+          romaji
+        }
+        genres
+        description
+        source
+      }
+    }
+  }
     `;
   return query;
 }

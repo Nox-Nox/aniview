@@ -9,8 +9,6 @@ import { mainTheme } from "../Theme/mainTheme";
 import GenresChip from "../Chip/GenresChip";
 import classes from "./Scroll.module.css";
 
-
-
 function CardView(props) {
   return (
     <ThemeProvider theme={mainTheme}>
@@ -22,18 +20,25 @@ function CardView(props) {
           height="30vh"
           margin="2vw"
           flexDirection="row"
-          borderRadius="2rem"
+          borderradius="2rem"
         >
-          <Box sx={{borderTopLeftRadius:"1rem", borderBottomLeftRadius:"1rem"}}>
+          <Box
+            sx={{ borderTopLeftRadius: "1rem", borderBottomLeftRadius: "1rem" }}
+          >
             <CardMedia
-            sx={{borderTopLeftRadius:"1rem", borderBottomLeftRadius:"1rem"}}
+              sx={{
+                borderTopLeftRadius: "1rem",
+                borderBottomLeftRadius: "1rem",
+              }}
               component="img"
               image={item.coverImage.large}
               height="100%"
-              borderRadius="2rem"
             />
             <Box
-              sx={{ backgroundColor: "rgba(0, 0, 0, 0.7)", borderTopLeftRadius:"1rem" }}
+              sx={{
+                backgroundColor: "rgba(0, 0, 0, 0.7)",
+                borderTopLeftRadius: "1rem",
+              }}
               position="absolute"
               top="0"
               width="10VW"
@@ -57,7 +62,7 @@ function CardView(props) {
               alignItems="flex-end"
               backgroundColor={mainTheme.palette.primary.light}
               sx={{
-                borderTopRightRadius:"1rem",
+                borderTopRightRadius: "1rem",
                 flexDirection: "column",
                 height: "80%",
                 maxHeight: "120%",
@@ -81,7 +86,7 @@ function CardView(props) {
               height="20%"
               backgroundColor={mainTheme.palette.primary.light}
               padding="5px"
-              sx={{borderBottomRightRadius:"1rem"}}
+              sx={{ borderBottomRightRadius: "1rem" }}
             >
               <GenresChip items={item.genres} />
             </Stack>
