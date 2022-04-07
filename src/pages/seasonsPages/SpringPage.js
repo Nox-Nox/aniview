@@ -17,21 +17,25 @@ function SpringPage() {
   var season = getCurrentSeason();
   var today = new Date();
   var month = today.getMonth();
+  var year = today.getFullYear();
   var status = "";
   var movie_status = "";
 
   if (season === "SPRING" && month <= 4 && month > 2) {
     status = "RELEASING";
     movie_status = "NOT_YET_RELEASED";
+    season = "SPRING";
   } else if (season === "SPRING" && month <= 4 && month === 3) {
     status = "NOT_YET_RELEASED";
     movie_status = "NOT_YET_RELEASED";
+    season = "SPRING";
   } else {
     status = "NOT_YET_RELEASED";
     movie_status = "NOT_YET_RELEASED";
+    season = "SPRING";
   }
 
-  var query = QuerySeason(season, status, movie_status);
+  var query = QuerySeason(season, status, movie_status, year);
   var url = "https://graphql.anilist.co";
   var options = QueryOptions(query);
 
@@ -109,10 +113,10 @@ function SpringPage() {
   }, [season]);
 
   if (
-    (loadedDataTV.length &&
-      loadedDataTV_SHORT.length &&
-      loadedDataMOVIE.length &&
-      loadedDataOVA.length &&
+    (loadedDataTV.length ||
+      loadedDataTV_SHORT.length ||
+      loadedDataMOVIE.length ||
+      loadedDataOVA.length ||
       loadedDataONA) === 0
   ) {
     return <LoadingHome />;

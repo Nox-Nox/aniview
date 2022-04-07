@@ -4,90 +4,131 @@ import CardContainer from "../../components/cardsContainer/CardContainer";
 import SeasonsNavigation from "../../components/NavigationBars/SeasonsNavigation";
 import { Box } from "@mui/material";
 import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";
+import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
 
 function SummerPage() {
   const [isLoading, setIsLoading] = useState(true);
-  const [loadedData, setLoadedData] = useState([]);
+  const [loadedDataTV, setLoadedDataTV] = useState([]);
+  const [loadedDataTV_SHORT, setLoadedDataTV_SHORT] = useState([]);
+  const [loadedDataMOVIE, setLoadedDataMOVIE] = useState([]);
+  const [loadedDataOVA, setLoadedDataOVA] = useState([]);
+  const [loadedDataONA, setLoadedDataONA] = useState([]);
+
   var season = getCurrentSeason();
   var today = new Date();
-  var year = today.getFullYear();
   var month = today.getMonth();
-  var title = "";
+  var year = today.getFullYear();
   var status = "";
+  var movie_status = "";
 
-  if (season === "SUMMER" && month <= 7 && month > 7) {
+  if (season === "SUMMER" && month <= 7 && month > 5) {
     status = "RELEASING";
-    title = "TV series currently airing";
-  } else if (season === "SPRING" && month <= 7 && month === 6) {
+    movie_status = "RELEASING";
+    season = "SUMMER";
+  } else if (season === "SUMMER" && month <= 7 && month === 6) {
     status = "NOT_YET_RELEASED";
-    title = "TV series to be aired";
+    movie_status = "NOT_YET_RELEASED";
+    season = "SUMMER";
   } else {
     status = "NOT_YET_RELEASED";
-    title = "TV series to be aired";
+    movie_status = "NOT_YET_RELEASED";
+    season = "SUMMER";
   }
 
-  var query = `
-  {
-    Page(page: 1, perPage: 40) {
+  var query = QuerySeason(season, status, movie_status, year);
+  var url = "https://graphql.anilist.co";
+  var options = QueryOptions(query);
 
-      media(season: SUMMER, type: ANIME, status: NOT_YET_RELEASED, format:TV) {
-        id
-        coverImage{
-          large
-        }
-        title {
-          romaji
-        }
-        genres
-        description
-        source
-      }
-    }
-  }
-  `;
-
-  var url = "https://graphql.anilist.co",
-    options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        query: query,
-      }),
-    };
   useEffect(() => {
     setIsLoading(true);
-
     fetch(url, options)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        const items = [];
+        console.log(data);
+        const TV_ITEMS = [];
+        const TV_SHORT_ITEMS = [];
+        const MOVIE_ITEMS = [];
+        const OVA_ITEMS = [];
+        const ONA_ITEMS = [];
 
         for (const [key, value] of Object.entries(
-          data["data"]["Page"]["media"]
+          data["data"]["TV_media"]["media"]
         )) {
-          const item = {
+          const TV_ITEM = {
             id: key,
             ...value,
           };
-          items.push(item);
+          TV_ITEMS.push(TV_ITEM);
         }
-        setLoadedData(items);
+        setLoadedDataTV(TV_ITEMS);
+
+        for (const [key, value] of Object.entries(
+          data["data"]["TV_SHORT_media"]["media"]
+        )) {
+          const TV_SHORT_ITEM = {
+            id: key,
+            ...value,
+          };
+          TV_SHORT_ITEMS.push(TV_SHORT_ITEM);
+        }
+        setLoadedDataTV_SHORT(TV_SHORT_ITEMS);
+
+        for (const [key, value] of Object.entries(
+          data["data"]["MOVIE_media"]["media"]
+        )) {
+          const MOVIE_ITEM = {
+            id: key,
+            ...value,
+          };
+          MOVIE_ITEMS.push(MOVIE_ITEM);
+        }
+        setLoadedDataMOVIE(MOVIE_ITEMS);
+
+        for (const [key, value] of Object.entries(
+          data["data"]["OVA_media"]["media"]
+        )) {
+          const OVA_ITEM = {
+            id: key,
+            ...value,
+          };
+          OVA_ITEMS.push(OVA_ITEM);
+        }
+        setLoadedDataOVA(OVA_ITEMS);
+
+        for (const [key, value] of Object.entries(
+          data["data"]["ONA_media"]["media"]
+        )) {
+          const ONA_ITEM = {
+            id: key,
+            ...value,
+          };
+          ONA_ITEMS.push(ONA_ITEM);
+        }
+        setLoadedDataONA(ONA_ITEMS);
+
         setIsLoading(false);
       });
-  }, []);
+  }, [season]);
 
-  if (loadedData.length === 0) {
+  if (
+    (loadedDataTV.length ||
+      loadedDataTV_SHORT.length ||
+      loadedDataMOVIE.length ||
+      loadedDataOVA.length ||
+      loadedDataONA) === 0
+  ) {
     return <LoadingHome />;
   }
   return (
     <Box>
       <SeasonsNavigation />
-      <CardContainer title={title} list={loadedData} />
+      <CardContainer title="TV" items={loadedDataTV} />
+      <CardContainer title="TV SHORTS" items={loadedDataTV_SHORT} />
+      <CardContainer title="MOVIES" items={loadedDataMOVIE} />
+      <CardContainer title="OVA" items={loadedDataOVA} />
+      <CardContainer title="ONA" items={loadedDataONA} />
     </Box>
   );
 }
