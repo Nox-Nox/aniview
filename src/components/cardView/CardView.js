@@ -23,7 +23,11 @@ function CardView(props) {
           borderradius="2rem"
         >
           <Box
-            sx={{ borderTopLeftRadius: "1rem", borderBottomLeftRadius: "1rem" }}
+            sx={{
+              borderTopLeftRadius: "1rem",
+              borderBottomLeftRadius: "1rem",
+              borderColor: "blue",
+            }}
           >
             <CardMedia
               sx={{
@@ -37,10 +41,10 @@ function CardView(props) {
             <Box
               sx={{
                 backgroundColor: "rgba(0, 0, 0, 0.7)",
-                borderTopLeftRadius: "1rem",
+                borderBottomLeftRadius: "1rem",
               }}
               position="absolute"
-              top="0"
+              bottom="0"
               width="10VW"
               height="auto"
             >

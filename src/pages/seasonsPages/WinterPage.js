@@ -7,7 +7,6 @@ import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";
 import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
 
 function WinterPage() {
-  const [isLoading, setIsLoading] = useState(true);
   const [loadedDataTV, setLoadedDataTV] = useState([]);
   const [loadedDataTV_SHORT, setLoadedDataTV_SHORT] = useState([]);
   const [loadedDataMOVIE, setLoadedDataMOVIE] = useState([]);
@@ -40,7 +39,6 @@ function WinterPage() {
   var options = QueryOptions(query);
 
   useEffect(() => {
-    setIsLoading(true);
     fetch(url, options)
       .then((response) => {
         return response.json();
@@ -107,8 +105,6 @@ function WinterPage() {
           ONA_ITEMS.push(ONA_ITEM);
         }
         setLoadedDataONA(ONA_ITEMS);
-
-        setIsLoading(false);
       });
   }, [season]);
 
