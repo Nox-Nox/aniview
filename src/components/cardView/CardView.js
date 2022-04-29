@@ -81,18 +81,21 @@ function CardView(props) {
             </Box>
 
             <Stack
-              alignItems="center"
               className={classes.scroll}
+              alignItems="center"
               direction="row"
               spacing={1}
-              flexGrow={1}
+              overflow="hidden"
               width="14vw"
               height="20%"
               backgroundColor={mainTheme.palette.primary.light}
               padding="5px"
               sx={{ borderBottomRightRadius: "1rem" }}
             >
-              <GenresChip items={item.genres} />
+              <GenresChip
+                items={item.genres}
+                className={classes.horizontalflo}
+              />
             </Stack>
           </Box>
         </Box>

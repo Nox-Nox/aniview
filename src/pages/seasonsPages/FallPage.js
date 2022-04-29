@@ -28,10 +28,14 @@ function FallPage() {
     status = "NOT_YET_RELEASED";
     movie_status = "NOT_YET_RELEASED";
     season = "FALL";
-  } else {
+  } else if (season !== "FALL" && year > year - 1) {
     status = "NOT_YET_RELEASED";
     movie_status = "NOT_YET_RELEASED";
     season = "FALL";
+  } else {
+    status = "FINISHED";
+    movie_status = "FINISHED";
+    season = "WINTER";
   }
 
   var query = QuerySeason(season, status, movie_status, year);

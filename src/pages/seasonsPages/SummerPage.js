@@ -28,9 +28,13 @@ function SummerPage() {
     status = "NOT_YET_RELEASED";
     movie_status = "NOT_YET_RELEASED";
     season = "SUMMER";
-  } else {
+  } else if (season !== "SUMMER" && year > year - 1) {
     status = "NOT_YET_RELEASED";
     movie_status = "NOT_YET_RELEASED";
+    season = "SUMMER";
+  } else {
+    status = "FINISHED";
+    movie_status = "FINISHED";
     season = "SUMMER";
   }
 

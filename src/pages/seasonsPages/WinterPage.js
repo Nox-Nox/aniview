@@ -28,9 +28,13 @@ function WinterPage() {
     status = "NOT_YET_RELEASED";
     movie_status = "NOT_YET_RELEASED";
     season = "WINTER";
-  } else {
+  } else if (season !== "WINTER" && year > year - 1) {
     status = "FINISHED";
     movie_status = "FINISHED";
+    season = "WINTER";
+  } else {
+    status = "NOT_YET_RELEASED";
+    movie_status = "NOT_YET_RELEASED";
     season = "WINTER";
   }
 

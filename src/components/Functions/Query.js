@@ -1,7 +1,7 @@
 export function QuerySeason(season, status, movie_status, year) {
   var query = `
   {
-    TV_media: Page(page: 1, perPage: 25) {
+    TV_media: Page(page: 1, perPage: 60) {
        media(season: ${season}, type: ANIME, status: ${status}, format: TV, seasonYear: ${year}) {
         id
         coverImage {
@@ -15,7 +15,7 @@ export function QuerySeason(season, status, movie_status, year) {
         source
       }
     }
-      TV_SHORT_media: Page(page: 1, perPage: 25) {
+      TV_SHORT_media: Page(page: 1, perPage: 60) {
       media(season: ${season}, type: ANIME, status: ${status}, format: TV_SHORT, seasonYear: ${year}) {
         id
         coverImage {
@@ -29,7 +29,7 @@ export function QuerySeason(season, status, movie_status, year) {
         source
       }
     }
-      MOVIE_media: Page(page: 1, perPage: 25) {
+      MOVIE_media: Page(page: 1, perPage: 60) {
       media(season: ${season}, type: ANIME, status: ${movie_status}, format: MOVIE, seasonYear: ${year}) {
         id
         coverImage {
@@ -43,7 +43,7 @@ export function QuerySeason(season, status, movie_status, year) {
         source
       }
     }
-        OVA_media: Page(page: 1, perPage: 25) {
+        OVA_media: Page(page: 1, perPage: 60) {
         media(season: ${season}, type: ANIME, status: ${movie_status}, format: OVA, seasonYear: ${year}) {
         id
         coverImage {
@@ -57,7 +57,7 @@ export function QuerySeason(season, status, movie_status, year) {
         source
       }
     }
-        ONA_media: Page(page: 1, perPage: 25) {
+        ONA_media: Page(page: 1, perPage: 60) {
         media(season: ${season}, type: ANIME, status: ${status}, format: ONA, seasonYear: ${year})  {
         id
         coverImage {

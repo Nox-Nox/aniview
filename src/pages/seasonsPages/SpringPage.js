@@ -28,10 +28,14 @@ function SpringPage() {
     status = "NOT_YET_RELEASED";
     movie_status = "NOT_YET_RELEASED";
     season = "SPRING";
-  } else {
+  } else if (season !== "SPRING" && year > year - 1) {
     status = "NOT_YET_RELEASED";
     movie_status = "NOT_YET_RELEASED";
     season = "SPRING";
+  } else {
+    status = "FINISHED";
+    movie_status = "FINISHED";
+    season = "WINTER";
   }
 
   var query = QuerySeason(season, status, movie_status, year);
