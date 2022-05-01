@@ -15,27 +15,10 @@ function FallPage() {
 
   var season = getCurrentSeason();
   var today = new Date();
-  var month = today.getMonth();
   var year = today.getFullYear();
-  var status = "";
-  var movie_status = "";
 
-  if (season === "FALL" && month <= 10 && month > 8) {
-    status = "RELEASING";
-    movie_status = "RELEASING";
-    season = "FALL";
-  } else if (season === "FALL" && month <= 10 && month === 9) {
-    status = "NOT_YET_RELEASED";
-    movie_status = "NOT_YET_RELEASED";
-    season = "FALL";
-  } else if (season !== "FALL" && year > year - 1) {
-    status = "NOT_YET_RELEASED";
-    movie_status = "NOT_YET_RELEASED";
-    season = "FALL";
-  } else {
-    status = "FINISHED";
-    movie_status = "FINISHED";
-    season = "WINTER";
+  if (season !== "FALL") {
+    season = "FALL"
   }
 
   var query = QuerySeason(season, year);
@@ -123,6 +106,7 @@ function FallPage() {
   ) {
     return <LoadingHome />;
   }
+
 
   return (
     <Box>

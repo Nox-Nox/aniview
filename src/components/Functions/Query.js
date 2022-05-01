@@ -30,7 +30,7 @@ export function QuerySeason(season, year) {
       }
     }
       MOVIE_media: Page(page: 1, perPage: 60) {
-      media(season: ${season}, type: ANIME,  format: MOVIE, seasonYear: ${year}) {
+      media(season: ${season}, type: ANIME, format: MOVIE, seasonYear: ${year}) {
         id
         coverImage {
           large
@@ -44,7 +44,7 @@ export function QuerySeason(season, year) {
       }
     }
         OVA_media: Page(page: 1, perPage: 60) {
-        media(season: ${season}, type: ANIME, status:  format: OVA, seasonYear: ${year}) {
+        media(season: ${season}, type: ANIME, format: OVA, seasonYear: ${year}) {
         id
         coverImage {
           large

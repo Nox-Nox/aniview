@@ -15,27 +15,10 @@ function SummerPage() {
 
   var season = getCurrentSeason();
   var today = new Date();
-  var month = today.getMonth();
   var year = today.getFullYear();
-  var status = "";
-  var movie_status = "";
 
-  if (season === "SUMMER" && month <= 7 && month > 5) {
-    status = "RELEASING";
-    movie_status = "RELEASING";
-    season = "SUMMER";
-  } else if (season === "SUMMER" && month <= 7 && month === 6) {
-    status = "NOT_YET_RELEASED";
-    movie_status = "NOT_YET_RELEASED";
-    season = "SUMMER";
-  } else if (season !== "SUMMER" && year > year - 1) {
-    status = "NOT_YET_RELEASED";
-    movie_status = "NOT_YET_RELEASED";
-    season = "SUMMER";
-  } else {
-    status = "FINISHED";
-    movie_status = "FINISHED";
-    season = "SUMMER";
+  if (season !== "SUMMER") {
+    season = "SUMMER"
   }
 
   var query = QuerySeason(season, year);

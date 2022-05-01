@@ -15,27 +15,10 @@ function WinterPage() {
 
   var season = getCurrentSeason();
   var today = new Date();
-  var month = today.getMonth();
   var year = today.getFullYear();
-  var status = "";
-  var movie_status = "";
 
-  if (season === "WINTER" && month <= 1 && month > 10) {
-    status = "RELEASING";
-    movie_status = "NOT_YET_RELEASED";
-    season = "WINTER";
-  } else if (season === "WINTER" && month <= 1 && month === 0) {
-    status = "NOT_YET_RELEASED";
-    movie_status = "NOT_YET_RELEASED";
-    season = "WINTER";
-  } else if (season !== "WINTER" && year > year - 1) {
-    status = "FINISHED";
-    movie_status = "FINISHED";
-    season = "WINTER";
-  } else {
-    status = "NOT_YET_RELEASED";
-    movie_status = "NOT_YET_RELEASED";
-    season = "WINTER";
+  if (season !== "WINTER") {
+    season = "WINTER"
   }
 
   var query = QuerySeason(season, year);
