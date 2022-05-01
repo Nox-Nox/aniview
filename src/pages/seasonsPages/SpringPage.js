@@ -12,6 +12,7 @@ function SpringPage() {
   const [loadedDataMOVIE, setLoadedDataMOVIE] = useState([]);
   const [loadedDataOVA, setLoadedDataOVA] = useState([]);
   const [loadedDataONA, setLoadedDataONA] = useState([]);
+  const [loadedDataSPECIAL, setLoadedDataSPECIAL] = useState([]);
 
   var season = getCurrentSeason();
   var today = new Date();
@@ -36,6 +37,7 @@ function SpringPage() {
         const MOVIE_ITEMS = [];
         const OVA_ITEMS = [];
         const ONA_ITEMS = [];
+        const SPECIAL_ITEMS = [];
 
         for (const [key, value] of Object.entries(
           data["data"]["TV_media"]["media"]
@@ -91,6 +93,17 @@ function SpringPage() {
           ONA_ITEMS.push(ONA_ITEM);
         }
         setLoadedDataONA(ONA_ITEMS);
+
+        for (const [key, value] of Object.entries(
+          data["data"]["SPECIAL_media"]["media"]
+        )) {
+          const SPECIAL_ITEM = {
+            id: key,
+            ...value,
+          };
+          SPECIAL_ITEMS.push(SPECIAL_ITEM);
+        }
+        setLoadedDataSPECIAL(SPECIAL_ITEMS);
       });
   }, [season]);
 
@@ -99,19 +112,37 @@ function SpringPage() {
       loadedDataTV_SHORT.length ||
       loadedDataMOVIE.length ||
       loadedDataOVA.length ||
-      loadedDataONA) === 0
+      loadedDataONA ||
+      loadedDataSPECIAL) === 0
   ) {
     return <LoadingHome />;
   }
+
+  const tvshort = loadedDataTV_SHORT;
+  const ova = loadedDataOVA;
+  const ona = loadedDataONA;
+  const special = loadedDataSPECIAL;
+  const movie = loadedDataMOVIE;
 
   return (
     <Box>
       <SeasonsNavigation />
       <CardContainer title="TV" items={loadedDataTV} />
-      <CardContainer title="TV SHORTS" items={loadedDataTV_SHORT} />
-      <CardContainer title="MOVIES" items={loadedDataMOVIE} />
-      <CardContainer title="OVA" items={loadedDataOVA} />
-      <CardContainer title="ONA" items={loadedDataONA} />
+      {tvshort.length > 0 &&
+        <CardContainer title="TV SHORTS" items={loadedDataTV_SHORT} />
+      }
+      {movie.length > 0 &&
+        <CardContainer title="MOVIES" items={loadedDataMOVIE} />
+      }
+      {ova.length > 0 &&
+        <CardContainer title="OVA" items={loadedDataOVA} />
+      }
+      {ona.length > 0 &&
+        <CardContainer title="ONA" items={loadedDataONA} />
+      }
+      {special.length > 0 &&
+        <CardContainer title="SPECIAL" items={loadedDataSPECIAL} />
+      }
     </Box>
   );
 }

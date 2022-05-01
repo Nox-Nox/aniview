@@ -71,6 +71,20 @@ export function QuerySeason(season, year) {
         source
       }
     }
+    SPECIAL_media: Page(page: 1, perPage: 60) {
+      media(season: ${season}, type: ANIME, format: SPECIAL, seasonYear: ${year}) {
+      id
+      coverImage {
+        large
+      }
+      title {
+        romaji
+      }
+      genres
+      description
+      source
+    }
+  }
   }
     `;
   return query;
