@@ -26,7 +26,6 @@ function CardView(props) {
             sx={{
               borderTopLeftRadius: "1rem",
               borderBottomLeftRadius: "1rem",
-              borderColor: "blue",
             }}
           >
             <CardMedia
@@ -62,17 +61,17 @@ function CardView(props) {
           <Box>
             <Box
               className={classes.scroll}
-              width="14vw"
+              width="13vw"
               alignItems="flex-end"
               backgroundColor={mainTheme.palette.primary.light}
               sx={{
                 borderTopRightRadius: "1rem",
                 flexDirection: "column",
-                height: "80%",
+                height: "24vh",
                 maxHeight: "120%",
               }}
             >
-              <Box width="13.5vw">
+              <Box width="12.5vw">
                 <Typography
                   color={"white"}
                   variant="body2"
@@ -81,24 +80,34 @@ function CardView(props) {
                 />
               </Box>
             </Box>
-
-            <Stack
-              className={classes.scroll}
-              alignItems="center"
-              direction="row"
-              spacing={1}
-              overflow="hidden"
-              width="14vw"
-              height="20%"
+            <Box
+              width="13vw"
               backgroundColor={mainTheme.palette.primary.light}
-              padding="5px"
               sx={{ borderBottomRightRadius: "1rem" }}
             >
-              <GenresChip
-                items={item.genres}
-                className={classes.horizontalflo}
-              />
-            </Stack>
+              <Box
+                className={classes.scroll}
+                sx={{
+                  flexDirection: "column",
+                }}
+                width="12.7vw"
+                height="6vh"
+                position="relative"
+                overflow="hidden"
+              >
+                <Stack
+                  height="5vh"
+                  position="absolute"
+                  justifyContent="start"
+                  direction="row"
+                  spacing={1}
+                  padding="0.7vw"
+                  marginRight="10px"
+                >
+                  <GenresChip items={item.genres} />
+                </Stack>
+              </Box>
+            </Box>
           </Box>
         </Box>
       ))}

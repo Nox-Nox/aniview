@@ -1,7 +1,7 @@
 ::-webkit-scrollbar {
   border-radius: 10px;
   height: 8px;
-  width: 10px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
   margin-block: 0.2em;
@@ -30,7 +30,10 @@
 .scroll:hover::-webkit-scrollbar-thumb {
   background: #222222;
   border-radius: 3px;
+  
 }
 .scroll::-webkit-scrollbar-track {
-  display: none;
+  margin-block: 0.8em;
 }
+
+
