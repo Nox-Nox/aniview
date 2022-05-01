@@ -15,7 +15,7 @@ function CardContainer(props) {
       >
         {props.title}
       </Typography>
-      <Box marginRight="5%" marginLeft="5%">
+      <Box marginRight="7.1%" marginLeft="7.1%">
         <Box
           backgroundColor={mainTheme.palette.primary.main}
           marginBottom="8vh"
