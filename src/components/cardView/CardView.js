@@ -72,12 +72,14 @@ function CardView(props) {
                 maxHeight: "120%",
               }}
             >
-              <Typography
-                color={"white"}
-                variant="body2"
-                dangerouslySetInnerHTML={{ __html: item.description }}
-                padding="1vw"
-              />
+              <Box width="13.5vw">
+                <Typography
+                  color={"white"}
+                  variant="body2"
+                  dangerouslySetInnerHTML={{ __html: item.description }}
+                  padding="1vw"
+                />
+              </Box>
             </Box>
 
             <Stack

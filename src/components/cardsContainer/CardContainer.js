@@ -21,12 +21,12 @@ function CardContainer(props) {
           marginBottom="8vh"
           borderRadius="3rem"
         >
-          <Grid columns={4} container justifyContent="center">
+          <Grid container justifyContent="space-around" >
             <CardView items={props.items} />
           </Grid>
         </Box>
       </Box>
-    </ThemeProvider>
+    </ThemeProvider >
   );
 }
 
