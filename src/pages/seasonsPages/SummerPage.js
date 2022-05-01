@@ -38,7 +38,7 @@ function SummerPage() {
     season = "SUMMER";
   }
 
-  var query = QuerySeason(season, status, movie_status, year);
+  var query = QuerySeason(season, year);
   var url = "https://graphql.anilist.co";
   var options = QueryOptions(query);
 
