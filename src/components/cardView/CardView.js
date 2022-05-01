@@ -90,7 +90,7 @@ function CardView(props) {
                 sx={{
                   flexDirection: "column",
                 }}
-                width="12.7vw"
+                width="12.8vw"
                 height="6vh"
                 position="relative"
                 overflow="hidden"

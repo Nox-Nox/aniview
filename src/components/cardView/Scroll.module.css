@@ -30,10 +30,7 @@
 .scroll:hover::-webkit-scrollbar-thumb {
   background: #222222;
   border-radius: 3px;
-  
 }
 .scroll::-webkit-scrollbar-track {
   margin-block: 0.8em;
 }
-
-
