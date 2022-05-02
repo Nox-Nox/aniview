@@ -19,7 +19,7 @@ function FallPage() {
   var year = today.getFullYear();
 
   if (season !== "FALL") {
-    season = "FALL"
+    season = "FALL";
   }
 
   var query = QuerySeason(season, year);
@@ -129,21 +129,17 @@ function FallPage() {
     <Box>
       <SeasonsNavigation />
       <CardContainer title="TV" items={loadedDataTV} />
-      {tvshort.length > 0 &&
+      {tvshort.length > 0 && (
         <CardContainer title="TV SHORTS" items={loadedDataTV_SHORT} />
-      }
-      {movie.length > 0 &&
+      )}
+      {movie.length > 0 && (
         <CardContainer title="MOVIES" items={loadedDataMOVIE} />
-      }
-      {ova.length > 0 &&
-        <CardContainer title="OVA" items={loadedDataOVA} />
-      }
-      {ona.length > 0 &&
-        <CardContainer title="ONA" items={loadedDataONA} />
-      }
-      {special.length > 0 &&
+      )}
+      {ova.length > 0 && <CardContainer title="OVA" items={loadedDataOVA} />}
+      {ona.length > 0 && <CardContainer title="ONA" items={loadedDataONA} />}
+      {special.length > 0 && (
         <CardContainer title="SPECIAL" items={loadedDataSPECIAL} />
-      }
+      )}
     </Box>
   );
 }

@@ -21,6 +21,7 @@ function CardView(props) {
           margin="2vw"
           flexDirection="row"
           borderradius="2rem"
+          className={classes.boxshadow}
         >
           <Box
             sx={{
@@ -44,29 +45,45 @@ function CardView(props) {
               }}
               position="absolute"
               bottom="0"
+              zIndex="1"
               width="10VW"
               height="auto"
             >
               <Typography
-                color={"white"}
-                paddingTop="2px"
-                paddingLeft="4px"
+                color="white"
+                paddingTop="1vh"
+                paddingLeft="0.4vw"
                 paddingRight="2px"
+                paddingBottom="3vh"
                 variant="body1"
               >
                 {item.title.romaji}
               </Typography>
             </Box>
           </Box>
-          <Box display="flex" flexDirection="column" alignSelf="flex-end">
+          <Box>
             <Box
               backgroundColor="blue"
               height="6vh"
+              width="13vw"
               sx={{
                 borderTopRightRadius: "1rem",
               }}
             >
-              {" "}
+              <Typography
+                color="white"
+                fontSize="15px"
+                paddingTop="2px"
+                paddingLeft="4px"
+                paddingRight="2px"
+              >
+                {item.episode === null || " "
+                  ? "Total episodes: n/a "
+                  : "Total episodes: " + item.episodes + " "}
+                {item.duration === null
+                  ? "Duration: n/a"
+                  : "Duration: " + item.duration}
+              </Typography>
             </Box>
             <Box
               className={classes.scroll}
@@ -77,7 +94,7 @@ function CardView(props) {
             >
               <Box width="12.5vw">
                 <Typography
-                  color={"white"}
+                  color="white"
                   variant="body2"
                   dangerouslySetInnerHTML={{ __html: item.description }}
                   padding="1vw"
@@ -95,7 +112,7 @@ function CardView(props) {
                 overflow="hidden"
                 className={classes.scroll}
               >
-                <Stack direction="row" spacing={1} marginTop="0.5vh">
+                <Stack direction="row" spacing={1} marginTop="0.6vh">
                   <GenresChip items={item.genres} />
                 </Stack>
               </Box>

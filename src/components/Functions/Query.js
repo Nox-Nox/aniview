@@ -3,35 +3,61 @@ export function QuerySeason(season, year) {
   {
     TV_media: Page(page: 1, perPage: 60) {
        media(season: ${season}, type: ANIME, format: TV, seasonYear: ${year}) {
-        id
+
+        nextAiringEpisode {
+          id
+          timeUntilAiring
+          episode
+        }
         coverImage {
           large
         }
         title {
           romaji
         }
+        id
+        episodes
+        duration
         genres
         description
         source
+        popularity
+        averageScore
       }
     }
       TV_SHORT_media: Page(page: 1, perPage: 60) {
       media(season: ${season}, type: ANIME, format: TV_SHORT, seasonYear: ${year}) {
-        id
+
+        nextAiringEpisode {
+          id
+          timeUntilAiring
+          episode
+        }
         coverImage {
           large
         }
         title {
           romaji
         }
+        id
+        episodes
+        duration
         genres
         description
         source
+        popularity
+        averageScore
       }
     }
       MOVIE_media: Page(page: 1, perPage: 60) {
       media(season: ${season}, type: ANIME, format: MOVIE, seasonYear: ${year}) {
         id
+        episodes
+        nextAiringEpisode {
+          id
+          timeUntilAiring
+          episode
+        }
         coverImage {
           large
         }
@@ -41,48 +67,80 @@ export function QuerySeason(season, year) {
         genres
         description
         source
+        popularity
+        averageScore
       }
     }
         OVA_media: Page(page: 1, perPage: 60) {
         media(season: ${season}, type: ANIME, format: OVA, seasonYear: ${year}) {
-        id
+
+        nextAiringEpisode {
+          id
+          timeUntilAiring
+          episode
+        }
         coverImage {
           large
         }
         title {
           romaji
         }
+        id
+        episodes
+        duration
         genres
         description
         source
+        popularity
+        averageScore
       }
     }
         ONA_media: Page(page: 1, perPage: 60) {
         media(season: ${season}, type: ANIME, format: ONA, seasonYear: ${year})  {
-        id
+
+        nextAiringEpisode {
+          id
+          timeUntilAiring
+          episode
+        }
         coverImage {
           large
         }
         title {
           romaji
         }
+        id
+        episodes
+        duration
         genres
         description
         source
+        popularity
+        averageScore
       }
     }
     SPECIAL_media: Page(page: 1, perPage: 60) {
       media(season: ${season}, type: ANIME, format: SPECIAL, seasonYear: ${year}) {
-      id
+
+      nextAiringEpisode {
+        id
+        timeUntilAiring
+        episode
+      }
       coverImage {
         large
       }
       title {
         romaji
       }
+      id
+      episodes
+      duration
       genres
       description
       source
+      popularity
+      averageScore
     }
   }
   }

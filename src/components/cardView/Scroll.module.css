@@ -3,6 +3,7 @@
   height: 8px;
   width: 10px;
 }
+
 ::-webkit-scrollbar-track {
   margin-block: 0.2em;
   border-radius: 12px;
@@ -33,4 +34,14 @@
 }
 .scroll::-webkit-scrollbar-track {
   margin-block: 0.8em;
+}
+
+.boxshadow {
+  transition: box-shadow 0.3s;
+  border-radius: 1rem;
+}
+
+.boxshadow:hover {
+  box-shadow: 0 0 11px whitesmoke;
+  border-radius: 1rem;
 }

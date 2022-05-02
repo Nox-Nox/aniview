@@ -19,7 +19,7 @@ function SpringPage() {
   var year = today.getFullYear();
 
   if (season !== "SPRING") {
-    season = "SPRING"
+    season = "SPRING";
   }
   var query = QuerySeason(season, year);
   var url = "https://graphql.anilist.co";
@@ -31,7 +31,6 @@ function SpringPage() {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         const TV_ITEMS = [];
         const TV_SHORT_ITEMS = [];
         const MOVIE_ITEMS = [];
@@ -128,21 +127,17 @@ function SpringPage() {
     <Box>
       <SeasonsNavigation />
       <CardContainer title="TV" items={loadedDataTV} />
-      {tvshort.length > 0 &&
+      {tvshort.length > 0 && (
         <CardContainer title="TV SHORTS" items={loadedDataTV_SHORT} />
-      }
-      {movie.length > 0 &&
+      )}
+      {movie.length > 0 && (
         <CardContainer title="MOVIES" items={loadedDataMOVIE} />
-      }
-      {ova.length > 0 &&
-        <CardContainer title="OVA" items={loadedDataOVA} />
-      }
-      {ona.length > 0 &&
-        <CardContainer title="ONA" items={loadedDataONA} />
-      }
-      {special.length > 0 &&
+      )}
+      {ova.length > 0 && <CardContainer title="OVA" items={loadedDataOVA} />}
+      {ona.length > 0 && <CardContainer title="ONA" items={loadedDataONA} />}
+      {special.length > 0 && (
         <CardContainer title="SPECIAL" items={loadedDataSPECIAL} />
-      }
+      )}
     </Box>
   );
 }
