@@ -58,18 +58,22 @@ function CardView(props) {
               </Typography>
             </Box>
           </Box>
-          <Box>
+          <Box display="flex" flexDirection="column" alignSelf="flex-end">
+            <Box
+              backgroundColor="blue"
+              height="6vh"
+              sx={{
+                borderTopRightRadius: "1rem",
+              }}
+            >
+              {" "}
+            </Box>
             <Box
               className={classes.scroll}
               width="13vw"
-              alignItems="flex-end"
               backgroundColor={mainTheme.palette.primary.light}
-              sx={{
-                borderTopRightRadius: "1rem",
-                flexDirection: "column",
-                height: "24vh",
-                maxHeight: "120%",
-              }}
+              height="20vh"
+              maxHeight="100%"
             >
               <Box width="12.5vw">
                 <Typography
@@ -82,28 +86,16 @@ function CardView(props) {
             </Box>
             <Box
               width="13vw"
-              backgroundColor={mainTheme.palette.primary.light}
+              backgroundColor="red"
               sx={{ borderBottomRightRadius: "1rem" }}
             >
               <Box
-                className={classes.scroll}
-                sx={{
-                  flexDirection: "column",
-                }}
                 width="12.8vw"
-                height="6vh"
-                position="relative"
+                height="4vh"
                 overflow="hidden"
+                className={classes.scroll}
               >
-                <Stack
-                  height="5vh"
-                  position="absolute"
-                  justifyContent="start"
-                  direction="row"
-                  spacing={1}
-                  padding="0.7vw"
-                  marginRight="10px"
-                >
+                <Stack direction="row" spacing={1} marginTop="0.5vh">
                   <GenresChip items={item.genres} />
                 </Stack>
               </Box>

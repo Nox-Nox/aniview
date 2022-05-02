@@ -1,4 +1,4 @@
-import { Chip, Box } from "@mui/material";
+import { Chip } from "@mui/material";
 
 function GenresChip(props) {
   return (props.items || []).map((item1, index) => (
@@ -8,6 +8,7 @@ function GenresChip(props) {
       size="small"
       variant="filled"
       sx={{
+        padding: "10px",
         background: "linear-gradient(to right bottom, #7b29ab, #d238dd)",
       }}
     />
