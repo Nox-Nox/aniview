@@ -65,7 +65,7 @@ function CardView(props) {
             <Box
               backgroundColor="blue"
               height="8vh"
-              width="13vw"
+              width="14vw"
               sx={{
                 borderTopRightRadius: "1rem",
               }}
@@ -97,7 +97,7 @@ function CardView(props) {
             </Box>
             <Box
               className={classes.scroll}
-              width="13vw"
+              width="14vw"
               backgroundColor={mainTheme.palette.primary.light}
               height="18vh"
               maxHeight="100%"
@@ -112,12 +112,15 @@ function CardView(props) {
               </Box>
             </Box>
             <Box
-              width="13vw"
+              width="14vw"
               backgroundColor="red"
               sx={{ borderBottomRightRadius: "1rem" }}
             >
               <Box
-                width="12.8vw"
+                width="13.6vw"
+                sx={{
+                  borderBottomRightRadius: "1.3vw",
+                }}
                 height="4vh"
                 overflow="hidden"
                 className={classes.scroll}

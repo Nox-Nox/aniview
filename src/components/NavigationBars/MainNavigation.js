@@ -20,6 +20,7 @@ function MainNavigation() {
           fontSize: "1.5vw",
           alignItems: "center",
           position: "relative",
+          marginBottom: "8vh",
         }}
       >
         <Toolbar className={classes.text}>

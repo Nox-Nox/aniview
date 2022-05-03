@@ -14,34 +14,44 @@ function SeasonsNavigation() {
   }, [location1]);
   return (
     <ThemeProvider theme={SeasonsNavigationTheme}>
-      <AppBar>
-        <Toolbar className={classes.text}>
-          <Link
-            className={isActive === "/Home/Winter" ? classes.active : ""}
-            to="/Home/Winter"
-          >
-            Winter
-          </Link>
-          <Link
-            className={isActive === "/Home/Spring" ? classes.active : ""}
-            to="/Home/Spring"
-          >
-            Spring
-          </Link>
-          <Link
-            className={isActive === "/Home/Summer" ? classes.active : ""}
-            to="/Home/Summer"
-          >
-            Summer
-          </Link>
-          <Link
-            className={isActive === "/Home/Fall" ? classes.active : ""}
-            to="/Home/Fall"
-          >
-            Fall
-          </Link>
-        </Toolbar>
-      </AppBar>
+      <Box display="flex" justifyContent="center">
+        <AppBar
+          position="relative"
+          sx={{
+            alignItems: "center",
+            marginBottom: "6vh",
+            width: "20vw",
+            borderRadius: "8vw",
+          }}
+        >
+          <Toolbar className={classes.text1} variant="dense">
+            <Link
+              className={isActive === "/Home/Winter" ? classes.active : ""}
+              to="/Home/Winter"
+            >
+              Winter
+            </Link>
+            <Link
+              className={isActive === "/Home/Spring" ? classes.active : ""}
+              to="/Home/Spring"
+            >
+              Spring
+            </Link>
+            <Link
+              className={isActive === "/Home/Summer" ? classes.active : ""}
+              to="/Home/Summer"
+            >
+              Summer
+            </Link>
+            <Link
+              className={isActive === "/Home/Fall" ? classes.active : ""}
+              to="/Home/Fall"
+            >
+              Fall
+            </Link>
+          </Toolbar>
+        </AppBar>
+      </Box>
     </ThemeProvider>
   );
 }
