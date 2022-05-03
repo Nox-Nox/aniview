@@ -42,7 +42,7 @@ function CardView(props) {
                 paddingLeft="0.4vw"
                 paddingRight="2px"
                 paddingBottom="1vh"
-                variant="body1"
+                fontSize="0.95em"
               >
                 {item.title.romaji}
               </Typography>
@@ -54,44 +54,74 @@ function CardView(props) {
                 fontSize="0.8em"
               >
                 {item.studios.edges.length === 0
-                  ? "nope"
+                  ? ""
                   : item.studios.edges.map((n) => n.node.name)}
               </Typography>
             </Box>
           </Box>
-          <Box>
+          <Box display="flex" flexDirection="column">
             <Box
-              backgroundColor={mainTheme.palette.primary.light}
               height="8vh"
-              width="14vw"
+              display="flex"
+              flexDirection="row"
+              backgroundColor={mainTheme.palette.primary.light}
               sx={{
                 borderTopRightRadius: "1vw",
               }}
             >
-              <Typography
-                fontWeight="bold"
-                color="violet"
-                fontSize="0.7em"
-                padding="0.5vw"
-                paddingTop="0.8vh"
-                paddingBottom="0.1vh"
+              <Box
+                backgroundColor="red"
+                width="7vw"
+                height="5vh"
+                flexDirection="column"
+                justifyContent="flex-start"
               >
-                {item.episodes === null
-                  ? "Total episodes: n/a"
-                  : "Total episodes: " + item.episodes}
-              </Typography>
-              <Typography
-                fontWeight="bold"
-                color="violet"
-                fontSize="0.7em"
-                padding="0.5vw"
-                paddingTop="0.1vh"
-                paddingBottom="0.1vh"
+                <Box width="7.5vw">
+                  <Typography
+                    fontWeight="bold"
+                    color="violet"
+                    fontSize="0.7em"
+                    padding="0.5vw"
+                    paddingTop="0.8vh"
+                    paddingBottom="0.1vh"
+                  >
+                    {item.episodes === null
+                      ? "Total episodes: n/a"
+                      : "Total episodes: " + item.episodes}
+                  </Typography>
+                </Box>
+
+                <Box width="8vw">
+                  <Typography
+                    fontWeight="bold"
+                    color="violet"
+                    fontSize="0.7em"
+                    padding="0.5vw"
+                    paddingTop="0.1vh"
+                    paddingBottom="0.1vh"
+                  >
+                    {item.duration === null
+                      ? "Duration: n/a"
+                      : "Duration: " + item.duration + " min"}
+                  </Typography>
+                </Box>
+              </Box>
+              <Box
+                sx={{
+                  borderTopRightRadius: "1vw",
+                }}
+                backgroundColor="green"
+                width="5vw"
+                height="5vh"
+                marginLeft="auto"
+                textAlign="center"
               >
-                {item.duration === null
-                  ? "Duration: n/a"
-                  : "Duration: " + item.duration + " min"}
-              </Typography>
+                {item.popularity}
+                <br /> {item.averageScore}
+              </Box>
+            </Box>
+
+            <Box>
               <Typography
                 fontWeight="bold"
                 color="#dd45dd"
@@ -117,44 +147,46 @@ function CardView(props) {
                     " hours"}
               </Typography>
             </Box>
-            <Box
-              className={classes.scroll}
-              width="14vw"
-              backgroundColor={mainTheme.palette.primary.light}
-              height="18vh"
-              maxHeight="100%"
-            >
-              <Box width="12.5vw">
-                <Typography
-                  color="white"
-                  fontSize="0.8em"
-                  dangerouslySetInnerHTML={{ __html: item.description }}
-                  padding="0.5vw"
-                />
-              </Box>
-            </Box>
-            <Box
-              width="14vw"
-              backgroundColor={mainTheme.palette.primary.light}
-              sx={{ borderBottomRightRadius: "1vw" }}
-            >
+            <Box display="flex" flexDirection="column">
               <Box
-                width="13.5vw"
-                sx={{
-                  borderBottomRightRadius: "1.2vw",
-                }}
-                height="4vh"
-                overflow="hidden"
                 className={classes.scroll}
+                width="14vw"
+                backgroundColor={mainTheme.palette.primary.light}
+                height="18vh"
+                maxHeight="100%"
               >
-                <Stack
-                  direction="row"
-                  spacing={1}
-                  marginTop="0.6vh"
-                  marginLeft="0.4vw"
+                <Box width="12.5vw">
+                  <Typography
+                    color="white"
+                    fontSize="0.8em"
+                    dangerouslySetInnerHTML={{ __html: item.description }}
+                    padding="0.5vw"
+                  />
+                </Box>
+              </Box>
+              <Box
+                width="14vw"
+                backgroundColor={mainTheme.palette.primary.light}
+                sx={{ borderBottomRightRadius: "1vw" }}
+              >
+                <Box
+                  width="13.5vw"
+                  sx={{
+                    borderBottomRightRadius: "1.2vw",
+                  }}
+                  height="4vh"
+                  overflow="hidden"
+                  className={classes.scroll}
                 >
-                  <GenresChip items={item.genres} />
-                </Stack>
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    marginTop="0.6vh"
+                    marginLeft="0.4vw"
+                  >
+                    <GenresChip items={item.genres} />
+                  </Stack>
+                </Box>
               </Box>
             </Box>
           </Box>

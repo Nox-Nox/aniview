@@ -1,4 +1,8 @@
 import { createTheme } from "@mui/material";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 
 export const mainTheme = createTheme({
   components: {
@@ -9,6 +13,13 @@ export const mainTheme = createTheme({
           borderTopLeftRadius: "1vw",
           borderBottomLeftRadius: "1vw",
           height: "100%",
+        },
+      },
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Roboto",
         },
       },
     },
