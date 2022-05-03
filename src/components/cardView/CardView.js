@@ -59,9 +59,9 @@ function CardView(props) {
               <Typography
                 fontWeight="bold"
                 color="white"
-                fontSize="13px"
+                fontSize="12px"
                 padding="0.5vw"
-                paddingTop="0.2vh"
+                paddingTop="1vh"
                 paddingBottom="0.1vh"
               >
                 {item.episodes === null
@@ -71,14 +71,38 @@ function CardView(props) {
               <Typography
                 fontWeight="bold"
                 color="white"
-                fontSize="13px"
+                fontSize="12px"
                 padding="0.5vw"
-                paddingTop="0.2vh"
+                paddingTop="0.1vh"
                 paddingBottom="0.1vh"
               >
                 {item.duration === null
                   ? "Duration: n/a"
-                  : "Duration: " + item.duration + "min"}
+                  : "Duration: " + item.duration + " min"}
+              </Typography>
+              <Typography
+                fontWeight="bold"
+                color="white"
+                fontSize="15px"
+                padding="0.5vw"
+                paddingTop="0.1vh"
+                paddingBottom="0.1vh"
+              >
+                {item.nextAiringEpisode === null
+                  ? "n/a"
+                  : "Ep " +
+                    item.nextAiringEpisode.episode +
+                    " " +
+                    "airing in " +
+                    Math.floor(
+                      item.nextAiringEpisode.timeUntilAiring / (3600 * 24)
+                    ) +
+                    " days, " +
+                    Math.floor(
+                      (item.nextAiringEpisode.timeUntilAiring % (3600 * 24)) /
+                        3600
+                    ) +
+                    " hours"}
               </Typography>
             </Box>
             <Box
