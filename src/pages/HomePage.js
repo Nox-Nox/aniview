@@ -5,6 +5,7 @@ function HomePage() {
   return (
     <Box>
       <SeasonsNavigation />
+      <h1>WORK IN PROGRESS....</h1>
     </Box>
   );
 }

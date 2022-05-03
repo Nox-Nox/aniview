@@ -49,7 +49,7 @@ function CardView(props) {
           </Box>
           <Box>
             <Box
-              backgroundColor="blue"
+              backgroundColor={mainTheme.palette.primary.light}
               height="8vh"
               width="14vw"
               sx={{
@@ -59,9 +59,9 @@ function CardView(props) {
               <Typography
                 fontWeight="bold"
                 color="white"
-                fontSize="12px"
+                fontSize="0.7em"
                 padding="0.5vw"
-                paddingTop="1vh"
+                paddingTop="0.8vh"
                 paddingBottom="0.1vh"
               >
                 {item.episodes === null
@@ -71,7 +71,7 @@ function CardView(props) {
               <Typography
                 fontWeight="bold"
                 color="white"
-                fontSize="12px"
+                fontSize="0.7em"
                 padding="0.5vw"
                 paddingTop="0.1vh"
                 paddingBottom="0.1vh"
@@ -83,7 +83,7 @@ function CardView(props) {
               <Typography
                 fontWeight="bold"
                 color="white"
-                fontSize="15px"
+                fontSize="1em"
                 padding="0.5vw"
                 paddingTop="0.1vh"
                 paddingBottom="0.1vh"
@@ -115,7 +115,7 @@ function CardView(props) {
               <Box width="12.5vw">
                 <Typography
                   color="white"
-                  variant="body2"
+                  fontSize="0.8em"
                   dangerouslySetInnerHTML={{ __html: item.description }}
                   padding="0.5vw"
                 />
@@ -123,19 +123,24 @@ function CardView(props) {
             </Box>
             <Box
               width="14vw"
-              backgroundColor="red"
+              backgroundColor={mainTheme.palette.primary.light}
               sx={{ borderBottomRightRadius: "1vw" }}
             >
               <Box
-                width="13.6vw"
+                width="13.5vw"
                 sx={{
-                  borderBottomRightRadius: "1.3vw",
+                  borderBottomRightRadius: "1.2vw",
                 }}
                 height="4vh"
                 overflow="hidden"
                 className={classes.scroll}
               >
-                <Stack direction="row" spacing={1} marginTop="0.6vh">
+                <Stack
+                  direction="row"
+                  spacing={1}
+                  marginTop="0.6vh"
+                  marginLeft="0.4vw"
+                >
                   <GenresChip items={item.genres} />
                 </Stack>
               </Box>
