@@ -5,6 +5,7 @@ import SeasonsNavigation from "../../components/NavigationBars/SeasonsNavigation
 import { Box } from "@mui/material";
 import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";
 import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
+import { DataObjectSharp } from "@mui/icons-material";
 
 function SpringPage() {
   const [isLoading, setLoading] = useState(true);
@@ -48,8 +49,10 @@ function SpringPage() {
             id: key,
             ...value,
           };
+
           TV_ITEMS.push(TV_ITEM);
         }
+
         setLoadedDataTV(TV_ITEMS);
 
         for (const [key, value] of Object.entries(
@@ -107,6 +110,7 @@ function SpringPage() {
         }
         setLoadedDataSPECIAL(SPECIAL_ITEMS);
         setLoading(false);
+        console.log(TV_ITEMS);
       });
   }, [season]);
 

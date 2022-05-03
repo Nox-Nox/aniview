@@ -21,18 +21,19 @@ function CardView(props) {
           margin="2vw"
           flexDirection="row"
           className={classes.boxshadow}
+          backgroundColor={mainTheme.palette.primary.light}
         >
           <Box>
             <CardMedia component="img" image={item.coverImage.large} />
             <Box
               sx={{
                 backgroundColor: "rgba(0, 0, 0, 0.8)",
-                borderBottomLeftRadius: "0.94vw",
+                borderBottomLeftRadius: "0.9vw",
               }}
               position="absolute"
               bottom="0"
               zIndex="1"
-              width="10VW"
+              width="10vw"
               height="auto"
             >
               <Typography
@@ -40,10 +41,21 @@ function CardView(props) {
                 paddingTop="1vh"
                 paddingLeft="0.4vw"
                 paddingRight="2px"
-                paddingBottom="3vh"
+                paddingBottom="1vh"
                 variant="body1"
               >
                 {item.title.romaji}
+              </Typography>
+              <Typography
+                color="pink"
+                paddingLeft="0.4vw"
+                paddingRight="2px"
+                paddingBottom="1vh"
+                fontSize="0.8em"
+              >
+                {item.studios.edges.length === 0
+                  ? "nope"
+                  : item.studios.edges.map((n) => n.node.name)}
               </Typography>
             </Box>
           </Box>
@@ -58,7 +70,7 @@ function CardView(props) {
             >
               <Typography
                 fontWeight="bold"
-                color="white"
+                color="violet"
                 fontSize="0.7em"
                 padding="0.5vw"
                 paddingTop="0.8vh"
@@ -70,7 +82,7 @@ function CardView(props) {
               </Typography>
               <Typography
                 fontWeight="bold"
-                color="white"
+                color="violet"
                 fontSize="0.7em"
                 padding="0.5vw"
                 paddingTop="0.1vh"
@@ -82,7 +94,7 @@ function CardView(props) {
               </Typography>
               <Typography
                 fontWeight="bold"
-                color="white"
+                color="#dd45dd"
                 fontSize="1em"
                 padding="0.5vw"
                 paddingTop="0.1vh"

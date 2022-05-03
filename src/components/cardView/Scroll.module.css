@@ -42,6 +42,6 @@
 }
 
 .boxshadow:hover {
-  box-shadow: 0 0 11px purple;
+  box-shadow: 0 0 11px rgb(209, 77, 209);
   border-radius: 1rem;
 }
