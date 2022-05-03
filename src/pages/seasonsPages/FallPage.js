@@ -7,6 +7,7 @@ import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";
 import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
 
 function FallPage() {
+  const [isLoading, setLoading] = useState(true);
   const [loadedDataTV, setLoadedDataTV] = useState([]);
   const [loadedDataTV_SHORT, setLoadedDataTV_SHORT] = useState([]);
   const [loadedDataMOVIE, setLoadedDataMOVIE] = useState([]);
@@ -27,6 +28,7 @@ function FallPage() {
   var options = QueryOptions(query);
 
   useEffect(() => {
+    setLoading(true);
     fetch(url, options)
       .then((response) => {
         return response.json();
@@ -105,17 +107,11 @@ function FallPage() {
           SPECIAL_ITEMS.push(SPECIAL_ITEM);
         }
         setLoadedDataSPECIAL(SPECIAL_ITEMS);
+        setLoading(false);
       });
   }, [season]);
 
-  if (
-    (loadedDataTV.length ||
-      loadedDataTV_SHORT.length ||
-      loadedDataMOVIE.length ||
-      loadedDataOVA.length ||
-      loadedDataONA ||
-      loadedDataSPECIAL) === 0
-  ) {
+  if (isLoading === true) {
     return <LoadingHome />;
   }
 

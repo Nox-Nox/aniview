@@ -7,6 +7,7 @@ import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";
 import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
 
 function WinterPage() {
+  const [isLoading, setLoading] = useState(true);
   const [loadedDataTV, setLoadedDataTV] = useState([]);
   const [loadedDataTV_SHORT, setLoadedDataTV_SHORT] = useState([]);
   const [loadedDataMOVIE, setLoadedDataMOVIE] = useState([]);
@@ -19,7 +20,7 @@ function WinterPage() {
   var year = today.getFullYear();
 
   if (season !== "WINTER") {
-    season = "WINTER"
+    season = "WINTER";
   }
 
   var query = QuerySeason(season, year);
@@ -27,6 +28,7 @@ function WinterPage() {
   var options = QueryOptions(query);
 
   useEffect(() => {
+    setLoading(true);
     fetch(url, options)
       .then((response) => {
         return response.json();
@@ -105,18 +107,14 @@ function WinterPage() {
           SPECIAL_ITEMS.push(SPECIAL_ITEM);
         }
         setLoadedDataSPECIAL(SPECIAL_ITEMS);
+        setLoading(false);
       });
   }, [season]);
 
-  if (
-    (loadedDataTV.length ||
-      loadedDataTV_SHORT.length ||
-      loadedDataMOVIE.length ||
-      loadedDataOVA.length ||
-      loadedDataONA) === 0
-  ) {
+  if (isLoading === true) {
     return <LoadingHome />;
   }
+
   const tvshort = loadedDataTV_SHORT;
   const ova = loadedDataOVA;
   const ona = loadedDataONA;
@@ -127,21 +125,17 @@ function WinterPage() {
     <Box>
       <SeasonsNavigation />
       <CardContainer title="TV" items={loadedDataTV} />
-      {tvshort.length > 0 &&
+      {tvshort.length > 0 && (
         <CardContainer title="TV SHORTS" items={loadedDataTV_SHORT} />
-      }
-      {movie.length > 0 &&
+      )}
+      {movie.length > 0 && (
         <CardContainer title="MOVIES" items={loadedDataMOVIE} />
-      }
-      {ova.length > 0 &&
-        <CardContainer title="OVA" items={loadedDataOVA} />
-      }
-      {ona.length > 0 &&
-        <CardContainer title="ONA" items={loadedDataONA} />
-      }
-      {special.length > 0 &&
+      )}
+      {ova.length > 0 && <CardContainer title="OVA" items={loadedDataOVA} />}
+      {ona.length > 0 && <CardContainer title="ONA" items={loadedDataONA} />}
+      {special.length > 0 && (
         <CardContainer title="SPECIAL" items={loadedDataSPECIAL} />
-      }
+      )}
     </Box>
   );
 }

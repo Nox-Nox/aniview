@@ -40,8 +40,8 @@ function CardView(props) {
             />
             <Box
               sx={{
-                backgroundColor: "rgba(0, 0, 0, 0.7)",
-                borderBottomLeftRadius: "1rem",
+                backgroundColor: "rgba(0, 0, 0, 0.8)",
+                borderBottomLeftRadius: "0.9rem",
               }}
               position="absolute"
               bottom="0"
@@ -64,32 +64,42 @@ function CardView(props) {
           <Box>
             <Box
               backgroundColor="blue"
-              height="6vh"
+              height="8vh"
               width="13vw"
               sx={{
                 borderTopRightRadius: "1rem",
               }}
             >
               <Typography
+                fontWeight="bold"
                 color="white"
-                fontSize="15px"
-                paddingTop="2px"
-                paddingLeft="4px"
-                paddingRight="2px"
+                fontSize="13px"
+                padding="0.5vw"
+                paddingTop="0.2vh"
+                paddingBottom="0.1vh"
               >
-                {item.episode === null || " "
-                  ? "Total episodes: n/a "
-                  : "Total episodes: " + item.episodes + " "}
+                {item.episodes === null
+                  ? "Total episodes: n/a"
+                  : "Total episodes: " + item.episodes}
+              </Typography>
+              <Typography
+                fontWeight="bold"
+                color="white"
+                fontSize="13px"
+                padding="0.5vw"
+                paddingTop="0.2vh"
+                paddingBottom="0.1vh"
+              >
                 {item.duration === null
                   ? "Duration: n/a"
-                  : "Duration: " + item.duration}
+                  : "Duration: " + item.duration + "min"}
               </Typography>
             </Box>
             <Box
               className={classes.scroll}
               width="13vw"
               backgroundColor={mainTheme.palette.primary.light}
-              height="20vh"
+              height="18vh"
               maxHeight="100%"
             >
               <Box width="12.5vw">
@@ -97,7 +107,7 @@ function CardView(props) {
                   color="white"
                   variant="body2"
                   dangerouslySetInnerHTML={{ __html: item.description }}
-                  padding="1vw"
+                  padding="0.5vw"
                 />
               </Box>
             </Box>

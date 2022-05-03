@@ -6,7 +6,7 @@ const SeasonsNavigationTheme = createTheme({
       styleOverrides: {
         root: {
           color: "lightgrey",
-          textDecoration:"none",
+          textDecoration: "none",
           "&:hover": {
             color: "white",
           },
@@ -26,10 +26,12 @@ const SeasonsNavigationTheme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          width: "28vw",
+          display: "flex",
+          width: "20vw",
           alignItems: "center",
           position: "relative",
-          marginTop: "2vh",
+          marginTop: "5vh",
+          marginLeft: "40%",
           borderRadius: "8vw",
         },
       },

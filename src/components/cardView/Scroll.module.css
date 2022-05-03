@@ -37,11 +37,11 @@
 }
 
 .boxshadow {
-  transition: box-shadow 0.3s;
+  transition: box-shadow 0.4s;
   border-radius: 1rem;
 }
 
 .boxshadow:hover {
-  box-shadow: 0 0 11px whitesmoke;
+  box-shadow: 0 0 11px purple;
   border-radius: 1rem;
 }

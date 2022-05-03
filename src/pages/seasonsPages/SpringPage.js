@@ -7,6 +7,7 @@ import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";
 import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
 
 function SpringPage() {
+  const [isLoading, setLoading] = useState(true);
   const [loadedDataTV, setLoadedDataTV] = useState([]);
   const [loadedDataTV_SHORT, setLoadedDataTV_SHORT] = useState([]);
   const [loadedDataMOVIE, setLoadedDataMOVIE] = useState([]);
@@ -26,11 +27,13 @@ function SpringPage() {
   var options = QueryOptions(query);
 
   useEffect(() => {
+    setLoading(true);
     fetch(url, options)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
+        console.log(data);
         const TV_ITEMS = [];
         const TV_SHORT_ITEMS = [];
         const MOVIE_ITEMS = [];
@@ -103,17 +106,11 @@ function SpringPage() {
           SPECIAL_ITEMS.push(SPECIAL_ITEM);
         }
         setLoadedDataSPECIAL(SPECIAL_ITEMS);
+        setLoading(false);
       });
   }, [season]);
 
-  if (
-    (loadedDataTV.length ||
-      loadedDataTV_SHORT.length ||
-      loadedDataMOVIE.length ||
-      loadedDataOVA.length ||
-      loadedDataONA ||
-      loadedDataSPECIAL) === 0
-  ) {
+  if (isLoading === true) {
     return <LoadingHome />;
   }
 
