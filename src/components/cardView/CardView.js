@@ -20,28 +20,14 @@ function CardView(props) {
           height="30vh"
           margin="2vw"
           flexDirection="row"
-          borderradius="2rem"
           className={classes.boxshadow}
         >
-          <Box
-            sx={{
-              borderTopLeftRadius: "1rem",
-              borderBottomLeftRadius: "1rem",
-            }}
-          >
-            <CardMedia
-              sx={{
-                borderTopLeftRadius: "1rem",
-                borderBottomLeftRadius: "1rem",
-              }}
-              component="img"
-              image={item.coverImage.large}
-              height="100%"
-            />
+          <Box>
+            <CardMedia component="img" image={item.coverImage.large} />
             <Box
               sx={{
                 backgroundColor: "rgba(0, 0, 0, 0.8)",
-                borderBottomLeftRadius: "0.9rem",
+                borderBottomLeftRadius: "0.94vw",
               }}
               position="absolute"
               bottom="0"
@@ -67,7 +53,7 @@ function CardView(props) {
               height="8vh"
               width="14vw"
               sx={{
-                borderTopRightRadius: "1rem",
+                borderTopRightRadius: "1vw",
               }}
             >
               <Typography
@@ -114,7 +100,7 @@ function CardView(props) {
             <Box
               width="14vw"
               backgroundColor="red"
-              sx={{ borderBottomRightRadius: "1rem" }}
+              sx={{ borderBottomRightRadius: "1vw" }}
             >
               <Box
                 width="13.6vw"

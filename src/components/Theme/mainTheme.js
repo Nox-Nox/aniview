@@ -6,14 +6,9 @@ export const mainTheme = createTheme({
       styleOverrides: {
         root: {
           width: "10vw",
-        },
-      },
-    },
-    MuiTypography: {
-      styleOverrides: {
-        root: {
-          fontFamily: "Roboto",
-          padding: "2.5vw",
+          borderTopLeftRadius: "1vw",
+          borderBottomLeftRadius: "1vw",
+          height: "100%",
         },
       },
     },
