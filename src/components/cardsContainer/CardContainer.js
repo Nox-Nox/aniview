@@ -2,6 +2,8 @@ import { Box, ThemeProvider } from "@mui/material";
 import CardView from "../cardView/CardView";
 import { Grid, Typography } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
+import pic from "../cardsContainer/background.jpg"
+import React from "react";
 
 function CardContainer(props) {
   return (
@@ -16,7 +18,7 @@ function CardContainer(props) {
       </Typography>
       <Box marginRight="7.1%" marginLeft="7.1%">
         <Box
-          backgroundColor={mainTheme.palette.primary.main}
+          sx={{backgroundImage:`url(${pic})`, backgroundSize:"cover"}}
           marginBottom="8vh"
           borderRadius="3rem"
         >

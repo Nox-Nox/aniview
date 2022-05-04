@@ -8,6 +8,7 @@ import {
 import { mainTheme } from "../Theme/mainTheme";
 import GenresChip from "../Chip/GenresChip";
 import classes from "./Scroll.module.css";
+import React from "react";
 
 import AverageScore from "../averageScore/AverageScore";
 

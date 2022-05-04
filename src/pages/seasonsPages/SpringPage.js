@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
+import React from "react";
 import LoadingHome from "../../components/LoadingSpinner/LoadingHome";
 import CardContainer from "../../components/cardsContainer/CardContainer";
 import SeasonsNavigation from "../../components/NavigationBars/SeasonsNavigation";
 import { Box } from "@mui/material";
 import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";
 import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
-import { DataObjectSharp } from "@mui/icons-material";
+
 
 function SpringPage() {
   const [isLoading, setLoading] = useState(true);

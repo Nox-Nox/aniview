@@ -1,4 +1,5 @@
 import { Chip } from "@mui/material";
+import React from "react";
 
 function GenresChip(props) {
   return (props.items || []).map((item1, index) => (

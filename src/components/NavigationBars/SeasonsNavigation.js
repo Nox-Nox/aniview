@@ -4,6 +4,7 @@ import SeasonsNavigationTheme from "../Theme/seasonsNavigationTheme";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import classes from "./activeS.module.css";
+import React from "react";
 
 function SeasonsNavigation() {
   const [isActive, setActive] = useState(null);

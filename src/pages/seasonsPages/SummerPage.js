@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import React from "react";
 import LoadingHome from "../../components/LoadingSpinner/LoadingHome";
 import CardContainer from "../../components/cardsContainer/CardContainer";
 import SeasonsNavigation from "../../components/NavigationBars/SeasonsNavigation";

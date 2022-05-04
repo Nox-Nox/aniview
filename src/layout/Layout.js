@@ -1,7 +1,8 @@
 import MainNavigation from "../components/NavigationBars/MainNavigation";
 import { CssBaseline } from "@mui/material";
-
+import  React from "react";
 import { Box } from "@mui/material";
+
 function Layout(props) {
   return (
     <Box>

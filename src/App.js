@@ -8,6 +8,7 @@ import SpringPage from "./pages/seasonsPages/SpringPage";
 import SummerPage from "./pages/seasonsPages/SummerPage";
 import FallPage from "./pages/seasonsPages/FallPage";
 import { getCurrentSeason } from "./components/Functions/GetCurrentSeason";
+import React from "react";
 
 var season = getCurrentSeason();
 
