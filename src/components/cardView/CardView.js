@@ -57,7 +57,9 @@ function CardView(props) {
               >
                 {item.studios.edges.length === 0
                   ? ""
-                  : item.studios.edges.map((n) => n.node.name)}
+                  : item.studios.edges.map(
+                      (n, index) => (index ? ", " : "") + n.node.name
+                    )}
               </Typography>
             </Box>
           </Box>
@@ -120,7 +122,7 @@ function CardView(props) {
                 paddingBottom="0.1vh"
               >
                 {item.nextAiringEpisode === null
-                  ? "n/a"
+                  ? ""
                   : "Ep " +
                     item.nextAiringEpisode.episode +
                     " " +

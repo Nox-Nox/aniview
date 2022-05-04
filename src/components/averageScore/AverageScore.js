@@ -33,7 +33,7 @@ function AverageScore(props) {
             </Typography>
           </Box>
         </Box>
-      ) : 50 < props.score < 78 ? (
+      ) : 50 < props.score < 78 && props.score !== null ? (
         <Box
           paddingRight="0.8vw"
           paddingTop="0.6vh"
@@ -51,7 +51,7 @@ function AverageScore(props) {
             </Typography>
           </Box>
         </Box>
-      ) : props.score < 50 ? (
+      ) : props.score < 50 && props.score !== null ? (
         <Box
           paddingRight="0.8vw"
           paddingTop="0.6vh"

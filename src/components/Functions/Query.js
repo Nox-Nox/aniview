@@ -85,6 +85,9 @@ export function QuerySeason(season, year) {
         title {
           romaji
         }
+        id
+        episodes
+        duration
         genres
         description
         source
