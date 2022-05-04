@@ -82,8 +82,8 @@ function CardView(props) {
                 <Box width="7.5vw">
                   <Typography
                     fontWeight="bold"
-                    color="violet"
-                    fontSize="0.7em"
+                    color="#fa88dd"
+                    fontSize="0.75em"
                     padding="0.5vw"
                     paddingTop="0.8vh"
                     paddingBottom="0.1vh"
@@ -97,8 +97,8 @@ function CardView(props) {
                 <Box width="8vw">
                   <Typography
                     fontWeight="bold"
-                    color="violet"
-                    fontSize="0.7em"
+                    color="#fa88dd"
+                    fontSize="0.75em"
                     padding="0.5vw"
                     paddingTop="0.1vh"
                     paddingBottom="0.1vh"
