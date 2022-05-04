@@ -9,6 +9,8 @@ import { mainTheme } from "../Theme/mainTheme";
 import GenresChip from "../Chip/GenresChip";
 import classes from "./Scroll.module.css";
 
+import AverageScore from "../averageScore/AverageScore";
+
 function CardView(props) {
   return (
     <ThemeProvider theme={mainTheme}>
@@ -70,7 +72,6 @@ function CardView(props) {
               }}
             >
               <Box
-                backgroundColor="red"
                 width="7vw"
                 height="5vh"
                 flexDirection="column"
@@ -106,25 +107,13 @@ function CardView(props) {
                   </Typography>
                 </Box>
               </Box>
-              <Box
-                sx={{
-                  borderTopRightRadius: "1vw",
-                }}
-                backgroundColor="green"
-                width="5vw"
-                height="5vh"
-                marginLeft="auto"
-                textAlign="center"
-              >
-                {item.popularity}
-                <br /> {item.averageScore}
-              </Box>
+              <AverageScore score={item.averageScore} />
             </Box>
 
             <Box>
               <Typography
                 fontWeight="bold"
-                color="#dd45dd"
+                color="#e88aff"
                 fontSize="1em"
                 padding="0.5vw"
                 paddingTop="0.1vh"

@@ -2,7 +2,7 @@ export function QuerySeason(season, year) {
   var query = `
   {
     TV_media: Page(page: 1, perPage: 60) {
-       media(season: ${season}, type: ANIME, format: TV, seasonYear: ${year}) {
+       media(sort: POPULARITY_DESC, season: ${season}, type: ANIME, format: TV, seasonYear: ${year}) {
         studios(isMain:true)  {
           edges {
             node {
@@ -33,7 +33,7 @@ export function QuerySeason(season, year) {
       }
     }
       TV_SHORT_media: Page(page: 1, perPage: 60) {
-      media(season: ${season}, type: ANIME, format: TV_SHORT, seasonYear: ${year}) {
+      media(sort: POPULARITY_DESC, season: ${season}, type: ANIME, format: TV_SHORT, seasonYear: ${year}) {
         studios(isMain:true)  {
           edges {
             node {
@@ -64,7 +64,7 @@ export function QuerySeason(season, year) {
       }
     }
       MOVIE_media: Page(page: 1, perPage: 60) {
-      media(season: ${season}, type: ANIME, format: MOVIE, seasonYear: ${year}) {
+      media(sort: POPULARITY_DESC, season: ${season}, type: ANIME, format: MOVIE, seasonYear: ${year}) {
         studios(isMain:true)  {
           edges {
             node {
@@ -93,7 +93,7 @@ export function QuerySeason(season, year) {
       }
     }
         OVA_media: Page(page: 1, perPage: 60) {
-        media(season: ${season}, type: ANIME, format: OVA, seasonYear: ${year}) {
+        media(sort: POPULARITY_DESC, season: ${season}, type: ANIME, format: OVA, seasonYear: ${year}) {
           studios(isMain:true)  {
             edges {
               node {
@@ -124,7 +124,7 @@ export function QuerySeason(season, year) {
       }
     }
         ONA_media: Page(page: 1, perPage: 60) {
-        media(season: ${season}, type: ANIME, format: ONA, seasonYear: ${year})  {
+        media(sort: POPULARITY_DESC, season: ${season}, type: ANIME, format: ONA, seasonYear: ${year})  {
           studios(isMain:true)  {
             edges {
               node {
@@ -155,7 +155,7 @@ export function QuerySeason(season, year) {
       }
     }
     SPECIAL_media: Page(page: 1, perPage: 60) {
-      media(season: ${season}, type: ANIME, format: SPECIAL, seasonYear: ${year}) {
+      media(sort: POPULARITY_DESC, season: ${season}, type: ANIME, format: SPECIAL, seasonYear: ${year}) {
         studios(isMain:true)  {
           edges {
             node {
