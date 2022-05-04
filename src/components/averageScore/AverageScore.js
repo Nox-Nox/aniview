@@ -25,7 +25,7 @@ function AverageScore(props) {
           justifyContent="flex-end"
         >
           <Box>
-            <ThumbUpAltOutlinedIcon sx={{ color: "#48A14D" }} />
+            <ThumbUpAltOutlinedIcon sx={{ color: "lightgreen" }} />
           </Box>
           <Box>
             <Typography fontSize="1.2em" paddingLeft="0.3vw" color="pink">
@@ -33,7 +33,7 @@ function AverageScore(props) {
             </Typography>
           </Box>
         </Box>
-      ) : 50 < props.score < 78 && props.score !== null ? (
+      ) : props.score < 60 && props.score !== null ? (
         <Box
           paddingRight="0.8vw"
           paddingTop="0.6vh"
@@ -43,7 +43,7 @@ function AverageScore(props) {
           justifyContent="flex-end"
         >
           <Box>
-            <ThumbsUpDownOutlinedIcon sx={{ color: "#FFE338" }} />
+            <ThumbDownAltOutlinedIcon sx={{ color: "red" }} />
           </Box>
           <Box>
             <Typography fontSize="1.2em" paddingLeft="0.3vw" color="pink">
@@ -51,7 +51,7 @@ function AverageScore(props) {
             </Typography>
           </Box>
         </Box>
-      ) : props.score < 50 && props.score !== null ? (
+      ) : 60 < props.score < 78 && props.score !== null ? (
         <Box
           paddingRight="0.8vw"
           paddingTop="0.6vh"
@@ -61,7 +61,7 @@ function AverageScore(props) {
           justifyContent="flex-end"
         >
           <Box>
-            <ThumbDownAltOutlinedIcon sx={{ color: "#B33F40" }} />
+            <ThumbsUpDownOutlinedIcon sx={{ color: "yellow" }} />
           </Box>
           <Box>
             <Typography fontSize="1.2em" paddingLeft="0.3vw" color="pink">
