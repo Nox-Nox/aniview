@@ -1,16 +1,10 @@
-import {
-  Typography,
-  CardMedia,
-  ThemeProvider,
-  Box,
-  Stack,
-} from "@mui/material";
+import { Typography, CardMedia, ThemeProvider, Box } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
-import GenresChip from "../Chip/GenresChip";
 import classes from "./Scroll.module.css";
 import React from "react";
-
-import AverageScore from "../averageScore/AverageScore";
+import AverageScore from "./averageScore/AverageScore";
+import BottomGenre from "./bottomGenres/BottomGenres";
+import LeftMediaTitle from "./leftMediaTitle/LeftMediaTitle";
 
 function CardView(props) {
   return (
@@ -26,50 +20,22 @@ function CardView(props) {
           className={classes.boxshadow}
           backgroundColor={mainTheme.palette.primary.light}
         >
-          <Box>
-            <CardMedia component="img" image={item.coverImage.large} />
-            <Box
-              sx={{
-                backgroundColor: "rgba(0, 0, 0, 0.8)",
-                borderBottomLeftRadius: "0.9vw",
-              }}
-              position="absolute"
-              bottom="0"
-              zIndex="1"
-              width="10vw"
-              height="auto"
-            >
-              <Typography
-                color="white"
-                paddingTop="1vh"
-                paddingLeft="0.4vw"
-                paddingRight="2px"
-                paddingBottom="1vh"
-                fontSize="0.95em"
-              >
-                {item.title.romaji}
-              </Typography>
-              <Typography
-                color="pink"
-                paddingLeft="0.4vw"
-                paddingRight="2px"
-                paddingBottom="1vh"
-                fontSize="0.8em"
-              >
-                {item.studios.edges.length === 0
-                  ? ""
-                  : item.studios.edges.map(
-                      (n, index) => (index ? ", " : "") + n.node.name
-                    )}
-              </Typography>
-            </Box>
-          </Box>
+          <LeftMediaTitle
+            cover={item.coverImage.large}
+            title={item.title.romaji}
+            studios={
+              item.studios.edges.length === 0
+                ? ""
+                : item.studios.edges.map(
+                    (n, index) => (index ? ", " : "") + n.node.name
+                  )
+            }
+          />
           <Box display="flex" flexDirection="column">
             <Box
               height="8vh"
               display="flex"
               flexDirection="row"
-              backgroundColor={mainTheme.palette.primary.light}
               sx={{
                 borderTopRightRadius: "1vw",
               }}
@@ -143,7 +109,6 @@ function CardView(props) {
               <Box
                 className={classes.scroll}
                 width="14vw"
-                backgroundColor={mainTheme.palette.primary.light}
                 height="18vh"
                 maxHeight="100%"
               >
@@ -156,30 +121,7 @@ function CardView(props) {
                   />
                 </Box>
               </Box>
-              <Box
-                width="14vw"
-                backgroundColor={mainTheme.palette.primary.light}
-                sx={{ borderBottomRightRadius: "1vw" }}
-              >
-                <Box
-                  width="13.5vw"
-                  sx={{
-                    borderBottomRightRadius: "1.2vw",
-                  }}
-                  height="4vh"
-                  overflow="hidden"
-                  className={classes.scroll}
-                >
-                  <Stack
-                    direction="row"
-                    spacing={1}
-                    marginTop="0.6vh"
-                    marginLeft="0.4vw"
-                  >
-                    <GenresChip items={item.genres} />
-                  </Stack>
-                </Box>
-              </Box>
+              <BottomGenre genre={item.genres} />
             </Box>
           </Box>
         </Box>
