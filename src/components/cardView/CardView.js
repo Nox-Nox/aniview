@@ -1,4 +1,4 @@
-import { Typography, CardMedia, ThemeProvider, Box } from "@mui/material";
+import { Typography, ThemeProvider, Box } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
 import classes from "./Scroll.module.css";
 import React from "react";
@@ -7,6 +7,7 @@ import BottomGenre from "./bottomGenres/BottomGenres";
 import LeftMediaTitle from "./leftMediaTitle/LeftMediaTitle";
 
 function CardView(props) {
+
   return (
     <ThemeProvider theme={mainTheme}>
       {(props.items || []).map((item) => (
@@ -107,11 +108,16 @@ function CardView(props) {
             </Box>
             <Box display="flex" flexDirection="column">
               <Box
+              component="div"
+              id = {item.id}
                 className={classes.scroll}
                 width="14vw"
                 height="18vh"
                 maxHeight="100%"
+                onMouseLeave={(() =>     {var wow = document.getElementById(item.id);
+                  wow.scrollTo(0, 0)})}
               >
+                
                 <Box width="12.5vw">
                   <Typography
                     color="white"

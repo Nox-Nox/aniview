@@ -22,6 +22,10 @@
   overflow: auto;
 }
 
+.scroll:hover::after:webkit-scrollbar-thumb{
+  overflow-y: initial;
+}
+
 .scroll::-webkit-scrollbar {
   border-radius: 6px;
   height: 5px;
