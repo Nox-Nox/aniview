@@ -2,7 +2,7 @@ import { Box, ThemeProvider } from "@mui/material";
 import CardView from "../cardView/CardView";
 import { Grid, Typography } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
-import pic from "../cardsContainer/background.jpg"
+import pic from "../cardsContainer/Background.jpg"
 import React from "react";
 
 function CardContainer(props) {
