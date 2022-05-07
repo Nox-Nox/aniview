@@ -5,17 +5,13 @@ import GenresChip from "../chip/GenresChip";
 
 function BottomGenre(props){
     return(
-        <Box
-        width="14vw"
-        sx={{ borderBottomRightRadius: "1vw" }}
-      >
+
         <Box
           width="13.5vw"
           sx={{
             borderBottomRightRadius: "1.2vw",
           }}
           height="4vh"
-          overflow="hidden"
           className={classes.scroll}
         >
           <Stack
@@ -27,7 +23,7 @@ function BottomGenre(props){
             <GenresChip items={props.genre} />
           </Stack>
         </Box>
-      </Box>
+      
     )
 }
 export default BottomGenre;

@@ -20,6 +20,7 @@ function SeasonsNavigation() {
           position="relative"
           sx={{
             alignItems: "center",
+            marginTop: "6vh",
             marginBottom: "6vh",
             width: "20vw",
             borderRadius: "8vw",

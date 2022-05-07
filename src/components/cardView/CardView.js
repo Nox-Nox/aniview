@@ -1,26 +1,33 @@
-import { Typography, ThemeProvider, Box } from "@mui/material";
+import {
+  Typography,
+  ThemeProvider,
+  Box,
+  responsiveFontSizes,
+} from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
 import classes from "./Scroll.module.css";
 import React from "react";
-import AverageScore from "./averageScore/AverageScore";
 import BottomGenre from "./bottomGenres/BottomGenres";
-import LeftMediaTitle from "./leftMediaTitle/LeftMediaTitle";
+import { Suspense } from "react";
+import { Skeleton } from "@mui/material";
+const LeftMediaTitle = React.lazy(() => import("./leftMediaTitle/LeftMediaTitle"));
+const AverageScore = React.lazy(() => import("./averageScore/AverageScore"));
 
 function CardView(props) {
-
   return (
-    <ThemeProvider theme={mainTheme}>
+    <ThemeProvider theme={responsiveFontSizes(mainTheme)}>
       {(props.items || []).map((item) => (
         <Box
           key={item.id}
           display="flex"
           position="relative"
           height="30vh"
+          width="23.5vw"
           margin="2vw"
           flexDirection="row"
           className={classes.boxshadow}
           backgroundColor={mainTheme.palette.primary.light}
-        >
+        ><Suspense fallback={<Skeleton variant="rectangle" width="100%" height="30vh" sx={{bgcolor:"white"}} />}>
           <LeftMediaTitle
             cover={item.coverImage.large}
             title={item.title.romaji}
@@ -32,6 +39,7 @@ function CardView(props) {
                   )
             }
           />
+          </Suspense>
           <Box display="flex" flexDirection="column">
             <Box
               height="8vh"
@@ -77,9 +85,10 @@ function CardView(props) {
                   </Typography>
                 </Box>
               </Box>
+              <Suspense fallback={<Skeleton variant="rectangle" width="100%" />}>
               <AverageScore score={item.averageScore} />
+              </Suspense>
             </Box>
-
             <Box>
               <Typography
                 fontWeight="bold"
@@ -108,24 +117,23 @@ function CardView(props) {
             </Box>
             <Box display="flex" flexDirection="column">
               <Box
-              component="div"
-              id = {item.id}
+                component="div"
+                id={item.id}
                 className={classes.scroll}
-                width="14vw"
+                width="13.5vw"
                 height="18vh"
                 maxHeight="100%"
-                onMouseLeave={(() =>     {var wow = document.getElementById(item.id);
-                  wow.scrollTo(0, 0)})}
+                onMouseLeave={() => {
+                  var wow = document.getElementById(item.id);
+                  wow.scrollTo({ top: 0, behavior: "smooth" });
+                }}
               >
-                
-                <Box width="12.5vw">
-                  <Typography
-                    color="white"
-                    fontSize="0.8em"
-                    dangerouslySetInnerHTML={{ __html: item.description }}
-                    padding="0.5vw"
-                  />
-                </Box>
+                <Typography
+                  color="white"
+                  fontSize="0.8em"
+                  dangerouslySetInnerHTML={{ __html: item.description }}
+                  padding="0.5vw"
+                />
               </Box>
               <BottomGenre genre={item.genres} />
             </Box>
