@@ -39,10 +39,18 @@ function CardView(props) {
           />
 
           <Box display="flex" flexDirection="column">
+            <TopInfoEp
+              episodes={item.episodes}
+              duration={item.duration}
+              averagescore={item.averageScore}
+              airingep={item.nextAiringEpisode}
+            />
 
-            <TopInfoEp  episodes={item.episodes} duration={item.duration} averagescore={item.averageScore} airingep={item.nextAiringEpisode} />
-
-            <Box display="flex" flexDirection="column" justifyContent="flex-start">
+            <Box
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-start"
+            >
               <Box
                 component="div"
                 id={item.id}
@@ -62,11 +70,10 @@ function CardView(props) {
                   padding="0.5vw"
                 />
               </Box>
-              </Box>
-              <BottomGenre genre={item.genres} />
             </Box>
+            <BottomGenre genre={item.genres} />
           </Box>
-        
+        </Box>
       ))}
     </ThemeProvider>
   );

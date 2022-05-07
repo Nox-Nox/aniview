@@ -43,7 +43,7 @@ function TopInfoEp(props) {
               paddingTop="0.1vh"
               paddingBottom="0.1vh"
             >
-              {props.duration=== null
+              {props.duration === null
                 ? "Duration: n/a"
                 : "Duration: " + props.duration + " min"}
             </Typography>
