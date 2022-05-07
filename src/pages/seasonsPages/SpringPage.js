@@ -7,7 +7,6 @@ import { Box } from "@mui/material";
 import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";
 import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
 
-
 function SpringPage() {
   const [isLoading, setLoading] = useState(true);
   const [loadedDataTV, setLoadedDataTV] = useState([]);
@@ -114,8 +113,6 @@ function SpringPage() {
         console.log(TV_ITEMS);
       });
   }, [season]);
-
-
 
   const tvshort = loadedDataTV_SHORT;
   const ova = loadedDataOVA;

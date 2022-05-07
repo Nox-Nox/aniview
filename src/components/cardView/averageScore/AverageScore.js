@@ -16,7 +16,7 @@ function AverageScore(props) {
       textAlign="center"
       paddingTop="5px"
     >
-      {props.score > 78 ? (
+      {props.score > 70 ? (
         <Box
           paddingRight="0.8vw"
           paddingTop="0.6vh"

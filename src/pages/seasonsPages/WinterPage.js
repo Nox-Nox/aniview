@@ -112,10 +112,6 @@ function WinterPage() {
       });
   }, [season]);
 
-  if (isLoading === true) {
-    return <LoadingHome />;
-  }
-
   const tvshort = loadedDataTV_SHORT;
   const ova = loadedDataOVA;
   const ona = loadedDataONA;
@@ -125,7 +121,7 @@ function WinterPage() {
   return (
     <Box>
       <SeasonsNavigation />
-      <CardContainer title="TV" items={loadedDataTV} />
+      <CardContainer title="TV" items={loadedDataTV} loaded={isLoading} />
       {tvshort.length > 0 && (
         <CardContainer title="TV SHORTS" items={loadedDataTV_SHORT} />
       )}
