@@ -10,8 +10,8 @@ import React from "react";
 import BottomGenre from "./bottomGenres/BottomGenres";
 import { Suspense } from "react";
 import { Skeleton } from "@mui/material";
-const LeftMediaTitle = React.lazy(() => import("./leftMediaTitle/LeftMediaTitle"));
-const AverageScore = React.lazy(() => import("./averageScore/AverageScore"));
+import AverageScore from "../cardView/averageScore/AverageScore";
+import LeftMediaTitle from "../cardView/leftMediaTitle/LeftMediaTitle";
 
 function CardView(props) {
   return (
@@ -27,7 +27,7 @@ function CardView(props) {
           flexDirection="row"
           className={classes.boxshadow}
           backgroundColor={mainTheme.palette.primary.light}
-        ><Suspense fallback={<Skeleton variant="rectangle" width="100%" height="30vh" sx={{bgcolor:"white"}} />}>
+        >
           <LeftMediaTitle
             cover={item.coverImage.large}
             title={item.title.romaji}
@@ -39,7 +39,7 @@ function CardView(props) {
                   )
             }
           />
-          </Suspense>
+
           <Box display="flex" flexDirection="column">
             <Box
               height="8vh"
@@ -85,8 +85,10 @@ function CardView(props) {
                   </Typography>
                 </Box>
               </Box>
-              <Suspense fallback={<Skeleton variant="rectangle" width="100%" />}>
-              <AverageScore score={item.averageScore} />
+              <Suspense
+                fallback={<Skeleton variant="rectangle" width="100%" />}
+              >
+                <AverageScore score={item.averageScore} />
               </Suspense>
             </Box>
             <Box>
