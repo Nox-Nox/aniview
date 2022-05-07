@@ -4,8 +4,9 @@ import { mainTheme } from "../Theme/mainTheme";
 
 function Loading(props) {
   return (
-    <Grid container justifyContent="space-around" >
+    <Grid container justifyContent="space-around" sx={{backgroundColor:"#171717", borderRadius:"3rem"}} >
       {(Array.from(new Array(6)) || []).map((item, index) => (
+        
         <Box
           key={index}
           display="flex"
@@ -18,9 +19,8 @@ function Loading(props) {
           backgroundColor={mainTheme.palette.primary.light}
           borderRadius="1vw"
         >
-          <Skeleton variant="rectangular" width="10vw" height="30vh" sx={{borderRadius:"1vw"}} />
+          <Skeleton variant="rectangular" width="10vw" height="30vh" sx={{borderTopLeftRadius:"1vw", borderBottomLeftRadius:"1vw"}} />
           <Box
-          
             height="5vh"
             width="7vw"
             flexDirection="column"
