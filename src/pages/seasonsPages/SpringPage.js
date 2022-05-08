@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import React from "react";
-import LoadingHome from "../../components/LoadingSpinner/LoadingHome";
 import CardContainer from "../../components/cardsContainer/CardContainer";
 import SeasonsNavigation from "../../components/NavigationBars/SeasonsNavigation";
 import { Box } from "@mui/material";
@@ -124,6 +123,7 @@ function SpringPage() {
     <Box>
       <SeasonsNavigation />
       <CardContainer title="TV" items={loadedDataTV} loaded={isLoading} />
+
       {tvshort.length > 0 && (
         <CardContainer title="TV SHORTS" items={loadedDataTV_SHORT} />
       )}

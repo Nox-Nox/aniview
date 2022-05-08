@@ -4,8 +4,7 @@ import { Grid, Typography } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
 import pic from "../cardsContainer/Background.jpg";
 import React from "react";
-import { Skeleton } from "@mui/material";
-import Loading from "../skeleton/loading";
+import Loading from "../skeleton/Loading";
 
 function CardContainer(props) {
   return (

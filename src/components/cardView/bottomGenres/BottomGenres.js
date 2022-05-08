@@ -12,6 +12,8 @@ function BottomGenre(props) {
       }}
       height="4vh"
       className={classes.scroll}
+      position="absolute"
+      bottom="0"
     >
       <Stack direction="row" spacing={1} marginTop="0.6vh" marginLeft="0.4vw">
         <GenresChip items={props.genre} />

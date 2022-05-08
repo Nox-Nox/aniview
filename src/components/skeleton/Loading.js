@@ -9,7 +9,7 @@ function Loading(props) {
       justifyContent="space-around"
       sx={{ backgroundColor: "#171717", borderRadius: "3rem" }}
     >
-      {(Array.from(new Array(6)) || []).map((item, index) => (
+      {(Array.from(new Array(9)) || []).map((item, index) => (
         <Box
           key={index}
           display="flex"
@@ -34,7 +34,6 @@ function Loading(props) {
             flexDirection="column"
             justifyContent="flex-start"
           >
-            {" "}
             <Box marginLeft="0.5vw">
               <Skeleton />
               <Skeleton />
