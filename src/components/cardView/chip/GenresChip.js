@@ -10,7 +10,7 @@ function GenresChip(props) {
       variant="filled"
       sx={{
         padding: "10px",
-        background: "linear-gradient(to right bottom, #7b29ab, #d238dd)",
+        background: "linear-gradient(to right bottom, #e364e1, #d238dd)",
       }}
     />
   ));
