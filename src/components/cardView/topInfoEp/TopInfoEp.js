@@ -6,7 +6,7 @@ function TopInfoEp(props) {
   return (
     <Box>
       <Box
-        height="8vh"
+        height="6vh"
         display="flex"
         flexDirection="row"
         sx={{
