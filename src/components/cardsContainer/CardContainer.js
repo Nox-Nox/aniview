@@ -2,7 +2,6 @@ import { Box, ThemeProvider } from "@mui/material";
 import CardView from "../cardView/CardView";
 import { Grid, Typography } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
-import pic from "../cardsContainer/Background.jpg";
 import React from "react";
 import Loading from "../skeleton/Loading";
 
@@ -21,11 +20,7 @@ function CardContainer(props) {
         {props.loaded ? (
           <Loading />
         ) : (
-          <Box
-            sx={{ backgroundImage: `url(${pic})`, backgroundSize: "cover" }}
-            marginBottom="8vh"
-            borderRadius="3rem"
-          >
+          <Box marginBottom="8vh" borderRadius="3rem" backgroundColor="#171717">
             <Grid container justifyContent="space-around">
               <CardView items={props.items} loaded={props.loaded} />
             </Grid>
