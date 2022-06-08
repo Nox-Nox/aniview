@@ -1,4 +1,4 @@
-##AniView
+## AniView
 
 
 The objective of this project is to create a site similar to anichart (with additional pages) and learn how to use React framework.
