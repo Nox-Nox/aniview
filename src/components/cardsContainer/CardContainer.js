@@ -5,6 +5,12 @@ import { mainTheme } from "../Theme/mainTheme";
 import React from "react";
 import Loading from "../skeleton/Loading";
 
+{/* <Grid container justifyContent="space-around" columns={1} alignItems="center">
+<Stack>
+<CardView items={props.items} loaded={props.loaded} />
+</Stack>
+</Grid> */}
+
 function CardContainer(props) {
   return (
     <ThemeProvider theme={mainTheme}>
