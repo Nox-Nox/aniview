@@ -1,12 +1,14 @@
 import { Box } from "@mui/material";
 import React from "react";
 import SeasonsNavigation from "../components/NavigationBars/SeasonsNavigation";
+import NewsContainer from "../components/newsContainer/NewsContainer";
 
 function HomePage() {
   return (
     <Box>
       <SeasonsNavigation />
-      <h1>WORK IN PROGRESS....</h1>
+      <NewsContainer />
+      <Box></Box>
     </Box>
   );
 }
