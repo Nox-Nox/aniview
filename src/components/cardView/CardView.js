@@ -57,7 +57,7 @@ function CardView(props) {
                 className={classes.scroll}
                 width="13.5vw"
                 height="15vh"
-                maxHeight="100%"
+                maxHeight="97%"
                 onMouseLeave={() => {
                   var wow = document.getElementById(item.id);
                   wow.scrollTo({ top: 0, behavior: "smooth" });
