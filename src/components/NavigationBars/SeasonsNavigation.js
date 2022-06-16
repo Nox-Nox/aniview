@@ -15,16 +15,13 @@ function SeasonsNavigation() {
   }, [location1]);
   return (
     <ThemeProvider theme={SeasonsNavigationTheme}>
-      <Box display="flex" justifyContent="center">
-        <AppBar
-          position="relative"
-          sx={{
-            alignItems: "center",
-            marginTop: "6vh",
-            marginBottom: "6vh",
-            width: "20vw",
-            borderRadius: "8vw",
-          }}
+      <Box display="flex" justifyContent="center" alignItems="center" height="14vh">
+        <Box
+          backgroundColor="black"
+          height="6vh"
+          display="flex"
+          justifyContent="center"
+          borderRadius="3rem"
         >
           <Toolbar className={classes.text1} variant="dense">
             <Link
@@ -52,7 +49,7 @@ function SeasonsNavigation() {
               Fall
             </Link>
           </Toolbar>
-        </AppBar>
+        </Box>
       </Box>
     </ThemeProvider>
   );
