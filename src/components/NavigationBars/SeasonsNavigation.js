@@ -17,7 +17,7 @@ function SeasonsNavigation() {
     <ThemeProvider theme={SeasonsNavigationTheme}>
       <Box display="flex" justifyContent="center" alignItems="center" height="14vh">
         <Box
-          backgroundColor="black"
+          backgroundColor="#171717"
           height="6vh"
           display="flex"
           justifyContent="center"

@@ -2,10 +2,10 @@
     position: relative;
     left: 0;
     bottom: 0;
-    width: 100%;
-    background-color: red;
+    width: 99.45vw;
     color: white;
     text-align: center;
-    height: 5vh;
+    height: 20vh;
     z-index: 1;
+    background-image: url(/home/tahmid/Documents/Projects/aniview/src/components/Footer/RectLight.svg);
   }

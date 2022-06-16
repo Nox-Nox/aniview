@@ -1,18 +1,21 @@
 import { Box, Typography } from "@mui/material";
 
+let viewportHeight = window.innerHeight;
+let viewportWidth = window.innerWidth;
+
 function NewsContainer() {
   return (
     // this is container
     <Box>
       {/* quotes component */}
-      <Box height="10vh" backgroundColor="lime" width="30vw"></Box>
+      <Box height="12vh" backgroundColor="lime" width="30vw"></Box>
       <Box display="flex" flexDirection="column">
         {/* component main */}
         <Box
           display="flex"
           width="100%"
           backgroundColor="orange"
-          marginBottom="4vh"
+          marginBottom="5vh"
         >
           <Box
             display="flex"
@@ -29,6 +32,8 @@ function NewsContainer() {
             <Box height="65vh" backgroundColor="cyan" width="100%">
               <Box>
                 <Typography backgroundColor="blue" color="white" margin="1rem">
+                  <Box>{viewportHeight}</Box>
+                  <Box>{viewportWidth}</Box>
                   efesfes
                 </Typography>
               </Box>
@@ -53,7 +58,7 @@ function NewsContainer() {
         </Box>
 
         {/* just a copy used for reference, to delete later */}
-        <Box display="flex" width="100%" backgroundColor="orange">
+        <Box display="flex" width="100%" >
           <Box
             display="flex"
             justifyContent="flex-start"
