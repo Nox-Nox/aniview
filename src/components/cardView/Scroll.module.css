@@ -21,10 +21,7 @@
 
 .scroll:hover {
   overflow: auto;
-  
 }
-
-
 
 .scroll::-webkit-scrollbar {
   border-radius: 6px;
@@ -38,10 +35,9 @@
   transition: background-color 3s;
 }
 .scroll::-webkit-scrollbar-thumb {
-  background-color:  transparent;
+  background-color: transparent;
   border-radius: 3px;
 }
-
 
 .scroll::-webkit-scrollbar-track {
   margin-block: 0.8em;
