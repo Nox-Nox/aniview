@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import React from "react";
+import { useState, useEffect, React } from "react";
 import CardContainer from "../../components/cardsContainer/CardContainer";
 import SeasonsNavigation from "../../components/NavigationBars/SeasonsNavigation";
 import { Box } from "@mui/material";

@@ -1,16 +1,14 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import DailyQuote from "../newsView/DailyQuote/DailyQuote"
 import NewsView from "../newsView/NewsView";
 
 
-
-function NewsContainer() {
+function NewsContainer(props) {
   return (
-    // this is container
+
     <Box>
         <DailyQuote />
-        <NewsView />
-    
+        <NewsView data = {props.data}/>
     </Box>
   );
 }

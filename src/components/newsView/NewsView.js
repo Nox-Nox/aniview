@@ -4,10 +4,11 @@ import NewsList from "../newsView/NewsList/NewsList";
 import { Box } from "@mui/material";
 
 
-function NewsView(){
+function NewsView(props){
     return(
-        <Box display="flex" flexDirection="column">
+        <Box backgroundColor="purple" display="flex" flexDirection="column">
         {/* component main */}
+        
         <Box display="flex" width="100%" marginBottom="5vh">
           <Box
             display="flex"
@@ -15,7 +16,7 @@ function NewsView(){
             backgroundColor="#171717"
             height="70vh"
             width="75%"
-            borderRadius="3rem"
+            borderRadius="1rem"
             overflow="hidden"
             margin="auto"
             alignItems="center"
@@ -28,8 +29,9 @@ function NewsView(){
           </Box>
 
           {/* component3 */}
-            <NewsList />
+            <NewsList data={props.data} />
         </Box>
+        
       </Box>
     )
 }
