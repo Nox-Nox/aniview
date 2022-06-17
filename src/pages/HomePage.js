@@ -1,46 +1,49 @@
-import { Box } from "@mui/material";
-import { React, useState, useEffect } from "react";
-import * as Realm from "realm-web"
+import { Box, Switch } from "@mui/material";
+import { useState, useEffect, createContext } from "react";
+import React from "react";
 import SeasonsNavigation from "../components/NavigationBars/SeasonsNavigation";
 import NewsContainer from "../components/newsContainer/NewsContainer";
 
+export const NewsContext = createContext()
+
+
+
 function HomePage() {
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true)
   const [loadedData, setLoadedData] = useState([]);
-  const url = "https://data.mongodb-api.com/app/data-pchjk/endpoint/today"
-  var options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json",
-      "api-key":"BGQ3es226VIn0dcmuHZke1tetXZbGHUW5QgJ2KsYb6XntNe6H2El4zPbQBjsAt29",
-    "Accept":"application/data-pchjk",
-    }
-  };
+  const [isNews, setNews] = useState();
+  const url = "https://get-mongo.herokuapp.com/getData"
+
+  const switchNews = (index) => {
+    console.log(index)
+    setNews(loadedData[index])}
 
 
-const getData = async () => {
-const app = new Realm.App({ id: "data-pchjk" });
-const credentials = Realm.Credentials.anonymous();
-try {
-  const user = await app.logIn(credentials);
-  const allData = await user.functions.getToday()
-  setLoadedData(allData)
-} catch(err) {
-  console.error("Failed to log in", err);
-}
-}
+  useEffect(() => {
+    setLoading(true)
+    fetch(url)
+    .then((response) => {
+      return response.json()
+    })
+    .then((data) => {
+      console.log(data)
+      setLoadedData(data)
+      setNews(data[0])
+      setLoading(false)
+      console.log("useEffect isNews: ",isNews)
+    })
+  },[])
+console.log("loaded data: ",loadedData)
+console.log("index 0 isNews: ", isNews)
+if (isLoading === true ){return <p>loading...</p>}
 
-useEffect(() => {
-    getData();
-},[])
-
-console.log(loadedData)
 
   return (
     <Box>
       <SeasonsNavigation />
-      <NewsContainer data={loadedData} />
+      <NewsContext.Provider value={loadedData}>
+      <NewsContainer first={isNews} switchNews={switchNews} />
+      </NewsContext.Provider>
     </Box>
   );
 }

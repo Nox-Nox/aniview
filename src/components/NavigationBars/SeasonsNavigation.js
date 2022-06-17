@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, ThemeProvider, Box } from "@mui/material";
+import { Toolbar, ThemeProvider, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import SeasonsNavigationTheme from "../Theme/seasonsNavigationTheme";
 import { useLocation } from "react-router-dom";

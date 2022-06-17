@@ -24,6 +24,14 @@ export const mainTheme = createTheme({
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          fontFamily: "Roboto",
+          fontSize: "20rem",
+        }
+      }
+    }
   },
 
   palette: {

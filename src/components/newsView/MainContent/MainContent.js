@@ -1,17 +1,19 @@
 import { Box, Typography } from "@mui/material";
+import React from "react";
 
 let viewportHeight = window.innerHeight;
 let viewportWidth = window.innerWidth;
 
-function MainContent() {
+function MainContent(props) {
   return (
     <Box height="65vh" backgroundColor="cyan" width="100%">
-      <Box>
-        <Typography fontSize="2vw" align="center">
-          Title
+              <Typography  backgroundColor="gray" fontSize="2vw" padding="0.8rem">
+          {props.first.title}
         </Typography>
-        <Typography backgroundColor="blue" color="white" margin="1rem">
-          fgtjfhfh
+      <Box backgroundColor="magenta" overflow="auto" height="100%" maxHeight="90%">
+
+        <Typography lineHeight="2.5rem" backgroundColor="blue" color="white" margin="1rem" padding="0.8rem">
+          {props.first.content}
         </Typography>
       </Box>
     </Box>
