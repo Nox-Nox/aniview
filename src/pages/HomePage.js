@@ -4,45 +4,44 @@ import React from "react";
 import SeasonsNavigation from "../components/NavigationBars/SeasonsNavigation";
 import NewsContainer from "../components/newsContainer/NewsContainer";
 
-export const NewsContext = createContext()
-
-
+export const NewsContext = createContext();
 
 function HomePage() {
-  const [isLoading, setLoading] = useState(true)
+  const [isLoading, setLoading] = useState(true);
   const [loadedData, setLoadedData] = useState([]);
   const [isNews, setNews] = useState();
-  const url = "https://get-mongo.herokuapp.com/getData"
+  const url = "https://get-mongo.herokuapp.com/getData";
 
   const switchNews = (index) => {
-    console.log(index)
-    setNews(loadedData[index])}
-
+    console.log(index);
+    setNews(loadedData[index]);
+  };
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     fetch(url)
-    .then((response) => {
-      return response.json()
-    })
-    .then((data) => {
-      console.log(data)
-      setLoadedData(data)
-      setNews(data[0])
-      setLoading(false)
-      console.log("useEffect isNews: ",isNews)
-    })
-  },[])
-console.log("loaded data: ",loadedData)
-console.log("index 0 isNews: ", isNews)
-if (isLoading === true ){return <p>loading...</p>}
-
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setLoadedData(data);
+        setNews(data[0]);
+        setLoading(false);
+        console.log("useEffect isNews: ", isNews);
+      });
+  }, []);
+  console.log("loaded data: ", loadedData);
+  console.log("index 0 isNews: ", isNews);
+  if (isLoading === true) {
+    return <p>loading...</p>;
+  }
 
   return (
     <Box>
       <SeasonsNavigation />
       <NewsContext.Provider value={loadedData}>
-      <NewsContainer first={isNews} switchNews={switchNews} />
+        <NewsContainer first={isNews} switchNews={switchNews} />
       </NewsContext.Provider>
     </Box>
   );
