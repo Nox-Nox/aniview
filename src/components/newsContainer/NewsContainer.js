@@ -13,7 +13,7 @@ function NewsContainer(props) {
         borderRadius="3rem"
       >
         <DailyQuote />
-        <NewsView first={props.first} />
+        <NewsView  />
       </Box>
     </Box>
   );

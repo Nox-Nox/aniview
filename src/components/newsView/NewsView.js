@@ -5,7 +5,8 @@ import { Box } from "@mui/material";
 import React from "react";
 
 
-function NewsView(props) {
+
+function NewsView() {
 
   return (
     <Box display="flex" flexDirection="column">
@@ -28,7 +29,7 @@ function NewsView(props) {
           <MainContent />
 
           {/* component2 */}
-          <SecondaryContent first={props.first} />
+          <SecondaryContent />
         </Box>
 
         {/* component3 */}

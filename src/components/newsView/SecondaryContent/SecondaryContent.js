@@ -5,11 +5,11 @@ import { NewsContext } from "../../../pages/HomePage";
 import { useContext } from "react";
 
 function SecondaryContent() {
-  const { first } = useContext(NewsContext);
+  const { data, set, first } = useContext(NewsContext);
   return (
+    
     <Box
     backgroundColor={mainTheme.palette.primary.light}
-    
       width="12vw"
       height="100%"
       display="flex"

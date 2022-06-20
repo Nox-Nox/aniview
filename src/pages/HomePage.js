@@ -20,11 +20,15 @@ function HomePage() {
         return response.json();
       })
       .then((data) => {
+        console.log(data);
         setLoadedData(data);
         setNews(data[0]);
         setLoading(false);
+        console.log("useEffect isNews: ", isNews);
       });
   }, []);
+  console.log("loaded data: ", loadedData);
+  console.log("index 0 isNews: ", isNews);
   if (isLoading === true) {
     return <p>loading...</p>;
   }
@@ -32,8 +36,8 @@ function HomePage() {
   return (
     <Box>
       <SeasonsNavigation />
-      <NewsContext.Provider value={{data:loadedData, set: setNews, first:isNews}}>
-        <NewsContainer />
+      <NewsContext.Provider value={{data:loadedData, set: setNews, first: isNews}}>
+        <NewsContainer first={isNews}/>
       </NewsContext.Provider>
     </Box>
   );

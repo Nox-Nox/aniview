@@ -6,13 +6,8 @@ import React from "react";
 import Button from "@mui/material/Button";
 
 function NewsList() {
-
-  const { data, set } = useContext(NewsContext);
+  const { data, set, first } = useContext(NewsContext);
   const index1 = 1;
-
-  // changeTextColor = () =>{
-
-  // }
 
   return (
     <Box
