@@ -11,11 +11,7 @@ function HomePage() {
   const [loadedData, setLoadedData] = useState([]);
   const [isNews, setNews] = useState();
   const url = "https://get-mongo.herokuapp.com/getData";
-
-  const switchNews = (index) => {
-    console.log(index);
-    setNews(loadedData[index]);
-  };
+  
 
   useEffect(() => {
     setLoading(true);
@@ -24,15 +20,11 @@ function HomePage() {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         setLoadedData(data);
         setNews(data[0]);
         setLoading(false);
-        console.log("useEffect isNews: ", isNews);
       });
   }, []);
-  console.log("loaded data: ", loadedData);
-  console.log("index 0 isNews: ", isNews);
   if (isLoading === true) {
     return <p>loading...</p>;
   }

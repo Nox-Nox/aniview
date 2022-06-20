@@ -4,7 +4,6 @@ import NewsView from "../newsView/NewsView";
 import React from "react";
 
 function NewsContainer(props) {
-  console.log(props.first);
   return (
     <Box display="flex" marginBottom="10vh">
       <Box
