@@ -6,9 +6,11 @@ import React from "react";
 function NewsContainer(props) {
   console.log(props.first);
   return (
-    <Box>
-      <DailyQuote />
+    <Box display="flex" marginBottom="10vh">
+    <Box backgroundColor="#171717" width="96%"  marginLeft="2%" borderRadius="3rem">
+            <DailyQuote />
       <NewsView first={props.first} switchNews={props.switchNews} />
+    </Box>
     </Box>
   );
 }

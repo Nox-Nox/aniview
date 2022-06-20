@@ -11,12 +11,13 @@ function NewsView(props) {
 
       <Box display="flex" width="100%" marginBottom="5vh">
         <Box
+          // sx={{border:5, borderColor:"black"}}
           display="flex"
           justifyContent="flex-start"
           backgroundColor="#171717"
           height="70vh"
           width="75%"
-          borderRadius="1rem"
+          borderRadius="3rem"
           overflow="hidden"
           margin="auto"
           alignItems="center"

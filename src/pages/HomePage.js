@@ -1,4 +1,4 @@
-import { Box, Switch } from "@mui/material";
+import { Box } from "@mui/material";
 import { useState, useEffect, createContext } from "react";
 import React from "react";
 import SeasonsNavigation from "../components/NavigationBars/SeasonsNavigation";

@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 
 function NewsList(props) {
   const newscontext = useContext(NewsContext);
+  const index1 = 1
 
   return (
     <Box
@@ -18,10 +19,15 @@ function NewsList(props) {
       justifyContent="center"
     >
       <Box
-        borderRadius="2rem"
+      id = {index1}
+        borderRadius="0.6rem"
         maxHeight="100%"
         overflow="auto"
         backgroundColor={mainTheme.palette.primary.light}
+        onMouseLeave={() => {
+          var wow = document.getElementById(index1);
+          wow.scrollTo({ top: 0, behavior: "smooth" });
+        }}
       >
         {(newscontext || []).map((item, index) => (
           <Typography
