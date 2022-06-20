@@ -1,9 +1,6 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, CardMedia } from "@mui/material";
 import React from "react";
 import { mainTheme } from "../../Theme/mainTheme";
-
-let viewportHeight = window.innerHeight;
-let viewportWidth = window.innerWidth;
 
 function MainContent(props) {
   return (
@@ -12,10 +9,29 @@ function MainContent(props) {
       width="100%"
       backgroundColor={mainTheme.palette.primary.light}
     >
-      <Typography color="white" fontSize="2vw" margin="1rem" padding="0.8rem">
+      <Typography
+        color="white"
+        fontSize="2vw"
+        margin="1rem"
+        padding="0.8rem"
+        sx={{
+          borderBottom: 1,
+          borderWidth: "3px",
+          borderColor: "#9B59B6",
+        }}
+      >
         {props.first.title}
       </Typography>
-      <Box overflow="auto" height="100%" maxHeight="90%">
+      <Box
+      id = {props.first.id}
+        overflow="auto"
+        height="100%"
+        maxHeight="85%"
+        onMouseLeave={() => {
+          var wow = document.getElementById(props.first.id);
+          wow.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      >
         <Typography
           lineHeight="2.5rem"
           color="white"
