@@ -3,7 +3,7 @@ import DailyQuote from "../newsView/DailyQuote/DailyQuote";
 import NewsView from "../newsView/NewsView";
 import React from "react";
 
-function NewsContainer(props) {
+function NewsContainer() {
   return (
     <Box display="flex" marginBottom="10vh">
       <Box

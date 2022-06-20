@@ -9,8 +9,10 @@ export const NewsContext = createContext();
 function HomePage() {
   const [isLoading, setLoading] = useState(true);
   const [loadedData, setLoadedData] = useState([]);
+  const [quoteData, setQuoteData] = useState([]);
   const [isNews, setNews] = useState();
   const url = "https://get-mongo.herokuapp.com/getData";
+  const quoteUrl = 'https://animechan.vercel.app/api/random'
   
 
   useEffect(() => {
@@ -20,15 +22,18 @@ function HomePage() {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         setLoadedData(data);
         setNews(data[0]);
         setLoading(false);
-        console.log("useEffect isNews: ", isNews);
       });
+      fetch(quoteUrl)
+        .then(response => response.json())
+        .then((data) => {
+          setQuoteData(data);
+          console.log(data)
+        })
   }, []);
-  console.log("loaded data: ", loadedData);
-  console.log("index 0 isNews: ", isNews);
+
   if (isLoading === true) {
     return <p>loading...</p>;
   }
@@ -36,8 +41,8 @@ function HomePage() {
   return (
     <Box>
       <SeasonsNavigation />
-      <NewsContext.Provider value={{data:loadedData, set: setNews, first: isNews}}>
-        <NewsContainer first={isNews}/>
+      <NewsContext.Provider value={{data:loadedData, set: setNews, first: isNews, quote: quoteData}}>
+        <NewsContainer />
       </NewsContext.Provider>
     </Box>
   );

@@ -3,7 +3,7 @@ import CardView from "../cardView/CardView";
 import { Grid, Typography } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
 import React from "react";
-import Loading from "../skeleton/Loading";
+import CardViewSkeleton from "../skeleton/CardViewSkeleton";
 
 function CardContainer(props) {
   return (
@@ -18,7 +18,7 @@ function CardContainer(props) {
       <Box marginRight="7.1%" marginLeft="7.1%">
         {/* #28282B matte black light */}
         {props.loaded ? (
-          <Loading />
+          <CardViewSkeleton />
         ) : (
           <Box marginBottom="8vh" borderRadius="3rem" backgroundColor="#171717"> 
             <Grid container justifyContent="space-around">
