@@ -30,7 +30,7 @@ function NewsView(props) {
         </Box>
 
         {/* component3 */}
-        <NewsList switchNews={props.switchNews} />
+        <NewsList />
       </Box>
     </Box>
   );

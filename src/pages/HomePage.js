@@ -40,8 +40,8 @@ function HomePage() {
   return (
     <Box>
       <SeasonsNavigation />
-      <NewsContext.Provider value={loadedData}>
-        <NewsContainer first={isNews} switchNews={switchNews} />
+      <NewsContext.Provider value={{data:loadedData, set: setNews}}>
+        <NewsContainer first={isNews}/>
       </NewsContext.Provider>
     </Box>
   );

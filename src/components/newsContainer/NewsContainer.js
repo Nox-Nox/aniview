@@ -14,7 +14,7 @@ function NewsContainer(props) {
         borderRadius="3rem"
       >
         <DailyQuote />
-        <NewsView first={props.first} switchNews={props.switchNews} />
+        <NewsView first={props.first} />
       </Box>
     </Box>
   );
