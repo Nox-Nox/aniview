@@ -1,12 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import { mainTheme } from "../../Theme/mainTheme";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { NewsContext } from "../../../pages/HomePage";
 import React from "react";
 import Button from "@mui/material/Button";
 
 function NewsList() {
-  const [isColor, setColor] = useState("")
+
   const { data, set } = useContext(NewsContext);
   const index1 = 1;
 
@@ -33,25 +33,16 @@ function NewsList() {
           var wow = document.getElementById(index1);
           wow.scrollTo({ top: 0, behavior: "smooth" });
         }}
-
         onClick={(e) => {
-          if(e.target !== e.currentTarget) {
-            var clickedItem = e.target.id
-            // console.log(clickedItem)
-            // console.log(e.target)
-            // console.log(e.currentTarget)
-            var k = document.getElementById(clickedItem)
-            // var c = document.querySelector(".MuiBox-root.css-effivw").children()
-            // console.log(c)
-            var c = document.getElementById(index1).childNodes
-            // console.log(c)
-            for (var i=0; i<c.length; i++){
-              // console.log(c[i])
-              if(c[i] !== k)
-              c[i].style.color="white"
+          if (e.target !== e.currentTarget) {
+            var clickedItem = e.target.id;
+            var k = document.getElementById(clickedItem);
+            console.log(k);
+            var c = document.getElementById(index1).childNodes;
+            for (var i = 0; i < c.length; i++) {
+              if (c[i] !== k) c[i].style.color = "white";
             }
-            k.style.color="pink"
-
+            k.style.color = "pink";
           }
         }}
       >
@@ -70,7 +61,6 @@ function NewsList() {
               set(data[index]);
               // i.style.color="pink"
             }}
-
             width="100%"
             color="white"
             padding="0.6rem"

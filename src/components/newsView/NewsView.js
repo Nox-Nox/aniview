@@ -4,7 +4,9 @@ import NewsList from "../newsView/NewsList/NewsList";
 import { Box } from "@mui/material";
 import React from "react";
 
+
 function NewsView(props) {
+
   return (
     <Box display="flex" flexDirection="column">
       {/* component main */}
@@ -23,7 +25,7 @@ function NewsView(props) {
           alignItems="center"
         >
           {/* component1 NewsView */}
-          <MainContent first={props.first} />
+          <MainContent />
 
           {/* component2 */}
           <SecondaryContent first={props.first} />
