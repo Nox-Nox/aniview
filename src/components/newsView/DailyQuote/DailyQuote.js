@@ -14,16 +14,15 @@ function DailyQuote() {
     >
       <Box
         backgroundColor="#9b59b6"
-        height="20vh"
+        maxHeight="25vh"
         width="30vw"
-        borderRadius="2rem"
+        borderRadius="0.6rem"
         display="flex"
         alignItems="center"
-        justifyContent="center"
         flexDirection="column"
         overflow="auto"
       >
-        <Typography variant="h5" paddingTop="1vh">
+        <Typography variant="h5" paddingTop="2vh">
           {quote.anime}
         </Typography>
         <Typography textAlign="center" padding="0.4rem">"{quote.quote}"</Typography>

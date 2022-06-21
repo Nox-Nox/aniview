@@ -26,13 +26,28 @@ function NewsViewSkeleton() {
           width="30vw"
           borderRadius="2rem"
           display="flex"
+          flexDirection="column"
           alignItems="center"
           justifyContent="center"
-          flexDirection="column"
         >
-          <Skeleton width="12vw" />
-          <Skeleton width="12vw" />
-          <Skeleton width="8vw" />
+          <Box margin="0.5vh">
+            <Skeleton width="14vw" height="4vh" />
+          </Box>
+          <Box
+            margin="0.5vh"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+          >
+            <Skeleton width="20vw" />
+            <Skeleton width="20vw" />
+            <Box>
+              <Skeleton width="12vw" />
+            </Box>
+          </Box>
+          <Box margin="0.2vh">
+            <Skeleton width="5vw" />
+          </Box>
         </Box>
       </Box>
 
@@ -51,9 +66,9 @@ function NewsViewSkeleton() {
           borderRadius="3rem"
           overflow="hidden"
           marginBottom="10vh"
+          justifyContent="flex-start"
         >
           <Box
-            backgroundColor="red"
             height="10vh"
             width="100%"
             display="flex"
@@ -61,18 +76,44 @@ function NewsViewSkeleton() {
             alignItems="flex-start"
             justifyContent="flex-start"
           >
-            <Box marginLeft="2vw" marginTop="1vh">
+            <Box padding="1vh">
               <Skeleton width="50vw" height="8vh" />
             </Box>
+            <Box padding="1vh">
+              {/* sx={{bgcolor:"white"}} */}
+              <Skeleton width="57vw" variant="text" />
+              <Skeleton width="53vw" variant="text" />
+              <Skeleton width="57vw" variant="text" />
+              <Skeleton width="57vw" variant="text" />
+              <Skeleton width="54vw" variant="text" />
+              <Skeleton width="54vw" variant="text" />
+              <Skeleton width="57vw" variant="text" />
+              <Skeleton width="57vw" variant="text" />
+              <Skeleton width="56vw" variant="text" />
+              <Skeleton width="57vw" variant="text" />
+              <Skeleton width="57vw" variant="text" />
+              <Skeleton width="53vw" variant="text" />
+              <Skeleton width="54vw" variant="text" />
+              <Skeleton width="57vw" variant="text" />
+              <Skeleton width="57vw" variant="text" />
+              <Skeleton width="50vw" variant="text" />
+            </Box>
           </Box>
+
           <Box
-            backgroundColor="yellow"
+          backgroundColor="yellow"
             width="12vw"
             height="100%"
             display="flex"
+            maxHeight="32vh"
             flexDirection="column"
             alignItems="flex-end"
-          ></Box>
+          >
+            <Skeleton variant="rectangular" width="12vw" height="32vh" />
+          </Box>
+          <Box backgroundColor="green" height="10vh">
+
+          </Box>
         </Box>
         <Box
           borderRadius="0.6rem"
