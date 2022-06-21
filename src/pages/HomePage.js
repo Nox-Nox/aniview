@@ -3,6 +3,7 @@ import { useState, useEffect, createContext } from "react";
 import React from "react";
 import SeasonsNavigation from "../components/NavigationBars/SeasonsNavigation";
 import NewsContainer from "../components/newsContainer/NewsContainer";
+import NewsViewSkeleton from "../components/skeleton/NewsViewSkeleton";
 
 export const NewsContext = createContext();
 
@@ -34,15 +35,15 @@ function HomePage() {
         })
   }, []);
 
-  if (isLoading === true) {
-    return <p>loading...</p>;
-  }
+  // if (isLoading === true) {
+  //   <NewsViewSkeleton />
+  // }
 
   return (
     <Box>
       <SeasonsNavigation />
       <NewsContext.Provider value={{data:loadedData, set: setNews, first: isNews, quote: quoteData}}>
-        <NewsContainer />
+        <NewsContainer loading={isLoading} />
       </NewsContext.Provider>
     </Box>
   );

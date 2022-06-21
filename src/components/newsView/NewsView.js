@@ -14,7 +14,6 @@ function NewsView() {
 
       <Box display="flex" width="100%" marginBottom="5vh">
         <Box
-          // sx={{border:5, borderColor:"black"}}
           display="flex"
           justifyContent="flex-start"
           backgroundColor="#171717"
