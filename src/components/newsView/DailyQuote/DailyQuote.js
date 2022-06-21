@@ -3,14 +3,6 @@ import React from "react";
 import { NewsContext } from "../../../pages/HomePage";
 import { useContext } from "react";
 
-<<<<<<< HEAD
-function DailyQuote(){
-    return(
-        <Box display="flex" justifyContent="center"  marginBottom="4vh">
-        <Box height="12vh" backgroundColor="lime" width="30vw"></Box>
-        </Box>
-    )
-=======
 function DailyQuote() {
   const { data, set, first, quote } = useContext(NewsContext);
   return (
@@ -39,6 +31,5 @@ function DailyQuote() {
       </Box>
     </Box>
   );
->>>>>>> temporary
 }
 export default DailyQuote;

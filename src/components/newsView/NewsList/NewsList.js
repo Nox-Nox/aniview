@@ -5,15 +5,9 @@ import { NewsContext } from "../../../pages/HomePage";
 import React from "react";
 import Button from "@mui/material/Button";
 
-<<<<<<< HEAD
-function NewsList(props) {
-  const newscontext = useContext(NewsContext);
-  const index1 = 1
-=======
 function NewsList() {
   const { data, set, first } = useContext(NewsContext);
   const index1 = 12345;
->>>>>>> temporary
 
   return (
     <Box
@@ -25,11 +19,7 @@ function NewsList() {
       justifyContent="center"
     >
       <Box
-<<<<<<< HEAD
-      id = {index1}
-=======
         id={index1}
->>>>>>> temporary
         borderRadius="0.6rem"
         maxHeight="100%"
         overflow="auto"
@@ -38,8 +28,6 @@ function NewsList() {
           var wow = document.getElementById(index1);
           wow.scrollTo({ top: 0, behavior: "smooth" });
         }}
-<<<<<<< HEAD
-=======
         onClick={(e) => {
           if (e.target !== e.currentTarget) {
             var clickedItem = e.target.id;
@@ -52,7 +40,6 @@ function NewsList() {
             k.style.color = "pink";
           }
         }}
->>>>>>> temporary
       >
         {(data || []).map((item, index) => (
           <Typography
