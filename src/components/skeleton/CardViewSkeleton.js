@@ -2,7 +2,7 @@ import { Skeleton, Grid, Box } from "@mui/material";
 import React from "react";
 import { mainTheme } from "../Theme/mainTheme";
 
-function Loading(props) {
+function CardViewSkeleton() {
   return (
     <Grid
       container
@@ -61,4 +61,4 @@ function Loading(props) {
     </Grid>
   );
 }
-export default Loading;
+export default CardViewSkeleton;

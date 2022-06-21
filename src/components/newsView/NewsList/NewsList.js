@@ -5,9 +5,15 @@ import { NewsContext } from "../../../pages/HomePage";
 import React from "react";
 import Button from "@mui/material/Button";
 
+<<<<<<< HEAD
 function NewsList(props) {
   const newscontext = useContext(NewsContext);
   const index1 = 1
+=======
+function NewsList() {
+  const { data, set, first } = useContext(NewsContext);
+  const index1 = 12345;
+>>>>>>> temporary
 
   return (
     <Box
@@ -19,7 +25,11 @@ function NewsList(props) {
       justifyContent="center"
     >
       <Box
+<<<<<<< HEAD
       id = {index1}
+=======
+        id={index1}
+>>>>>>> temporary
         borderRadius="0.6rem"
         maxHeight="100%"
         overflow="auto"
@@ -28,8 +38,23 @@ function NewsList(props) {
           var wow = document.getElementById(index1);
           wow.scrollTo({ top: 0, behavior: "smooth" });
         }}
+<<<<<<< HEAD
+=======
+        onClick={(e) => {
+          if (e.target !== e.currentTarget) {
+            var clickedItem = e.target.id;
+            var k = document.getElementById(clickedItem);
+            console.log(k);
+            var c = document.getElementById(index1).childNodes;
+            for (var i = 0; i < c.length; i++) {
+              if (c[i] !== k) c[i].style.color = "white";
+            }
+            k.style.color = "pink";
+          }
+        }}
+>>>>>>> temporary
       >
-        {(newscontext || []).map((item, index) => (
+        {(data || []).map((item, index) => (
           <Typography
             sx={{
               borderBottom: 1,
@@ -37,9 +62,13 @@ function NewsList(props) {
               borderColor: "#9B59B6",
             }}
             component={Button}
-            variant="outlined"
             fontSize="15px"
-            onClick={() => props.switchNews(index)}
+            id={index}
+            key={index}
+            onClick={() => {
+              set(data[index]);
+              // i.style.color="pink"
+            }}
             width="100%"
             color="white"
             padding="0.6rem"

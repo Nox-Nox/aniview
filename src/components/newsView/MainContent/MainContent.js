@@ -1,8 +1,16 @@
 import { Box, Typography, CardMedia } from "@mui/material";
 import React from "react";
 import { mainTheme } from "../../Theme/mainTheme";
+import { useContext, useState } from "react";
+import { NewsContext } from "../../../pages/HomePage";
 
+<<<<<<< HEAD
 function MainContent(props) {
+=======
+
+function MainContent() {
+  const { data, set, first  } = useContext(NewsContext);
+>>>>>>> temporary
   return (
     <Box
       height="100%"
@@ -20,15 +28,26 @@ function MainContent(props) {
           borderColor: "#9B59B6",
         }}
       >
+<<<<<<< HEAD
         {props.first.title}
       </Typography>
       <Box
       id = {props.first.id}
+=======
+        {first.title}
+      </Typography>
+      <Box
+      id = {first.id}
+>>>>>>> temporary
         overflow="auto"
         height="100%"
         maxHeight="85%"
         onMouseLeave={() => {
+<<<<<<< HEAD
           var wow = document.getElementById(props.first.id);
+=======
+          var wow = document.getElementById(first.id);
+>>>>>>> temporary
           wow.scrollTo({ top: 0, behavior: "smooth" });
         }}
       >
@@ -38,7 +57,7 @@ function MainContent(props) {
           margin="1rem"
           padding="0.8rem"
         >
-          {props.first.content}
+          {first.content}
         </Typography>
       </Box>
     </Box>

@@ -3,19 +3,18 @@ import { useState, useEffect, createContext } from "react";
 import React from "react";
 import SeasonsNavigation from "../components/NavigationBars/SeasonsNavigation";
 import NewsContainer from "../components/newsContainer/NewsContainer";
+import NewsViewSkeleton from "../components/skeleton/NewsViewSkeleton";
 
 export const NewsContext = createContext();
 
 function HomePage() {
   const [isLoading, setLoading] = useState(true);
   const [loadedData, setLoadedData] = useState([]);
+  const [quoteData, setQuoteData] = useState([]);
   const [isNews, setNews] = useState();
   const url = "https://get-mongo.herokuapp.com/getData";
-
-  const switchNews = (index) => {
-    console.log(index);
-    setNews(loadedData[index]);
-  };
+  const quoteUrl = 'https://animechan.vercel.app/api/random'
+  
 
   useEffect(() => {
     setLoading(true);
@@ -24,24 +23,27 @@ function HomePage() {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         setLoadedData(data);
         setNews(data[0]);
         setLoading(false);
-        console.log("useEffect isNews: ", isNews);
       });
+      fetch(quoteUrl)
+        .then(response => response.json())
+        .then((data) => {
+          setQuoteData(data);
+          console.log(data)
+        })
   }, []);
-  console.log("loaded data: ", loadedData);
-  console.log("index 0 isNews: ", isNews);
-  if (isLoading === true) {
-    return <p>loading...</p>;
-  }
+
+  // if (isLoading === true) {
+  //   <NewsViewSkeleton />
+  // }
 
   return (
     <Box>
       <SeasonsNavigation />
-      <NewsContext.Provider value={loadedData}>
-        <NewsContainer first={isNews} switchNews={switchNews} />
+      <NewsContext.Provider value={{data:loadedData, set: setNews, first: isNews, quote: quoteData}}>
+        <NewsContainer loading={isLoading} />
       </NewsContext.Provider>
     </Box>
   );
