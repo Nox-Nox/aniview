@@ -111,7 +111,6 @@ function NewsViewSkeleton() {
               <Skeleton variant="rectangular" width="12vw" height="32vh" />
             </Box>
             <Box
-              backgroundColor="green"
               display="flex"
               flexDirection="column"
             ></Box>
@@ -125,7 +124,7 @@ function NewsViewSkeleton() {
         </Box>
         <Box
           borderRadius="0.6rem"
-          backgroundColor="purple"
+          backgroundColor={mainTheme.palette.primary.light}
           height="70vh"
           width="20%"
           marginRight="1.5vw"
