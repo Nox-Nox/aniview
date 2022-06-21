@@ -24,7 +24,7 @@ function NewsViewSkeleton() {
           backgroundColor="#9b59b6"
           height="20vh"
           width="30vw"
-          borderRadius="2rem"
+          borderRadius="1rem"
           display="flex"
           flexDirection="column"
           alignItems="center"
@@ -53,6 +53,7 @@ function NewsViewSkeleton() {
 
       <Box
         display="flex"
+        height="75vh"
         backgroundColor="#171717"
         width="100%"
         borderRadius="3vw"
@@ -99,20 +100,27 @@ function NewsViewSkeleton() {
               <Skeleton width="50vw" variant="text" />
             </Box>
           </Box>
-
-          <Box
-          backgroundColor="yellow"
-            width="12vw"
-            height="100%"
-            display="flex"
-            maxHeight="32vh"
-            flexDirection="column"
-            alignItems="flex-end"
-          >
-            <Skeleton variant="rectangular" width="12vw" height="32vh" />
-          </Box>
-          <Box backgroundColor="green" height="10vh">
-
+          <Box heighth="70vh">
+            <Box
+              width="12vw"
+              display="flex"
+              maxHeight="32vh"
+              flexDirection="column"
+              alignItems="flex-end"
+            >
+              <Skeleton variant="rectangular" width="12vw" height="32vh" />
+            </Box>
+            <Box
+              backgroundColor="green"
+              display="flex"
+              flexDirection="column"
+            ></Box>
+            <Box height="38vh" display="flex" flexDirection="column-reverse">
+              <Box padding="1vh">
+                <Skeleton width="8vw" variant="text" />
+                <Skeleton width="8vw" variant="text" />
+              </Box>
+            </Box>
           </Box>
         </Box>
         <Box
@@ -122,15 +130,15 @@ function NewsViewSkeleton() {
           width="20%"
           marginRight="1.5vw"
           display="flex"
-          alignItems="center"
           justifyContent="center"
+          flexDirection="column"
           marginLeft="1.5vw"
         >
-          <Box
-            maxHeight="100%"
-            overflow="auto"
-            backgroundColor={mainTheme.palette.primary.light}
-          ></Box>
+          {(Array.from(new Array(10)) || []).map((item, index) => (
+            <Box padding="1vh">
+              <Skeleton variant="rectangular" width="18vw" height="5vh" />
+            </Box>
+          ))}
         </Box>
       </Box>
     </Box>
