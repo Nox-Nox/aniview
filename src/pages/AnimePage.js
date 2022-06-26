@@ -12,8 +12,8 @@ import {
 function AnimePage() {
   return (
     <Box>
-      <Box height="35vh" backgroundColor=" red" display="flex" justifyContent="center" alignItems="center">
-        <Box backgroundColor="cyan" height="32vh" width = "98%" borderRadius="3rem"> </Box>
+      <Box height="40vh" backgroundColor=" red" display="flex" justifyContent="center" alignItems="center">
+        <Box backgroundColor="cyan" height="38vh" width = "99%" borderRadius="3rem"> </Box>
       </Box>
       <Box height="10vh" backgroundColor="lightgreen"> search fields, filters</Box>
       <Box height="50vh" backgroundColor="gray" >rgdrg</Box>

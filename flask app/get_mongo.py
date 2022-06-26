@@ -3,7 +3,7 @@ from flask_cors import CORS, cross_origin
 import pymongo
 from bson.json_util import dumps
 
-conn_str = "mongodb+srv://Nox:DianaWhore99@cluster0.wvmvj.mongodb.net/newsdb"
+conn_str = "mongodb+srv://[user]:[password]@cluster0.wvmvj.mongodb.net/newsdb"
 client = pymongo.MongoClient(conn_str, serverSelectiontimeoutMS=10000)
 db = client['newsdb']
 
