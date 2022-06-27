@@ -8,7 +8,7 @@ function MainContent() {
   const { data, set, first } = useContext(NewsContext);
   return (
     <Box
-      height="100%"
+      height="70vh"
       width="100%"
       backgroundColor={mainTheme.palette.primary.light}
     >
@@ -29,7 +29,8 @@ function MainContent() {
         id={first.id}
         overflow="auto"
         height="100%"
-        maxHeight="85%"
+        maxHeight="80%"
+                  padding="0.8rem"
         onMouseLeave={() => {
           var wow = document.getElementById(first.id);
           wow.scrollTo({ top: 0, behavior: "smooth" });
@@ -39,7 +40,7 @@ function MainContent() {
           lineHeight="2.5rem"
           color="white"
           margin="1rem"
-          padding="0.8rem"
+
         >
           {first.content}
         </Typography>

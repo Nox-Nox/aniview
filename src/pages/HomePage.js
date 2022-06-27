@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { useState, useEffect, createContext } from "react";
 import React from "react";
 import SeasonsNavigation from "../components/NavigationBars/SeasonsNavigation";
-import NewsContainer from "../components/newsContainer/NewsContainer";
+import NewsContainer from "../components/newsView/newsContainer/NewsContainer";
 import NewsViewSkeleton from "../components/skeleton/NewsViewSkeleton";
 
 export const NewsContext = createContext();
