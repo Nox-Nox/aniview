@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import React from "react";
-import CardContainer from "../../components/cardsContainer/CardContainer";
+import CardContainer from "../../components/cardView/cardsContainer/CardContainer";
 import SeasonsNavigation from "../../components/NavigationBars/SeasonsNavigation";
 import { Box } from "@mui/material";
 import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";
