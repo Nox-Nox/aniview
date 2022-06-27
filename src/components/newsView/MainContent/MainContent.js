@@ -8,7 +8,7 @@ function MainContent() {
   const { data, set, first } = useContext(NewsContext);
   return (
     <Box
-      height="70vh"
+      height="100%"
       width="100%"
       backgroundColor={mainTheme.palette.primary.light}
     >
@@ -39,8 +39,8 @@ function MainContent() {
         <Typography
           lineHeight="2.5rem"
           color="white"
-          margin="1rem"
-
+          marginLeft="1rem"
+          marginBottom="2rem"
         >
           {first.content}
         </Typography>
