@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Typography,
   ThemeProvider,
@@ -10,6 +10,10 @@ import {
 } from "@mui/material";
 
 function AnimePage() {
+  const [isLoading, setLoading] = useState(true);
+  
+  
+  
   return (
     <Box>
       <Box height="40vh" backgroundColor=" red" display="flex" justifyContent="center" alignItems="center">
