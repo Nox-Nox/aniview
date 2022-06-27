@@ -1,12 +1,11 @@
-import { Box, Typography, CardMedia } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import { mainTheme } from "../../Theme/mainTheme";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { NewsContext } from "../../../pages/HomePage";
 
-
 function MainContent() {
-  const { data, set, first  } = useContext(NewsContext);
+  const { data, set, first } = useContext(NewsContext);
   return (
     <Box
       height="100%"
@@ -27,7 +26,7 @@ function MainContent() {
         {first.title}
       </Typography>
       <Box
-      id = {first.id}
+        id={first.id}
         overflow="auto"
         height="100%"
         maxHeight="85%"

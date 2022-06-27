@@ -22,11 +22,15 @@ function DailyQuote() {
         flexDirection="column"
         overflow="auto"
       >
-        <Typography variant="h5" paddingTop="2vh">
+        <Typography textAlign="center" variant="h5" paddingTop="1.5vh">
           {quote.anime}
         </Typography>
-        <Typography textAlign="center" padding="0.4rem">"{quote.quote}"</Typography>
-        <Typography variant="h6" paddingBottom="0.4rem">-{quote.character}</Typography>
+        <Typography textAlign="center" padding="0.5vw">
+          "{quote.quote}"
+        </Typography>
+        <Typography variant="h6" paddingBottom="0.5vw">
+          -{quote.character}
+        </Typography>
       </Box>
     </Box>
   );

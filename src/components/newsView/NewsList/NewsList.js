@@ -10,13 +10,14 @@ function NewsList() {
   const index1 = 12345;
 
   return (
+    
+
     <Box
       height="70vh"
       width="20%"
       marginRight="1.5vw"
       display="flex"
-      alignItems="center"
-      justifyContent="center"
+      flexDirection="column"
     >
       <Box
         id={index1}
@@ -54,7 +55,6 @@ function NewsList() {
             key={index}
             onClick={() => {
               set(data[index]);
-              // i.style.color="pink"
             }}
             width="100%"
             color="white"
@@ -65,6 +65,7 @@ function NewsList() {
         ))}
       </Box>
     </Box>
+    
   );
 }
 export default NewsList;

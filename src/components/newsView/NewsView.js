@@ -33,6 +33,7 @@ function NewsView() {
         </Box>
 
         {/* component3 */}
+        
         <NewsList />
       </Box>
     </Box>
