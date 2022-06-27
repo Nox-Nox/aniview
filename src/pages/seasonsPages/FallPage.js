@@ -34,7 +34,6 @@ function FallPage() {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         const TV_ITEMS = [];
         const TV_SHORT_ITEMS = [];
         const MOVIE_ITEMS = [];
