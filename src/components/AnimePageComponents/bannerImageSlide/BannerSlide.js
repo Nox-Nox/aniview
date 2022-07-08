@@ -6,6 +6,7 @@ import BannerImage from "../bannerImageSlide/noImageAvailable.jpg";
 function BannerSlide(props) {
   console.log(props.items);
   return (
+    <Box backgroundColor="#171717" borderRadius="4rem" marginBottom="2vh">
     <Carousel>
       {(props.items || []).map((item, index) => (
         <Box>
@@ -41,6 +42,7 @@ function BannerSlide(props) {
         </Box>
       ))}
     </Carousel>
+    </Box>
   );
 }
 
