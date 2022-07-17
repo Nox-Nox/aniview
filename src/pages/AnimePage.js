@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getCurrentSeason } from "../components/Functions/GetCurrentSeason";
-import { QueryTop6 } from "../components/Functions/Top6TrendingAnime";
+import { QueryTop6 } from "../components/Functions/Top6PopularAnime";
 import { QueryOptions } from "../components/Functions/Query";
 import {
   Box,
