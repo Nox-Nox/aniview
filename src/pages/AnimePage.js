@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import BannerSlide from "../components/AnimePageComponents/bannerImageSlide/BannerSlide";
 import SearchIcon from "@mui/icons-material/Search";
-import { deepPurple } from "@mui/material/colors";
+
 
 function AnimePage() {
   const [isLoading, setLoading] = useState(true);
