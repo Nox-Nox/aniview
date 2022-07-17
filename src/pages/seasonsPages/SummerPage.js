@@ -1,9 +1,10 @@
-import { useState, useEffect, React } from "react";
+import { useState, useEffect} from "react";
 import CardContainer from "../../components/cardView/cardsContainer/CardContainer";
 import SeasonsNavigation from "../../components/NavigationBars/SeasonsNavigation";
 import { Box } from "@mui/material";
 import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";
 import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
+import React from "react";
 
 function SummerPage() {
   const [isLoading, setLoading] = useState(true);
@@ -51,6 +52,7 @@ function SummerPage() {
           TV_ITEMS.push(TV_ITEM);
         }
         setLoadedDataTV(TV_ITEMS);
+        console.log(TV_ITEMS)
 
         for (const [key, value] of Object.entries(
           data["data"]["TV_SHORT_media"]["media"]
