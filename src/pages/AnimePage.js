@@ -2,8 +2,16 @@ import React, { useState, useEffect } from "react";
 import { getCurrentSeason } from "../components/Functions/GetCurrentSeason";
 import { QueryTop6 } from "../components/Functions/Top6TrendingAnime";
 import { QueryOptions } from "../components/Functions/Query";
-import { Box } from "@mui/material";
+import {
+  Box,
+  TextField,
+  Select,
+  InputAdornment,
+  MenuItem,
+} from "@mui/material";
 import BannerSlide from "../components/AnimePageComponents/bannerImageSlide/BannerSlide";
+import SearchIcon from "@mui/icons-material/Search";
+import { deepPurple } from "@mui/material/colors";
 
 function AnimePage() {
   const [isLoading, setLoading] = useState(true);
@@ -49,10 +57,57 @@ function AnimePage() {
     <Box margin="2vw">
       <BannerSlide items={isData} />
 
-      <Box height="10vh" backgroundColor="#171717" borderRadius="2rem">
-        search fields, filters
+      <Box
+        height="10vh"
+        backgroundColor="#171717"
+        borderRadius="1rem"
+        display="flex"
+        alignItems="center"
+        marginBottom="5vh"
+      >
+        <Box
+          component="form"
+          autoComplete="off"
+          sx={{
+            "& > :not(style)": { m: 4, width: "25ch" },
+          }}
+        >
+          <TextField
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon color="secondary" />
+                </InputAdornment>
+              ),
+            }}
+            id="standard-basic"
+            label="Search"
+            color="secondary"
+            focused
+            sx={{
+              input: { color: "blueviolet" },
+            }}
+          />
+
+          <TextField
+            select
+            focused
+            color="secondary"
+          >
+            <MenuItem sx={{ color: "red" }} value={10}>
+              Ten
+            </MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+            <MenuItem value={30}>Thirty</MenuItem>
+          </TextField>
+        </Box>
       </Box>
-      <Box height="50vh" backgroundColor="gray">
+      <Box height="50vh"        
+        backgroundColor="#171717"
+        borderRadius="1rem"
+        display="flex"
+        alignItems="center"
+        marginBottom="5vh">
         rgdrg
       </Box>
     </Box>
