@@ -4,7 +4,10 @@ import { Grid, Typography } from "@mui/material";
 import { mainTheme } from "../../Theme/mainTheme";
 import React from "react";
 import CardViewSkeleton from "../../skeleton/CardViewSkeleton";
+import useMediaQuery from "@mui/material";
 
+const breakPoints = useTheme()
+const matches = useMediaQuery(breakPoints.breakpoints.down('tablet'))
 function CardContainer(props) {
   return (
     <ThemeProvider theme={mainTheme}>
