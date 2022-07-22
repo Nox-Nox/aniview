@@ -5,7 +5,6 @@ import { QueryOptions } from "../components/Functions/Query";
 import {
   Box,
   TextField,
-  Select,
   InputAdornment,
   MenuItem,
 } from "@mui/material";
@@ -16,7 +15,7 @@ import SearchIcon from "@mui/icons-material/Search";
 function AnimePage() {
   const [isLoading, setLoading] = useState(true);
   const [isData, setData] = useState([]);
-  const [isImage, setImage] = useState(0);
+ 
 
   var season = getCurrentSeason();
   var today = new Date();

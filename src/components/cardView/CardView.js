@@ -25,6 +25,8 @@ function CardView(props) {
           flexDirection="row"
           className={classes.boxshadow}
           backgroundColor={mainTheme.palette.primary.light}
+          // backgroundColor="lime"
+          borderRadius="1.2rem"
         >
           <LeftMediaTitle
             cover={item.coverImage.large}

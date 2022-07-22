@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { NewsContext } from "../../../pages/HomePage";
 
 function MainContent() {
-  const { data, set, first } = useContext(NewsContext);
+  const { first } = useContext(NewsContext);
   return (
     <Box
       height="100%"

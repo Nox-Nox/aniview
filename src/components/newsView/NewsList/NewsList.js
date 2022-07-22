@@ -6,7 +6,7 @@ import React from "react";
 import Button from "@mui/material/Button";
 
 function NewsList() {
-  const { data, set, first } = useContext(NewsContext);
+  const { data, set } = useContext(NewsContext);
   const index1 = 12345;
 
   return (

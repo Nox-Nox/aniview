@@ -19,7 +19,7 @@ function TopInfoEp(props) {
           flexDirection="column"
           justifyContent="flex-start"
         >
-          <Box width="7.5vw">
+          <Box width="100%">
             <Typography
               fontWeight="bold"
               color="#fa88dd"

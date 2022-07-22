@@ -10,3 +10,8 @@ export const themeBreakpoints = createTheme({
     },
   },
 });
+
+// below 1302 w grid should display 2 cards and change size of card and media, use rem or px for cardmedia instead
+//below 1050 grid should display 1 card
+//below 801 switch to tablet/mobile size
+// make 2 more components for cardContainer and cardView

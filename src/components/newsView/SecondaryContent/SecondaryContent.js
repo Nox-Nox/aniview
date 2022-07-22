@@ -6,7 +6,7 @@ import { useContext } from "react";
 
 
 function SecondaryContent() {
-  const { data, set, first } = useContext(NewsContext);
+  const { first } = useContext(NewsContext);
   return (
     <Box
       backgroundColor={mainTheme.palette.primary.light}

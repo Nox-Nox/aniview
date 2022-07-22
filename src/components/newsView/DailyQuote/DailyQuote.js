@@ -4,7 +4,7 @@ import { NewsContext } from "../../../pages/HomePage";
 import { useContext } from "react";
 
 function DailyQuote() {
-  const { data, set, first, quote } = useContext(NewsContext);
+  const { quote } = useContext(NewsContext);
   return (
     <Box
       display="flex"
