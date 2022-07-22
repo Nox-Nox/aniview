@@ -118,11 +118,11 @@ function SummerPage() {
   const special = loadedDataSPECIAL;
   const movie = loadedDataMOVIE;
 
-  if (isLoading === true) {
-    return (
-      <h1>Loading...</h1>
-    )
-  }
+  // if (isLoading === true) {
+  //   return (
+  //     <h1>Loading...</h1>
+  //   )
+  // }
 
   return (
     <Box>
