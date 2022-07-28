@@ -7,15 +7,21 @@ import {
   TextField,
   InputAdornment,
   MenuItem,
+  createTheme,
+  ThemeProvider
 } from "@mui/material";
 import BannerSlide from "../components/AnimePageComponents/bannerImageSlide/BannerSlide";
 import SearchIcon from "@mui/icons-material/Search";
 
+const theme = createTheme({
+  input:{
+    color:"blue,"
+  }
+})
 
 function AnimePage() {
   const [isLoading, setLoading] = useState(true);
   const [isData, setData] = useState([]);
- 
 
   var season = getCurrentSeason();
   var today = new Date();
@@ -87,11 +93,20 @@ function AnimePage() {
               input: { color: "blueviolet" },
             }}
           />
-
+        <ThemeProvider theme={theme}>
           <TextField
-            select
-            focused
+          select
+          focused
             color="secondary"
+            label="lol"
+            sx={{
+              "& .MuiSvgIcon-root": {
+                  color: "blueviolet",
+              },
+              "& .MuiSelect-select":{
+                color:"yellow",
+              }
+              }}
           >
             <MenuItem sx={{ color: "red" }} value={10}>
               Ten
@@ -99,14 +114,17 @@ function AnimePage() {
             <MenuItem value={20}>Twenty</MenuItem>
             <MenuItem value={30}>Thirty</MenuItem>
           </TextField>
+          </ThemeProvider>
         </Box>
       </Box>
-      <Box height="50vh"        
+      <Box
+        height="50vh"
         backgroundColor="#171717"
         borderRadius="1rem"
         display="flex"
         alignItems="center"
-        marginBottom="5vh">
+        marginBottom="5vh"
+      >
         rgdrg
       </Box>
     </Box>

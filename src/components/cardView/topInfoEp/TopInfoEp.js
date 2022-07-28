@@ -58,7 +58,7 @@ function TopInfoEp(props) {
           color="#e88aff"
           fontSize="1em"
           padding="0.5vw"
-          paddingTop="0.1vh"
+          paddingTop="0.4vh"
           paddingBottom="0.1vh"
         >
           {props.airingep === null
