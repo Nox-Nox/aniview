@@ -18,7 +18,6 @@ function MainNavigation() {
     <ThemeProvider theme={mainTheme}>
       <AppBar
         sx={{
-          fontSize: "1.5vw",
           alignItems: "center",
           position: "relative",
           

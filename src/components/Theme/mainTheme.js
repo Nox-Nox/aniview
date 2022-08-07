@@ -21,14 +21,15 @@ export const mainTheme = createTheme({
         },
       },
     },
-    MuiButton: {
+    MuiAppBar: {
       styleOverrides: {
-        root: {
-          fontFamily: "Roboto",
-          fontSize: "20rem",
+        root:{
+          borderBottomLeftRadius:"2rem",
+          borderBottomRightRadius:"2rem",
         }
       }
     }
+
   },
 
   palette: {

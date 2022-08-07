@@ -29,14 +29,14 @@ function BannerSlide(props) {
             <Box
               position="absolute"
               zIndex="1"
-              bottom="2vh"
-              left="1vw"
+              bottom="2vw"
+              left="2vw"
               backgroundColor="rgba(0, 0, 0, 0.8)"
-              padding="0.5rem"
+              padding="0.5vw"
               borderRadius="1.5rem"
             >
               <Typography
-                variant="h3"
+                fontSize="2vw"
                 fontWeight="bold"
                 color="whitesmoke"
                 padding="15px"

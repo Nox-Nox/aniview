@@ -8,20 +8,19 @@ import {
   InputAdornment,
   MenuItem,
   createTheme,
-  ThemeProvider
+  ThemeProvider,
 } from "@mui/material";
 import BannerSlide from "../components/AnimePageComponents/bannerImageSlide/BannerSlide";
 import SearchIcon from "@mui/icons-material/Search";
+import { AnimePageTheme } from "../components/Theme/animePageTheme";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const theme = createTheme({
-  input:{
-    color:"blue,"
-  }
-})
 
 function AnimePage() {
   const [isLoading, setLoading] = useState(true);
   const [isData, setData] = useState([]);
+
+
 
   var season = getCurrentSeason();
   var today = new Date();
@@ -74,7 +73,7 @@ function AnimePage() {
           component="form"
           autoComplete="off"
           sx={{
-            "& > :not(style)": { m: 4, width: "25ch" },
+            "& .MuiTextField-root": { m: 3 },
           }}
         >
           <TextField
@@ -93,27 +92,12 @@ function AnimePage() {
               input: { color: "blueviolet" },
             }}
           />
-        <ThemeProvider theme={theme}>
-          <TextField
-          select
-          focused
-            color="secondary"
-            label="lol"
-            sx={{
-              "& .MuiSvgIcon-root": {
-                  color: "blueviolet",
-              },
-              "& .MuiSelect-select":{
-                color:"yellow",
-              }
-              }}
-          >
-            <MenuItem sx={{ color: "red" }} value={10}>
-              Ten
-            </MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </TextField>
+          <ThemeProvider theme={AnimePageTheme}>
+            <TextField color="secondary" select focused label="Genres" SelectProps={{IconComponent: ExpandMoreIcon}}>
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </TextField>
           </ThemeProvider>
         </Box>
       </Box>
