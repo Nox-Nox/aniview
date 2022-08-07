@@ -5,45 +5,52 @@ export const AnimePageTheme = createTheme({
     MuiTextField: {
       styleOverrides: {
         root: {
-            width:"20ch",
+          width: "20ch",
           "& .MuiSvgIcon-root": {
             color: "blueviolet",
           },
           "& .MuiSelect-select": {
-            color: "blueviolet",
+            color: "#9980FA",
           },
-          select:{
-            color: "blueviolet",
-          }
         },
       },
     },
     MuiMenuItem: {
       styleOverrides: {
         root: {
-          color: "blueviolet",
+          color:"#9980FA",
         },
       },
-    
     },
 
-    MuiPaper:{
-        styleOverrides: {
-            root: {
-                background:"#28282B ",
-                marginTop: "10px",
-            }
-        }
-    },
-MuiList:{
-    styleOverrides: {
+    MuiPaper: {
+      styleOverrides: {
         root: {
-            "& .MuiMenu-paper":{
-                marginTop:"10px",
-            },
-            // background: "red",
-        }
-    }
-}
+          background: "#28282B ",
+          marginTop: "10px",
+        },
+      },
+    },
+    MuiList: {
+      styleOverrides: {
+        root: {
+          "& li": {
+            padding: "10px",
+          },
+          "& li:hover": {
+            background: "blueviolet",
+            color: "white",
+          },
+          "& li.Mui-selected": {
+            background: "#9980FA",
+            color:"white",
+          },
+          "& li.Mui-selected:hover":{
+            background: "#5758BB",
+            color:"white",
+          }
+        },
+      },
+    },
   },
 });

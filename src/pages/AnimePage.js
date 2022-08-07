@@ -13,14 +13,11 @@ import {
 import BannerSlide from "../components/AnimePageComponents/bannerImageSlide/BannerSlide";
 import SearchIcon from "@mui/icons-material/Search";
 import { AnimePageTheme } from "../components/Theme/animePageTheme";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 function AnimePage() {
   const [isLoading, setLoading] = useState(true);
   const [isData, setData] = useState([]);
-
-
 
   var season = getCurrentSeason();
   var today = new Date();
@@ -89,15 +86,79 @@ function AnimePage() {
             color="secondary"
             focused
             sx={{
-              input: { color: "blueviolet" },
+              input: { color: "#9980FA" },
             }}
           />
           <ThemeProvider theme={AnimePageTheme}>
-            <TextField color="secondary" select focused label="Genres" SelectProps={{IconComponent: ExpandMoreIcon}}>
+            <TextField
+                      sx={{
+                        width:"24ch"
+                      }}
+              color="secondary"
+              select
+              focused
+              label="Genres"
+              SelectProps={{ IconComponent: ExpandMoreIcon }}
+            >
               <MenuItem value={10}>Ten</MenuItem>
               <MenuItem value={20}>Twenty</MenuItem>
               <MenuItem value={30}>Thirty</MenuItem>
             </TextField>
+
+            <TextField
+              color="secondary"
+              select
+              focused
+              label="Season"
+              SelectProps={{ IconComponent: ExpandMoreIcon }}
+            >
+              <MenuItem value={"Winter"}>Winter</MenuItem>
+              <MenuItem value={"Spring"}>Spring</MenuItem>
+              <MenuItem value={"Summer"}>Summer</MenuItem>
+              <MenuItem value={"Fall"}>Fall</MenuItem>
+            </TextField>
+
+            <TextField
+              color="secondary"
+              select
+              focused
+              label="Year"
+              SelectProps={{ IconComponent: ExpandMoreIcon }}
+            >
+              <MenuItem value={2023}>2023</MenuItem>
+              <MenuItem value={2022}>2022</MenuItem>
+              <MenuItem value={2021}>2021</MenuItem>
+            </TextField>
+
+            <TextField
+              color="secondary"
+              select
+              focused
+              label="Format"
+              SelectProps={{ IconComponent: ExpandMoreIcon }}
+            >
+              <MenuItem value={"TV Show"}>TV Show</MenuItem>
+              <MenuItem value={"Movie"}>Movie</MenuItem>
+              <MenuItem value={"Special"}>Special</MenuItem>
+              <MenuItem value={"OVA"}>OVA</MenuItem>
+              <MenuItem value={"ONA"}>ONA</MenuItem>
+              <MenuItem value={"Music"}>Music</MenuItem>
+              <MenuItem value={"TV Short"}>TV Short</MenuItem>
+            </TextField>
+
+            <TextField
+              color="secondary"
+              select
+              focused
+              label="Airing Status"
+              SelectProps={{ IconComponent: ExpandMoreIcon }}
+            >
+              <MenuItem value={"Airing"}>Airing</MenuItem>
+              <MenuItem value={"Finished"}>Finished</MenuItem>
+              <MenuItem value={"Not Yet Aired"}>Not Yet Aired</MenuItem>
+              <MenuItem value={"Cancelled"}>Cancelled</MenuItem>
+            </TextField>
+            
           </ThemeProvider>
         </Box>
       </Box>
