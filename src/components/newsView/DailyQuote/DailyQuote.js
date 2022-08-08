@@ -16,6 +16,7 @@ function DailyQuote() {
         backgroundColor="#9b59b6"
         maxHeight="25vh"
         width="30vw"
+        minWidth="25vw"
         borderRadius="0.6rem"
         display="flex"
         alignItems="center"
