@@ -22,11 +22,10 @@ function AnimePage() {
   var season = getCurrentSeason();
   var today = new Date();
   var year = today.getFullYear();
-
   var query = QueryTop6(season, year);
   var url = "https://graphql.anilist.co";
-  var options = QueryOptions(query);
-
+  var options = QueryOptions(query);  
+  
   useEffect(() => {
     setLoading(true);
     fetch(url, options)
