@@ -6,7 +6,6 @@ import { mainTheme } from "../../Theme/mainTheme";
 import React from "react";
 import CardViewSkeleton from "../../skeleton/CardViewSkeleton";
 
-
 function CardContainer(props) {
   return (
     <ThemeProvider theme={mainTheme}>
@@ -21,7 +20,7 @@ function CardContainer(props) {
           <Box marginBottom="8vh" borderRadius="3rem" backgroundColor="#171717">
             <Grid container justifyContent="space-around">
               {/*<CardView items={props.items} loaded={props.loaded} />*/}
-              <CardView2 items={props.items}  />
+              <CardView2 items={props.items} />
             </Grid>
           </Box>
         )}
