@@ -20,8 +20,8 @@ function CardContainer(props) {
         ) : (
           <Box marginBottom="8vh" borderRadius="3rem" backgroundColor="#171717">
             <Grid container justifyContent="space-around">
-       
-              <CardView2 items={props.items}  />
+              <CardView items={props.items} loaded={props.loaded} />
+              
             </Grid>
           </Box>
         )}
