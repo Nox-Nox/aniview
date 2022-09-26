@@ -1,0 +1,53 @@
+.container{
+    margin-top: 40px;
+    display: grid;
+    /* background-color: brown; */
+    height: 18rem;
+    grid-template-columns: auto 18rem;
+    grid-template-rows: 1.5rem 1.5rem 1.5rem 8rem 3rem;
+    grid-template-areas: 
+    "coveri totalep"
+    "cover duration"
+    "cover timer"
+    "cover description"
+    "cover genres";
+
+}
+
+
+#imgsize{
+    height: 15.5rem;
+    width: 11rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+#cover{
+    grid-area: coveri;
+}
+#totalep{
+    background-color: grey;
+    grid-area: totalep;
+    border-top-right-radius: 1rem;
+}
+#duration{
+    /* background-color: palegreen; */
+    background-color: grey;
+    grid-area:duration;
+}
+#timer{
+    /* background-color: bisque; */
+    background-color: grey;
+    grid-area: timer;
+}
+#description{
+    /* background-color: coral; */
+    background-color: grey;
+    grid-area: description;
+    overflow-y: auto;
+}
+#genres{
+    /* background-color: crimson; */
+    background-color: grey;
+    grid-area: genres;
+    border-bottom-right-radius: 1rem;
+}
