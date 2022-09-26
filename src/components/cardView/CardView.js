@@ -35,8 +35,8 @@ function CardView(props) {
               item.studios.edges.length === 0
                 ? ""
                 : item.studios.edges.map(
-                    (n, index) => (index ? ", " : "") + n.node.name
-                  )
+                  (n, index) => (index ? ", " : "") + n.node.name
+                )
             }
           />
 

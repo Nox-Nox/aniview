@@ -12,13 +12,26 @@ function CardView2(props) {
 
                     {/* <CardMedia component="img" image={item.coverImage.large} /> */}
                     <div id={styles.cover}>
-
                         <img id={styles.imgsize} src={item.coverImage.large} alt="image" />
                     </div>
-                    <div id={styles.totalep}>Total episode:{item.episodes}</div>
-                    <div id={styles.duration}>Duration{item.duration}</div>
-                    <div id={styles.score}> esgrghdrgrs </div>
-                    <div id={styles.timer}></div>
+                    <div id={styles.totalep}>Total episodes: {item.episodes}</div>
+                    <div id={styles.duration}>Duration {item.duration} min</div>
+                    <div id={styles.score}> {item.averageScore} </div>
+                    <div id={styles.timer}>
+                    {item.nextAiringEpisode === null
+            ? ""
+            : "Ep " +
+            item.nextAiringEpisode.episode +
+              " " +
+              "airing in " +
+              Math.floor(item.nextAiringEpisode.timeUntilAiring / (3600 * 24)) +
+              " days, " +
+              Math.floor(
+                (item.nextAiringEpisode.timeUntilAiring % (3600 * 24)) / 3600
+              ) +
+              " hours"}
+
+                    </div>
                     <div id={item.id} className={styles.description} onMouseLeave={() => {
                         var wow = document.getElementById(item.id);
                         wow.scrollTo({ top: 0, behavior: "smooth" });
