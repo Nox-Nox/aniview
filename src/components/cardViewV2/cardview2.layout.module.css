@@ -4,7 +4,7 @@
   /* background-color: brown; */
   height: 18rem;
   grid-template-columns: auto 10rem 6rem;
-  grid-template-rows: 1.5rem 1.5rem 1.8rem 8.5rem 2.2rem;
+  grid-template-rows: 1.5rem 1.5rem 2.3rem 8rem 2.2rem;
   grid-template-areas:
     "coveri totalep score"
     "coveri duration score"
@@ -17,8 +17,24 @@
   overflow-y: auto;
 }
 
+#score_number {
+  color: #d671d1;
+  padding-top: 5px;
+  padding-left: 6px;
+  font-size: 1.3em;
+  font-weight: 500;
+  justify-content: center;
+}
+
+#score_thumb {
+  padding-top: 8px;
+}
+
 #score {
-  background-color: red;
+  justify-content: center;
+  display: flex;
+  /* background-color: red; */
+  background-color: #4e4d4d;
   grid-area: score;
   border-top-right-radius: 1rem;
 }
@@ -38,16 +54,16 @@
   padding: 5px;
   font-size: 0.8em;
   color: white;
-  background-color: #3d3d3d;
+  background-color: #4e4d4d;
   grid-area: totalep;
 }
 
 #duration {
-  padding:5px;
+  padding: 5px;
   font-size: 0.8em;
   color: white;
   /* background-color: palegreen; */
-  background-color: #3d3d3d;
+  background-color: #4e4d4d;
   grid-area: duration;
 }
 
@@ -57,26 +73,88 @@
   font-size: 1em;
   color: white;
   /* background-color: bisque; */
-  background-color: #3d3d3d;
+  background-color: #4e4d4d;
   grid-area: timer;
 }
 
 .description {
   padding: 5px;
-  padding-top: 20px;
   font-size: 0.9em;
-  /* background-color: coral; */
   color: white;
-  background-color: #3d3d3d;
+  background-color: #4e4d4d;
   grid-area: description;
   overflow-y: auto;
+
 }
 
-#genres {
-  padding-left: 5px;
+.description {
+  overflow: auto;
+  transition: 2s all ease;
+}
+
+.description:hover {
+  overflow: auto;
+}
+
+.description::-webkit-scrollbar {
+  border-radius: 6px;
+  height: 5px;
+  width: 5px;
+}
+
+.description:hover::-webkit-scrollbar-thumb {
+  background-color: #222222;
+  border-radius: 3px;
+  transition: background-color 3s;
+}
+.description::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 3px;
+  border: 3px solid transparent;
+ 
+}
+
+.description::-webkit-scrollbar-track {
+  margin-block: 0.8em;
+}
+
+.genres {
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
   /* background-color: crimson; */
-  background-color: lime;
+  background-color: #4e4d4d;
   grid-area: genres;
   border-bottom-right-radius: 1rem;
 }
 
+.genres {
+  overflow: auto;
+  transition: 2s all ease;
+}
+
+.genres:hover {
+  overflow: auto;
+}
+
+.genres::-webkit-scrollbar {
+  border-radius: 6px;
+  height: 5px;
+  width: 5px;
+}
+
+.genres:hover::-webkit-scrollbar-thumb {
+  background-color: #222222;
+  border-radius: 3px;
+  transition: background-color 3s;
+}
+.genres::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 3px;
+  border: 3px solid transparent;
+ 
+}
+
+.genres::-webkit-scrollbar-track {
+  margin-block: 0.8em;
+}

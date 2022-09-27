@@ -1,8 +1,14 @@
 import { ThemeProvider } from "@emotion/react";
-import { CardMedia } from "@mui/material";
-import { Box, responsiveFontSizes } from "@mui/material";
+
+
+import { responsiveFontSizes } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
 import styles from "../cardViewV2/cardview2.layout.module.css";
+// import scroll_style from "../cardViewV2/scroll.module.css";
+import GenresChip2 from "./GenresChip2/GenresChipV2";
+import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
+import ThumbDownAltOutlinedIcon from "@mui/icons-material/ThumbDownAltOutlined";
+import ThumbsUpDownOutlinedIcon from "@mui/icons-material/ThumbsUpDownOutlined";
 
 function CardView2(props) {
     return (
@@ -12,24 +18,44 @@ function CardView2(props) {
 
                     {/* <CardMedia component="img" image={item.coverImage.large} /> */}
                     <div id={styles.cover}>
-                        <img id={styles.imgsize} src={item.coverImage.large} alt="image" />
+                        <img id={styles.imgsize} src={item.coverImage.large} alt="anime cover" />
                     </div>
                     <div id={styles.totalep}>Total episodes: {item.episodes}</div>
                     <div id={styles.duration}>Duration {item.duration} min</div>
-                    <div id={styles.score}> {item.averageScore} </div>
+                    <div id={styles.score}>
+
+                        <div id={styles.score_thumb}>
+                            {item.averageScore > 70 ?
+                                <ThumbUpAltOutlinedIcon sx={{ color: "lightgreen" }} /> :
+
+                                item.averageScore < 60 && item.averageScore !== null ?
+                                    <ThumbDownAltOutlinedIcon sx={{ color: "red" }} /> :
+
+                                    item.averageScore < 78 && item.averageScore !== null ?
+                                        <ThumbsUpDownOutlinedIcon sx={{ color: "yellow" }} /> : ""
+                            }
+                        </div>
+                        {item.averageScore > 0 ?
+                        <div id={styles.score_number}>
+                            {item.averageScore}%
+                        </div>
+                        : ""
+}
+
+                    </div>
                     <div id={styles.timer}>
-                    {item.nextAiringEpisode === null
-            ? ""
-            : "Ep " +
-            item.nextAiringEpisode.episode +
-              " " +
-              "airing in " +
-              Math.floor(item.nextAiringEpisode.timeUntilAiring / (3600 * 24)) +
-              " days, " +
-              Math.floor(
-                (item.nextAiringEpisode.timeUntilAiring % (3600 * 24)) / 3600
-              ) +
-              " hours"}
+                        {item.nextAiringEpisode === null
+                            ? "N/A"
+                            : "Ep " +
+                            item.nextAiringEpisode.episode +
+                            " " +
+                            "airing in " +
+                            Math.floor(item.nextAiringEpisode.timeUntilAiring / (3600 * 24)) +
+                            " days, " +
+                            Math.floor(
+                                (item.nextAiringEpisode.timeUntilAiring % (3600 * 24)) / 3600
+                            ) +
+                            " hours"}
 
                     </div>
                     <div id={item.id} className={styles.description} onMouseLeave={() => {
@@ -38,7 +64,12 @@ function CardView2(props) {
                     }} >
                         <div dangerouslySetInnerHTML={{ __html: item.description }} />
                     </div>
-                    <div id={styles.genres}>genres chips</div>
+                    <div className={styles.genres}>
+                        {/* <Stack direction="row" spacing={1} marginTop="0.6vh" marginLeft="0.4vw" overflow="auto">
+                            <GenresChip items={item.genres} />
+                        </Stack> */}
+                        <GenresChip2 items={item.genres} />
+                    </div>
                 </div>
             ))}
         </ThemeProvider>
