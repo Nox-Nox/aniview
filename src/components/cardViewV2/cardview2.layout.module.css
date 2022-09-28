@@ -1,8 +1,8 @@
 .container {
-  margin-top: 40px;
+  margin-top: 50px;
   display: grid;
   /* background-color: brown; */
-  height: 18rem;
+  height: auto;
   grid-template-columns: auto 10rem 6rem;
   grid-template-rows: 1.5rem 1.5rem 2.3rem 8rem 2.2rem;
   grid-template-areas:
@@ -11,6 +11,13 @@
     "coveri timer timer"
     "coveri description description"
     "coveri genres genres";
+  transition: box-shadow 0.4s;
+  border-radius: 1rem;
+}
+
+.container:hover {
+  box-shadow: 0 0 11px rgb(209, 77, 209);
+  border-radius: 1rem;
 }
 
 #descontainer {

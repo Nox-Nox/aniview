@@ -14,9 +14,9 @@ function CardViewSkeleton() {
           key={index}
           display="flex"
           position="relative"
-          height="30vh"
+          height="26vh"
           width="23.5vw"
-          margin="2vw"
+          marginTop="50px"
           flexDirection="row"
           justifyContent="flex-start"
           backgroundColor={mainTheme.palette.primary.light}

@@ -37,7 +37,7 @@ function CardView2(props) {
 
 
                     <div id={styles.totalep}>Total episodes: {item.episodes}</div>
-                    <div id={styles.duration}>Duration {item.duration} min</div>
+                    <div id={styles.duration}>Duration: {item.duration} min</div>
                     <div id={styles.score}>
 
                         <div id={styles.score_thumb}>

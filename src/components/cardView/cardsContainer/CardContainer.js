@@ -1,5 +1,4 @@
 import { Box, ThemeProvider } from "@mui/material";
-import CardView from "../CardView";
 import CardView2 from "../../cardViewV2/CardView2";
 import { Grid, Typography } from "@mui/material";
 import { mainTheme } from "../../Theme/mainTheme";
@@ -13,13 +12,11 @@ function CardContainer(props) {
         {props.title}
       </Typography>
       <Box marginRight="7.1%" marginLeft="7.1%">
-        {/* #28282B matte black light */}
         {props.loaded ? (
           <CardViewSkeleton />
         ) : (
           <Box marginBottom="8vh" borderRadius="3rem" backgroundColor="#171717">
             <Grid container justifyContent="space-around">
-              {/*<CardView items={props.items} loaded={props.loaded} />*/}
               <CardView2 items={props.items} />
             </Grid>
           </Box>
