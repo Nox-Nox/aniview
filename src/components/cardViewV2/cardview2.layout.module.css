@@ -46,8 +46,33 @@
   border-bottom-left-radius: 1rem;
 }
 
+.title_container {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  border-bottom-left-radius: 1rem;
+}
+
+.title {
+  margin: 0;
+  padding: 5px;
+  color: white;
+  font-size: 0.9em;
+}
+
+.studio {
+  margin: 0;
+  padding: 5px;
+  color: pink;
+  font-size: 0.8em;
+}
+
 #cover {
   grid-area: coveri;
+  position: relative;
 }
 
 #totalep {
@@ -84,7 +109,6 @@
   background-color: #4e4d4d;
   grid-area: description;
   overflow-y: auto;
-
 }
 
 .description {
@@ -111,7 +135,6 @@
   background-color: transparent;
   border-radius: 3px;
   border: 3px solid transparent;
- 
 }
 
 .description::-webkit-scrollbar-track {
@@ -152,7 +175,6 @@
   background-color: transparent;
   border-radius: 3px;
   border: 3px solid transparent;
- 
 }
 
 .genres::-webkit-scrollbar-track {

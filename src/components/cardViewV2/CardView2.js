@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@emotion/react";
 
 
-import { responsiveFontSizes } from "@mui/material";
+import { responsiveFontSizes, Typography } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
 import styles from "../cardViewV2/cardview2.layout.module.css";
 // import scroll_style from "../cardViewV2/scroll.module.css";
@@ -19,7 +19,23 @@ function CardView2(props) {
                     {/* <CardMedia component="img" image={item.coverImage.large} /> */}
                     <div id={styles.cover}>
                         <img id={styles.imgsize} src={item.coverImage.large} alt="anime cover" />
+                        <div className={styles.title_container}>
+                            <p className={styles.title}>{item.title.romaji}</p>
+                            <p className={styles.studio}>
+                                {
+                                    item.studios.edges.length === 0
+                                        ? ""
+                                        : item.studios.edges.map(
+                                            (n, index) => (index ? ", " : "") + n.node.name
+                                        )
+                                }
+
+                            </p>
+                        </div>
                     </div>
+
+
+
                     <div id={styles.totalep}>Total episodes: {item.episodes}</div>
                     <div id={styles.duration}>Duration {item.duration} min</div>
                     <div id={styles.score}>
@@ -36,11 +52,11 @@ function CardView2(props) {
                             }
                         </div>
                         {item.averageScore > 0 ?
-                        <div id={styles.score_number}>
-                            {item.averageScore}%
-                        </div>
-                        : ""
-}
+                            <div id={styles.score_number}>
+                                {item.averageScore}%
+                            </div>
+                            : ""
+                        }
 
                     </div>
                     <div id={styles.timer}>
