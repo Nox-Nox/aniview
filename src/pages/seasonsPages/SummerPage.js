@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react";
-import CardContainer from "../../components/cardView/cardsContainer/CardContainer";
+import CardContainer from "../../components/CardContainer/CardContainer";
 import SeasonsNavigation from "../../components/NavigationBars/SeasonsNavigation";
 import { Box } from "@mui/material";
 import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";

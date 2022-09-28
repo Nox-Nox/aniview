@@ -1,10 +1,9 @@
 import { ThemeProvider } from "@emotion/react";
 
 
-import { responsiveFontSizes, Typography } from "@mui/material";
+import { responsiveFontSizes } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
 import styles from "../cardViewV2/cardview2.layout.module.css";
-// import scroll_style from "../cardViewV2/scroll.module.css";
 import GenresChip2 from "./GenresChip2/GenresChipV2";
 import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
 import ThumbDownAltOutlinedIcon from "@mui/icons-material/ThumbDownAltOutlined";

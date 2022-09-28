@@ -1,0 +1,17 @@
+.container{
+    margin-right: 7.1%;
+    margin-left: 7.1%;
+}
+
+.inner_container{
+   margin-bottom: 50px;
+   border-radius: 3rem;
+   background-color: #171717;
+   padding: 30px;
+}
+
+.series_type{
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bold;
+}

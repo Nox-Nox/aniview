@@ -1,5 +1,6 @@
 .container {
   margin-top: 50px;
+  margin-bottom: 50px;
   display: grid;
   /* background-color: brown; */
   height: auto;
@@ -54,7 +55,7 @@
 }
 
 .title_container {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.75);
   position: absolute;
   bottom: 0;
   z-index: 1;
@@ -66,6 +67,7 @@
 .title {
   margin: 0;
   padding: 5px;
+  padding-bottom: 0;
   color: white;
   font-size: 0.9em;
 }
@@ -73,6 +75,7 @@
 .studio {
   margin: 0;
   padding: 5px;
+  padding-bottom: 8px;
   color: pink;
   font-size: 0.8em;
 }
@@ -187,3 +190,4 @@
 .genres::-webkit-scrollbar-track {
   margin-block: 0.8em;
 }
+

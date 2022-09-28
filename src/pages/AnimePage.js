@@ -7,7 +7,6 @@ import {
   TextField,
   InputAdornment,
   MenuItem,
-  createTheme,
   ThemeProvider,
 } from "@mui/material";
 import BannerSlide from "../components/AnimePageComponents/bannerImageSlide/BannerSlide";

@@ -1,27 +1,28 @@
 import { Box, ThemeProvider } from "@mui/material";
-import CardView2 from "../../cardViewV2/CardView2";
 import { Grid, Typography } from "@mui/material";
-import { mainTheme } from "../../Theme/mainTheme";
+import { mainTheme } from "../Theme/mainTheme";
 import React from "react";
-import CardViewSkeleton from "../../skeleton/CardViewSkeleton";
+import CardView2 from "../cardViewV2/CardView2";
+import CardViewSkeleton from "../skeleton/CardViewSkeleton";
+import styles from "../CardContainer/cardcontainer.module.css";
 
 function CardContainer(props) {
   return (
     <ThemeProvider theme={mainTheme}>
-      <Typography fontSize="3rem" textAlign="center" fontWeight="bold">
+      <p className={styles.series_type}>
         {props.title}
-      </Typography>
-      <Box marginRight="7.1%" marginLeft="7.1%">
+      </p>
+      <div className={styles.container}>
         {props.loaded ? (
           <CardViewSkeleton />
         ) : (
-          <Box marginBottom="8vh" borderRadius="3rem" backgroundColor="#171717">
+          <div className={styles.inner_container}>
             <Grid container justifyContent="space-around">
               <CardView2 items={props.items} />
             </Grid>
-          </Box>
+          </div>
         )}
-      </Box>
+      </div>
     </ThemeProvider>
   );
 }
