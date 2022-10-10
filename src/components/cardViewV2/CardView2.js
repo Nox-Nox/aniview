@@ -28,25 +28,23 @@ function CardView2(props) {
                                             (n, index) => (index ? ", " : "") + n.node.name
                                         )
                                 }
-
                             </p>
                         </div>
                     </div>
 
 
-
-                    <div id={styles.totalep}>Total episodes: {item.episodes}</div>
-                    <div id={styles.duration}>Duration: {item.duration} min</div>
+                    <div id={styles.totalep}>Total ep: {item.episodes}</div>
+                    <div id={styles.duration}>Duration: {item.duration !== null ? item.duration +"min" : "N/A"}</div>
                     <div id={styles.score}>
 
                         <div id={styles.score_thumb}>
-                            {item.averageScore > 70 ?
-                                <ThumbUpAltOutlinedIcon sx={{ color: "lightgreen" }} /> :
+                            {item.averageScore >= 65 ?
+                                <ThumbUpAltOutlinedIcon sx={{ color: "lightgreen", marginTop:"-3px" }}  /> :
 
-                                item.averageScore < 60 && item.averageScore !== null ?
+                                item.averageScore < 49 && item.averageScore !== null ?
                                     <ThumbDownAltOutlinedIcon sx={{ color: "red" }} /> :
 
-                                    item.averageScore < 78 && item.averageScore !== null ?
+                                    item.averageScore < 65 && item.averageScore !== null ?
                                         <ThumbsUpDownOutlinedIcon sx={{ color: "yellow" }} /> : ""
                             }
                         </div>
@@ -66,11 +64,11 @@ function CardView2(props) {
                             " " +
                             "airing in " +
                             Math.floor(item.nextAiringEpisode.timeUntilAiring / (3600 * 24)) +
-                            " days, " +
+                            "d, " +
                             Math.floor(
                                 (item.nextAiringEpisode.timeUntilAiring % (3600 * 24)) / 3600
                             ) +
-                            " hours"}
+                            "h"}
 
                     </div>
                     <div id={item.id} className={styles.description} onMouseLeave={() => {

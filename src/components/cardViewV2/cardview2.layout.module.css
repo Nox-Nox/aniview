@@ -35,7 +35,7 @@
 }
 
 #score_thumb {
-  padding-top: 8px;
+  padding-top: 10px;
 }
 
 #score {
@@ -191,3 +191,52 @@
   margin-block: 0.8em;
 }
 
+/* media queries of cardview */
+
+@media all and (max-width: 550px) {
+  .container {
+    margin-top: 0;
+    margin-bottom: 40px;
+    display: grid;
+    /* background-color: brown; */
+    height: auto;
+    grid-template-columns: auto 7rem 4rem;
+    grid-template-rows: 1.7rem 1.7rem 2rem 7.9rem 2.2rem;
+    grid-template-areas:
+      "coveri totalep score"
+      "coveri duration score"
+      "coveri timer timer"
+      "coveri description description"
+      "coveri genres genres";
+    transition: box-shadow 0.4s;
+    border-radius: 1rem;
+  }
+
+  #score_number {
+    color: #d671d1;
+    padding-top: 8px;
+    padding-right: 8px;
+    font-size: 1em;
+    font-weight: 500;
+    justify-content: center;
+  }
+
+  .description {
+    padding: 5px;
+    font-size: 0.75em;
+    color: white;
+    background-color: #4e4d4d;
+    grid-area: description;
+    overflow-y: auto;
+  }
+
+  #timer {
+    padding: 5px;
+    padding-top: 7px;
+    font-size: 1em;
+    color: white;
+    /* background-color: bisque; */
+    background-color: #4e4d4d;
+    grid-area: timer;
+  }
+}
