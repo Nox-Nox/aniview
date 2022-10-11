@@ -2,10 +2,16 @@
   background-color: #171717;
   display: flex;
   justify-content: center;
-  height: 5rem;
+  height: 6rem;
   align-items: center;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+}
+
+.navBar {
+  font-size: larger;
+  padding: 15px;
+  border-radius: 3rem;
 }
 
 ul {

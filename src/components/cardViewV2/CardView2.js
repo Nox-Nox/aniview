@@ -15,7 +15,6 @@ function CardView2(props) {
             {(props.items || []).map((item) => (
                 <div key={item.id} className={styles.container}>
 
-                    {/* <CardMedia component="img" image={item.coverImage.large} /> */}
                     <div id={styles.cover}>
                         <img id={styles.imgsize} src={item.coverImage.large} alt="anime cover" />
                         <div className={styles.title_container}>
@@ -33,13 +32,13 @@ function CardView2(props) {
                     </div>
 
 
-                    <div id={styles.totalep}>Total ep: {item.episodes}</div>
-                    <div id={styles.duration}>Duration: {item.duration !== null ? item.duration +"min" : "N/A"}</div>
+                    <div id={styles.totalep}>Total ep: {item.episodes !== null ? item.episodes + "min" : "N/A"}</div>
+                    <div id={styles.duration}>Duration: {item.duration !== null ? item.duration + "min" : "N/A"}</div>
                     <div id={styles.score}>
 
                         <div id={styles.score_thumb}>
                             {item.averageScore >= 65 ?
-                                <ThumbUpAltOutlinedIcon sx={{ color: "lightgreen", marginTop:"-3px" }}  /> :
+                                <ThumbUpAltOutlinedIcon sx={{ color: "lightgreen", marginTop: "-3px" }} /> :
 
                                 item.averageScore < 49 && item.averageScore !== null ?
                                     <ThumbDownAltOutlinedIcon sx={{ color: "red" }} /> :

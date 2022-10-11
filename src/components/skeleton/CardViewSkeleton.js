@@ -30,7 +30,7 @@ function CardViewSkeleton() {
           />
           <Box
             height="5vh"
-            width="7vw"
+            width="6vw"
             flexDirection="column"
             justifyContent="flex-start"
           >

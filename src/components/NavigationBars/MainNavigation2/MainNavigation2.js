@@ -12,8 +12,8 @@ function MainNavigation2() {
         setActive(location.pathname);
     }, [location]);
     return (
-        <div>
-            <nav className={styles.wrapper}>
+        <div className={styles.wrapper}>
+            <nav className={styles.navBar}>
                 <ul>
                     <Link
                         className={
