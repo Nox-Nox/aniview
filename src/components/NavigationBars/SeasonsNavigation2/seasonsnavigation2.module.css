@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  margin-top: 3rem;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+}
+
+.navBar {
+  font-size: small;
+  background-color: #171717;
+  padding: 15px;
+  border-radius: 3rem;
+}
+
+.active {
+  color: white;
+  text-decoration: overline;
+}
+
+a {
+  color: lightgray;
+  padding: 1vw;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}

@@ -1,9 +1,7 @@
-import { Box } from "@mui/material";
 import { useState, useEffect, createContext } from "react";
 import React from "react";
-import SeasonsNavigation from "../components/NavigationBars/SeasonsNavigation";
 import NewsContainer from "../components/newsView/newsContainer/NewsContainer";
-
+import SeasonsNavigation2 from "../components/NavigationBars/SeasonsNavigation2/SeasonsNavigation2";
 
 export const NewsContext = createContext();
 
@@ -35,17 +33,14 @@ function HomePage() {
         })
   }, []);
 
-  // if (isLoading === true) {
-  //   <NewsViewSkeleton />
-  // }
 
   return (
-    <Box>
-      <SeasonsNavigation />
+    <div>
+      <SeasonsNavigation2 />
       <NewsContext.Provider value={{data:loadedData, set: setNews, first: isNews, quote: quoteData}}>
         <NewsContainer loading={isLoading} />
       </NewsContext.Provider>
-    </Box>
+    </div>
   );
 }
 export default HomePage;

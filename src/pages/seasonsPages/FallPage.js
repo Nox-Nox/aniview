@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import CardContainer from "../../components/CardContainer/CardContainer";
-import SeasonsNavigation from "../../components/NavigationBars/SeasonsNavigation";
-import { Box } from "@mui/material";
 import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";
 import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
+import SeasonsNavigation2 from "../../components/NavigationBars/SeasonsNavigation2/SeasonsNavigation2";
 
 function FallPage() {
   const [isLoading, setLoading] = useState(true);
@@ -117,8 +116,8 @@ function FallPage() {
   const movie = loadedDataMOVIE;
 
   return (
-    <Box>
-      <SeasonsNavigation />
+    <div>
+      <SeasonsNavigation2 />
       <CardContainer title="TV" items={loadedDataTV} loaded={isLoading} />
       {tvshort.length > 0 && (
         <CardContainer title="TV SHORTS" items={loadedDataTV_SHORT} />
@@ -131,7 +130,7 @@ function FallPage() {
       {special.length > 0 && (
         <CardContainer title="SPECIAL" items={loadedDataSPECIAL} />
       )}
-    </Box>
+    </div>
   );
 }
 

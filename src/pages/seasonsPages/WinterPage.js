@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import CardContainer from "../../components/CardContainer/CardContainer";
-import SeasonsNavigation from "../../components/NavigationBars/SeasonsNavigation";
-import { Box } from "@mui/material";
 import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";
 import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
+import SeasonsNavigation2 from "../../components/NavigationBars/SeasonsNavigation2/SeasonsNavigation2";
+
 
 function WinterPage() {
   const [isLoading, setLoading] = useState(true);
@@ -118,8 +118,8 @@ function WinterPage() {
   const movie = loadedDataMOVIE;
 
   return (
-    <Box>
-      <SeasonsNavigation />
+    <div>
+      <SeasonsNavigation2 />
       <CardContainer title="TV" items={loadedDataTV} loaded={isLoading} />
       {tvshort.length > 0 && (
         <CardContainer title="TV SHORTS" items={loadedDataTV_SHORT} />
@@ -132,7 +132,7 @@ function WinterPage() {
       {special.length > 0 && (
         <CardContainer title="SPECIAL" items={loadedDataSPECIAL} />
       )}
-    </Box>
+    </div>
   );
 }
 export default WinterPage;
