@@ -1,0 +1,83 @@
+.outer_container{
+    margin-right: 7.1%;
+    margin-left: 7.1%;
+    height: 30rem;
+  }
+    
+  .inner_container{
+    height: 30rem;
+    margin-bottom: 50px;
+    border-radius: 3rem;
+    background-color: #171717;
+    padding: 20px;
+  }
+  
+
+.container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: grid;
+  /* background-color: brown; */
+  height: auto;
+  grid-template-columns: auto 10rem 6rem;
+  grid-template-rows: 1.5rem 1.5rem 2.3rem 8rem 2.2rem;
+  grid-template-areas:
+    "coveri totalep score"
+    "coveri duration score"
+    "coveri timer timer"
+    "coveri description description"
+    "coveri genres genres";
+  transition: box-shadow 0.4s;
+  border-radius: 1rem;
+}
+
+.title {
+    margin: 0;
+    padding-bottom: 0;
+    color: white;
+    font-size: 0.9em;
+  }
+  
+  .studio {
+    margin: 0;
+    color: pink;
+    font-size: 0.7em;
+  }
+  
+  #cover {
+    grid-area: coveri;
+    position: relative;
+    background-color: red;
+  }
+
+#descontainer {
+  overflow-y: auto;
+}
+
+#score_number {
+  color: #d671d1;
+  padding-top: 5px;
+  padding-left: 6px;
+  font-size: 1.3em;
+  font-weight: 500;
+  justify-content: center;
+}
+
+#score_thumb {
+  padding-top: 10px;
+}
+
+#score {
+  justify-content: center;
+  display: flex;
+  background-color: #4e4d4d;
+  grid-area: score;
+  border-top-right-radius: 1rem;
+}
+
+#imgsize {
+  height: 15.5rem;
+  width: 11rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}

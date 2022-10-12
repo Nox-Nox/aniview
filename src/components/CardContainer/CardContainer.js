@@ -1,5 +1,4 @@
-import { Box, ThemeProvider } from "@mui/material";
-import { Grid, Typography } from "@mui/material";
+import { Grid, ThemeProvider} from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
 import React from "react";
 import CardView2 from "../cardViewV2/CardView2";
@@ -19,6 +18,7 @@ function CardContainer(props) {
           <div className={styles.inner_container}>
             <Grid container justifyContent="space-around">
               <CardView2 items={props.items} />
+
             </Grid>
           </div>
         )}

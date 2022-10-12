@@ -28,3 +28,20 @@ a {
 a:hover {
   color: white;
 }
+
+@media all and (max-width: 500px){
+.wrapper{
+  margin-bottom: 10px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+}
+
+  .navBar{
+    background-color: blueviolet;
+  }
+}

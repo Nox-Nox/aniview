@@ -16,6 +16,10 @@
   border-radius: 1rem;
 }
 
+.l{
+  height: 30rem;
+}
+
 .container:hover {
   box-shadow: 0 0 11px rgb(209, 77, 209);
   border-radius: 1rem;
@@ -41,7 +45,6 @@
 #score {
   justify-content: center;
   display: flex;
-  /* background-color: red; */
   background-color: #4e4d4d;
   grid-area: score;
   border-top-right-radius: 1rem;
