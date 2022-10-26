@@ -1,8 +1,7 @@
-import { Grid, ThemeProvider} from "@mui/material";
+import { Grid, ThemeProvider } from "@mui/material";
 import { mainTheme } from "../Theme/mainTheme";
 import React from "react";
-import CardView2 from "../cardViewV2/CardView2";
-import CardViewSkeleton from "../skeleton/CardViewSkeleton";
+import CardView2 from "../CardViewV2/CardView2";
 import styles from "../CardContainer/cardcontainer.module.css";
 
 function CardContainer(props) {
@@ -12,16 +11,13 @@ function CardContainer(props) {
         {props.title}
       </p>
       <div className={styles.container}>
-        {props.loaded ? (
-          <CardViewSkeleton />
-        ) : (
-          <div className={styles.inner_container}>
-            <Grid container justifyContent="space-around">
-              <CardView2 items={props.items} />
 
-            </Grid>
-          </div>
-        )}
+        <div className={styles.inner_container}>
+         
+            <CardView2 items={props.items} />
+          
+        </div>
+
       </div>
     </ThemeProvider>
   );

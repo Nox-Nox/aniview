@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import CardContainer from "../../components/CardContainer/CardContainer";
-import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";
 import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
 import SeasonsNavigation2 from "../../components/NavigationBars/SeasonsNavigation2/SeasonsNavigation2";
 
 
-function WinterPage() {
+function WinterPage(props) {
   const [isLoading, setLoading] = useState(true);
   const [loadedDataTV, setLoadedDataTV] = useState([]);
   const [loadedDataTV_SHORT, setLoadedDataTV_SHORT] = useState([]);
@@ -15,15 +14,9 @@ function WinterPage() {
   const [loadedDataONA, setLoadedDataONA] = useState([]);
   const [loadedDataSPECIAL, setLoadedDataSPECIAL] = useState([]);
 
-  var season = getCurrentSeason();
   var today = new Date();
   var year = today.getFullYear();
-
-  if (season !== "WINTER") {
-    season = "WINTER";
-  }
-
-  var query = QuerySeason(season, year);
+  var query = QuerySeason(props.season, year);
   var url = "https://graphql.anilist.co";
   var options = QueryOptions(query);
 
@@ -109,7 +102,7 @@ function WinterPage() {
         setLoadedDataSPECIAL(SPECIAL_ITEMS);
         setLoading(false);
       });
-  }, [season]);
+  }, [props.season]);
 
   const tvshort = loadedDataTV_SHORT;
   const ova = loadedDataOVA;

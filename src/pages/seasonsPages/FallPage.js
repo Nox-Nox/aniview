@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import CardContainer from "../../components/CardContainer/CardContainer";
-import { getCurrentSeason } from "../../components/Functions/GetCurrentSeason";
 import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
 import SeasonsNavigation2 from "../../components/NavigationBars/SeasonsNavigation2/SeasonsNavigation2";
+import LoadingGif from "../../components/LoadingGIF/LoadingGif"
+import CardViewSkeleton from "../../components/skeleton/CardViewSkeleton/CardViewSkeleton";
 
-function FallPage() {
+function FallPage(props) {
   const [isLoading, setLoading] = useState(true);
   const [loadedDataTV, setLoadedDataTV] = useState([]);
   const [loadedDataTV_SHORT, setLoadedDataTV_SHORT] = useState([]);
@@ -14,15 +15,9 @@ function FallPage() {
   const [loadedDataONA, setLoadedDataONA] = useState([]);
   const [loadedDataSPECIAL, setLoadedDataSPECIAL] = useState([]);
 
-  var season = getCurrentSeason();
   var today = new Date();
   var year = today.getFullYear();
-
-  if (season !== "FALL") {
-    season = "FALL";
-  }
-
-  var query = QuerySeason(season, year);
+  var query = QuerySeason(props.season, year);
   var url = "https://graphql.anilist.co";
   var options = QueryOptions(query);
 
@@ -107,13 +102,22 @@ function FallPage() {
         setLoadedDataSPECIAL(SPECIAL_ITEMS);
         setLoading(false);
       });
-  }, [season]);
+  }, [props.season]);
 
   const tvshort = loadedDataTV_SHORT;
   const ova = loadedDataOVA;
   const ona = loadedDataONA;
   const special = loadedDataSPECIAL;
   const movie = loadedDataMOVIE;
+
+  if (isLoading === true) {
+    return (
+      <div>
+        <SeasonsNavigation2 />
+        <CardViewSkeleton />
+      </div>
+    )
+  }
 
   return (
     <div>

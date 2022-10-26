@@ -14,33 +14,25 @@ import React, { useEffect, useState } from "react";
 function App() {
   var season = getCurrentSeason();
   const [isSeason, setSeason] = useState("")
-  const [isLoaded, setLoaded] = useState(false)
 
   useEffect(() => {
     switch (season) {
       case "WINTER":
         setSeason("/Home/Winter")
-        setLoaded(true)
+        break;
       case "SPRING":
         setSeason("/Home/Spring")
-        setLoaded(true)
+        break;
       case "SUMMER":
         setSeason("/Home/Summer")
-        setLoaded(true)
+        break;
       case "FALL":
         setSeason("/Home/Fall")
-        setLoaded(true)
+        break;
     }
+  }, [season])
 
-  })
 
-  if (isLoaded === false) {
-    return (
-      <div>
-        loading....
-      </div>
-    )
-  }
   return (
 
     <Routes>
@@ -50,10 +42,10 @@ function App() {
       <Route path="/Manga" element={<MangaPage />} />
       <Route path="/LightNovel" element={<LightNovelPage />} />
 
-      <Route path="/Home/Winter" element={<WinterPage />} />
-      <Route path="/Home/Spring" element={<SpringPage />} />
-      <Route path="/Home/Summer" element={<SummerPage />} />
-      <Route path="/Home/Fall" element={<FallPage />} />
+      <Route path="/Home/Winter" element={<WinterPage season={season} />} />
+      <Route path="/Home/Spring" element={<SpringPage season={season} />} />
+      <Route path="/Home/Summer" element={<SummerPage season={season} />} />
+      <Route path="/Home/Fall" element={<FallPage season={season} />} />
     </Routes>
 
   );
