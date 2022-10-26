@@ -1,31 +1,118 @@
-.container{
+.container {
   margin-right: 7.1%;
   margin-left: 7.1%;
 }
 
-.inner_container{
- margin-bottom: 50px;
- border-radius: 3rem;
- background-color: #171717;
- padding: 20px;
+.inner_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 50px;
+  border-radius: 3rem;
+  background-color: #171717;
+  padding: 20px;
 }
 
-.series_type{
+.series_type {
   display: flex;
-  justify-content:center ;
+  justify-content: center;
   font-size: 3rem;
   text-align: center;
   font-weight: bold;
   margin: 3rem;
 }
+
+.card_container {
+  background-color: #3d3d3d;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 27rem;
+  display: grid;
+  height: 15.5rem;
+  grid-template-columns: 11rem 10rem 6rem;
+  grid-template-rows: 1.5rem 1.5rem 2rem 8.5rem 2rem;
+  grid-template-areas:
+    "coveri totalep score"
+    "coveri duration score"
+    "coveri timer timer"
+    "coveri description description"
+    "coveri genres genres";
+  transition: box-shadow 0.4s;
+  border-radius: 1rem;
+}
+
+#cover {
+  grid-area: coveri;
+  position: relative;
+}
+
+#totalep {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  grid-area: totalep;
+}
+
+#duration {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  grid-area: duration;
+}
+
+#timer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  grid-area: timer;
+}
+
+#score {
+  border-top-right-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: score;
+}
+
+#description {
+  display: flex;
+  flex-direction: column;
+  grid-area: description;
+}
+
+#genres {
+  display: flex;
+  align-items: center;
+  grid-area: genres;
+  border-bottom-right-radius: 1rem;
+}
+
 @media all and (max-width: 500px) {
-  .inner_container{
-      margin-bottom: 20px;
-      border-radius: 2rem;
-      /* background-color: transparent; */
-   }
-   .container{
-      margin-right: 1%;
-      margin-left: 1%;
+  .inner_container {
+    margin-bottom: 20px;
+    border-radius: 2rem;
   }
+  .container {
+    margin-right: 1%;
+    margin-left: 1%;
+  }
+
+  .card_container {
+    margin-top: 0;
+    margin-bottom: 40px;
+    display: grid;
+    height: auto;
+    grid-template-columns: auto 7rem 4rem;
+    grid-template-rows: 1.7rem 1.7rem 2rem 7.9rem 2.2rem;
+    grid-template-areas:
+      "coveri totalep score"
+      "coveri duration score"
+      "coveri timer timer"
+      "coveri description description"
+      "coveri genres genres";
+    transition: box-shadow 0.4s;
+    border-radius: 1rem;
+  }
+  
 }

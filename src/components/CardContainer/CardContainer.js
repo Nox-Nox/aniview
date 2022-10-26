@@ -13,9 +13,7 @@ function CardContainer(props) {
       <div className={styles.container}>
 
         <div className={styles.inner_container}>
-         
-            <CardView2 items={props.items} />
-          
+          <CardView2 items={props.items} />
         </div>
 
       </div>

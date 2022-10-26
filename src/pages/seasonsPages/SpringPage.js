@@ -3,6 +3,7 @@ import React from "react";
 import CardContainer from "../../components/CardContainer/CardContainer";
 import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
 import SeasonsNavigation2 from "../../components/NavigationBars/SeasonsNavigation2/SeasonsNavigation2";
+import CardViewSkeleton from "../../components/skeleton/CardViewSkeleton/CardViewSkeleton";
 
 function SpringPage(props) {
   const [isLoading, setLoading] = useState(true);
@@ -111,6 +112,15 @@ function SpringPage(props) {
   const ona = loadedDataONA;
   const special = loadedDataSPECIAL;
   const movie = loadedDataMOVIE;
+
+  if (isLoading === true) {
+    return (
+      <div>
+        <SeasonsNavigation2 />
+        <CardViewSkeleton />
+      </div>
+    )
+  }
 
   return (
     <div>
