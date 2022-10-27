@@ -87,6 +87,7 @@
 #totalep {
   padding: 5px;
   font-size: 0.8em;
+  font-weight: 500;
   color: rgb(236, 103, 207);
   background-color: #4e4d4d;
   grid-area: totalep;
@@ -95,6 +96,7 @@
 #duration {
   padding: 5px;
   font-size: 0.8em;
+  font-weight: 500;
   color: rgb(233, 62, 210);
   /* background-color: palegreen; */
   background-color: #4e4d4d;
@@ -105,7 +107,8 @@
   padding: 5px;
   padding-top: 7px;
   font-size: 1em;
-  color: rgb(234, 0, 255);
+  font-weight: 500;
+  color: rgb(229, 58, 245);
   /* background-color: bisque; */
   background-color: #4e4d4d;
   grid-area: timer;

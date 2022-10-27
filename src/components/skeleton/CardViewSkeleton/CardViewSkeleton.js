@@ -11,7 +11,7 @@ function CardViewSkeleton() {
       <div className={styles.container}>
         <div className={styles.inner_container}>
           {(Array.from(new Array(9)) || []).map((item, index) => (
-            <div className={styles.card_container}>
+            <div key={index} className={styles.card_container}>
               <div id={styles.cover}>
                 <Skeleton variant="rectangular" width="11rem" height="15.5rem" sx={{ borderTopLeftRadius: "1rem", borderBottomLeftRadius: "1rem" }} />
               </div>

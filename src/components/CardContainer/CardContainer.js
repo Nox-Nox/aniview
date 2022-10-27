@@ -1,12 +1,10 @@
-import { Grid, ThemeProvider } from "@mui/material";
-import { mainTheme } from "../Theme/mainTheme";
 import React from "react";
 import CardView2 from "../CardViewV2/CardView2";
 import styles from "../CardContainer/cardcontainer.module.css";
 
 function CardContainer(props) {
   return (
-    <ThemeProvider theme={mainTheme}>
+    <div>
       <p className={styles.series_type}>
         {props.title}
       </p>
@@ -17,7 +15,7 @@ function CardContainer(props) {
         </div>
 
       </div>
-    </ThemeProvider>
+    </div>
   );
 }
 
