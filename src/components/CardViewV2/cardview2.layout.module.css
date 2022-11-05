@@ -30,7 +30,7 @@
 }
 
 #score_number {
-  color: #d671d1;
+  color: rgb(204, 142, 255);
   padding-top: 5px;
   padding-left: 6px;
   font-size: 1.3em;
@@ -39,7 +39,7 @@
 }
 
 #score_thumb {
-  padding-top: 10px;
+  padding-top: 10.4px;
 }
 
 #score {
@@ -88,7 +88,7 @@
   padding: 5px;
   font-size: 0.8em;
   font-weight: 500;
-  color: rgb(236, 103, 207);
+  color: rgb(204, 142, 255);
   background-color: #4e4d4d;
   grid-area: totalep;
 }
@@ -97,7 +97,7 @@
   padding: 5px;
   font-size: 0.8em;
   font-weight: 500;
-  color: rgb(233, 62, 210);
+  color: rgb(204, 142, 255);
   /* background-color: palegreen; */
   background-color: #4e4d4d;
   grid-area: duration;
@@ -108,7 +108,7 @@
   padding-top: 7px;
   font-size: 1em;
   font-weight: 500;
-  color: rgb(229, 58, 245);
+  color: rgb(204, 142, 255);
   /* background-color: bisque; */
   background-color: #4e4d4d;
   grid-area: timer;
@@ -124,7 +124,6 @@
 }
 
 .description {
-  overflow: auto;
   transition: 2s all ease;
 }
 
@@ -132,65 +131,59 @@
   overflow: auto;
 }
 
+
 .description::-webkit-scrollbar {
+  background-color: transparent;
   border-radius: 6px;
   height: 5px;
   width: 5px;
 }
 
-.description:hover::-webkit-scrollbar-thumb {
-  background-color: #222222;
-  border-radius: 3px;
-  transition: background-color 3s;
+.description:hover::-webkit-scrollbar {
+  transition: background-color 6s;
 }
 .description::-webkit-scrollbar-thumb {
   background-color: transparent;
-  border-radius: 3px;
-  border: 3px solid transparent;
+}
+
+.description:hover::-webkit-scrollbar-thumb {
+  background-color: black;
 }
 
 .description::-webkit-scrollbar-track {
-  margin-block: 0.8em;
+  margin-block: 0.2em;
 }
 
 .genres {
   white-space: nowrap;
   overflow-y: hidden;
   overflow-x: auto;
-  /* background-color: crimson; */
   background-color: #4e4d4d;
   grid-area: genres;
   border-bottom-right-radius: 1rem;
 }
 
-.genres {
-  overflow: auto;
-  transition: 2s all ease;
-}
-
-.genres:hover {
-  overflow: auto;
-}
-
 .genres::-webkit-scrollbar {
+  background-color: transparent;
   border-radius: 6px;
   height: 5px;
   width: 5px;
 }
 
-.genres:hover::-webkit-scrollbar-thumb {
-  background-color: #222222;
-  border-radius: 3px;
-  transition: background-color 3s;
+.genres:hover::-webkit-scrollbar {
+  transition: background-color 6s;
 }
 .genres::-webkit-scrollbar-thumb {
   background-color: transparent;
-  border-radius: 3px;
-  border: 3px solid transparent;
+}
+
+.genres:hover::-webkit-scrollbar-thumb {
+  background-color: black;
 }
 
 .genres::-webkit-scrollbar-track {
-  margin-block: 0.8em;
+  /* margin-block: 5em; */
+  margin-right: 10px;
 }
 
 /* media queries of cardview */
@@ -215,7 +208,7 @@
   }
 
   #score_number {
-    color: #d671d1;
+    color: #ffc1e3;
     padding-top: 8px;
     padding-right: 8px;
     font-size: 1em;
@@ -240,5 +233,21 @@
     /* background-color: bisque; */
     background-color: #4e4d4d;
     grid-area: timer;
+  }
+
+  .title_container {
+    background-color: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-bottom-left-radius: 0.9rem;
+    padding: 8px;
+  }
+  
+  .title {
+    margin: 0;
+    padding-bottom: 0;
+    color: white;
+    font-size: 0.9em;
   }
 }

@@ -9,11 +9,9 @@ function CardContainer(props) {
         {props.title}
       </p>
       <div className={styles.container}>
-
         <div className={styles.inner_container}>
           <CardView2 items={props.items} />
         </div>
-
       </div>
     </div>
   );

@@ -6,3 +6,20 @@
 body {
   background: linear-gradient(#9b59b6, #8e44ad, #911b99, #320949);
 }
+
+.backDrop {
+  background-image: url('/public/backDrop.png');
+}
+
+::-webkit-scrollbar {
+  border-radius: 10px;
+  height: 8px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background-clip: content-box;
+}

@@ -29,8 +29,8 @@ function CardView2(props) {
                         </div>
                     </div>
 
-
-                    <div id={styles.totalep}>Total ep: {item.episodes !== null ? item.episodes + "min" : "N/A"}</div>
+                    {/* <div> */}
+                    <div id={styles.totalep}>Total ep: {item.episodes !== null ? item.episodes : "N/A"}</div>
                     <div id={styles.duration}>Duration: {item.duration !== null ? item.duration + "min" : "N/A"}</div>
                     <div id={styles.score}>
 
@@ -75,9 +75,6 @@ function CardView2(props) {
                         <div dangerouslySetInnerHTML={{ __html: item.description }} />
                     </div>
                     <div className={styles.genres}>
-                        {/* <Stack direction="row" spacing={1} marginTop="0.6vh" marginLeft="0.4vw" overflow="auto">
-                            <GenresChip items={item.genres} />
-                        </Stack> */}
                         <GenresChip2 items={item.genres} />
                     </div>
                 </div>
