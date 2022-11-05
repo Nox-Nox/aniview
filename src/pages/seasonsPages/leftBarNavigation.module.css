@@ -23,7 +23,7 @@ button{
     font-weight: 600;
     font-size: 20px;
     padding: 6px;
-    padding-right: 10px;
+    padding-right: 12px;
     padding-left: 10px;
 }
 
@@ -35,8 +35,5 @@ button:hover{
 .link_style{
 padding: 0px;
 }
-/* .lol:hover{
-    color: red;
-    transform: 1s;
-} */
+
 
