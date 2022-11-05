@@ -1,4 +1,4 @@
-import styles from "./leftBarNavigation.css"
+import styles from "./leftBarNavigation.module.css"
 import { Link } from "react-scroll";
 
 

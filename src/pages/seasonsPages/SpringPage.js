@@ -4,6 +4,7 @@ import CardContainer from "../../components/CardContainer/CardContainer";
 import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
 import SeasonsNavigation2 from "../../components/NavigationBars/SeasonsNavigation2/SeasonsNavigation2";
 import CardViewSkeleton from "../../components/skeleton/CardViewSkeleton/CardViewSkeleton";
+import LeftBarNavigation from "../../components/LeftBarNavigation/LeftBarNavigation";
 
 function SpringPage(props) {
   const [isLoading, setLoading] = useState(true);
@@ -125,18 +126,18 @@ function SpringPage(props) {
   return (
     <div>
       <SeasonsNavigation2 />
-      <CardContainer title="TV" items={loadedDataTV} loaded={isLoading} />
-
+      <LeftBarNavigation />
+      <CardContainer ID="TV" title="TV" items={loadedDataTV} loaded={isLoading} />
       {tvshort.length > 0 && (
-        <CardContainer title="TV SHORTS" items={loadedDataTV_SHORT} />
+        <CardContainer ID="TVSHORT" title="TV SHORTS" items={loadedDataTV_SHORT} />
       )}
       {movie.length > 0 && (
-        <CardContainer title="MOVIES" items={loadedDataMOVIE} />
+        <CardContainer ID="MOVIES" title="MOVIES" items={loadedDataMOVIE} />
       )}
-      {ova.length > 0 && <CardContainer title="OVA" items={loadedDataOVA} />}
-      {ona.length > 0 && <CardContainer title="ONA" items={loadedDataONA} />}
+      {ova.length > 0 && <CardContainer ID="OVA" title="OVA" items={loadedDataOVA} />}
+      {ona.length > 0 && <CardContainer ID="ONA" title="ONA" items={loadedDataONA} />}
       {special.length > 0 && (
-        <CardContainer title="SPECIAL" items={loadedDataSPECIAL} />
+        <CardContainer ID="SPECIAL" title="SPECIAL" items={loadedDataSPECIAL} />
       )}
     </div>
   );

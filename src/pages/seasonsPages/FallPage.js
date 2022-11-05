@@ -102,7 +102,7 @@ function FallPage(props) {
         setLoadedDataSPECIAL(SPECIAL_ITEMS);
         setLoading(false);
       });
-  }, [options, props.season, url]);
+  }, [props.season]);
 
   const tvshort = loadedDataTV_SHORT;
   const ova = loadedDataOVA;
