@@ -1,11 +1,10 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import CardContainer from "../../components/CardContainer/CardContainer";
 import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
 import SeasonsNavigation2 from "../../components/NavigationBars/SeasonsNavigation2/SeasonsNavigation2";
-import styles from "./leftBarNavigation.module.css"
 import CardViewSkeleton from "../../components/skeleton/CardViewSkeleton/CardViewSkeleton";
-import { Link } from "react-scroll";
+import LeftBarNavigation from "../../components/LeftBarNavigation/LeftBarNavigation";
 
 function FallPage(props) {
   const [isLoading, setLoading] = useState(true);
@@ -21,16 +20,6 @@ function FallPage(props) {
   var query = QuerySeason(props.season, year);
   var url = "https://graphql.anilist.co";
   var options = QueryOptions(query);
-
-  // const moveTo = () =>{
-  //   {document.querySelector(".cardcontainer_series_type__rl0ux").scrollIntoView({behavior:'smooth'})}
-  // }
-
-  const ref = useRef(null);
-
-  const scrollTo = () => {
-    ref.current?.scrollIntoView({ behaviour: 'smooth' })
-  }
 
   useEffect(() => {
     setLoading(true);
@@ -113,7 +102,7 @@ function FallPage(props) {
         setLoadedDataSPECIAL(SPECIAL_ITEMS);
         setLoading(false);
       });
-  }, [props.season]);
+  }, [options, props.season, url]);
 
   const tvshort = loadedDataTV_SHORT;
   const ova = loadedDataOVA;
@@ -133,30 +122,7 @@ function FallPage(props) {
   return (
     <div>
       <SeasonsNavigation2 />
-      <div className={styles.container}>
-
-        <ul>
-          <li>
-            <button><Link className={styles.link_style} activeClass="active" to="TV" spy={true} smooth={true}>TV</Link></button>
-          </li>
-          <li>
-            <button><Link className={styles.link_style} to="TVSHORT" spy={true} smooth={true}>TV SHORTS</Link></button>
-          </li>
-          <li>
-            <button><Link className={styles.link_style} to="MOVIES" spy={true} smooth={true}>MOVIES</Link></button>
-          </li>
-          <li>
-            <button><Link className={styles.link_style} to="OVA" spy={true} smooth={true}>OVA</Link></button>
-          </li>
-          <li>
-            <button><Link className={styles.link_style} to="ONA" spy={true} smooth={true}>ONA</Link></button>
-          </li>
-          <li>
-            <button><Link className={styles.link_style} to="SPECIAL" spy={true} smooth={true}>SPECIAL</Link></button>
-          </li>
-        </ul>
-
-      </div>
+      <LeftBarNavigation />
       <CardContainer ID="TV" title="TV" items={loadedDataTV} loaded={isLoading} />
       {tvshort.length > 0 && (
         <CardContainer ID="TVSHORT" title="TV SHORTS" items={loadedDataTV_SHORT} />
