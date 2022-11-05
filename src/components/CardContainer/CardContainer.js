@@ -4,7 +4,7 @@ import styles from "../CardContainer/cardcontainer.module.css";
 
 function CardContainer(props) {
   return (
-    <div>
+    <div id={props.ID}>
       <p className={styles.series_type}>
         {props.title}
       </p>

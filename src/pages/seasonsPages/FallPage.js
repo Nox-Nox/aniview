@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import React from "react";
 import CardContainer from "../../components/CardContainer/CardContainer";
 import { QuerySeason, QueryOptions } from "../../components/Functions/Query";
 import SeasonsNavigation2 from "../../components/NavigationBars/SeasonsNavigation2/SeasonsNavigation2";
-import LoadingGif from "../../components/LoadingGIF/LoadingGif"
+import styles from "./leftBarNavigation.module.css"
 import CardViewSkeleton from "../../components/skeleton/CardViewSkeleton/CardViewSkeleton";
+import { Link } from "react-scroll";
 
 function FallPage(props) {
   const [isLoading, setLoading] = useState(true);
@@ -20,6 +21,16 @@ function FallPage(props) {
   var query = QuerySeason(props.season, year);
   var url = "https://graphql.anilist.co";
   var options = QueryOptions(query);
+
+  // const moveTo = () =>{
+  //   {document.querySelector(".cardcontainer_series_type__rl0ux").scrollIntoView({behavior:'smooth'})}
+  // }
+
+  const ref = useRef(null);
+
+  const scrollTo = () => {
+    ref.current?.scrollIntoView({ behaviour: 'smooth' })
+  }
 
   useEffect(() => {
     setLoading(true);
@@ -122,17 +133,41 @@ function FallPage(props) {
   return (
     <div>
       <SeasonsNavigation2 />
-      <CardContainer title="TV" items={loadedDataTV} loaded={isLoading} />
+      <div className={styles.container}>
+
+        <ul>
+          <li>
+            <button><Link className={styles.link_style} activeClass="active" to="TV" spy={true} smooth={true}>TV</Link></button>
+          </li>
+          <li>
+            <button><Link className={styles.link_style} to="TVSHORT" spy={true} smooth={true}>TV SHORTS</Link></button>
+          </li>
+          <li>
+            <button><Link className={styles.link_style} to="MOVIES" spy={true} smooth={true}>MOVIES</Link></button>
+          </li>
+          <li>
+            <button><Link className={styles.link_style} to="OVA" spy={true} smooth={true}>OVA</Link></button>
+          </li>
+          <li>
+            <button><Link className={styles.link_style} to="ONA" spy={true} smooth={true}>ONA</Link></button>
+          </li>
+          <li>
+            <button><Link className={styles.link_style} to="SPECIAL" spy={true} smooth={true}>SPECIAL</Link></button>
+          </li>
+        </ul>
+
+      </div>
+      <CardContainer ID="TV" title="TV" items={loadedDataTV} loaded={isLoading} />
       {tvshort.length > 0 && (
-        <CardContainer title="TV SHORTS" items={loadedDataTV_SHORT} />
+        <CardContainer ID="TVSHORT" title="TV SHORTS" items={loadedDataTV_SHORT} />
       )}
       {movie.length > 0 && (
-        <CardContainer title="MOVIES" items={loadedDataMOVIE} />
+        <CardContainer ID="MOVIES" title="MOVIES" items={loadedDataMOVIE} />
       )}
-      {ova.length > 0 && <CardContainer title="OVA" items={loadedDataOVA} />}
-      {ona.length > 0 && <CardContainer title="ONA" items={loadedDataONA} />}
+      {ova.length > 0 && <CardContainer ID="OVA" title="OVA" items={loadedDataOVA} />}
+      {ona.length > 0 && <CardContainer ID="ONA" title="ONA" items={loadedDataONA} />}
       {special.length > 0 && (
-        <CardContainer title="SPECIAL" items={loadedDataSPECIAL} />
+        <CardContainer ID="SPECIAL" title="SPECIAL" items={loadedDataSPECIAL} />
       )}
     </div>
   );
